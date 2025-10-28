@@ -1,0 +1,289 @@
+[2025-09-22 15:38:50,732] [12076] [MainThread] [WARNING] (pydicom:82) - get_frame_offsets is deprecated and will be removed in v4.0
+[2025-09-22 15:47:51,743] [19804] [MainThread] [INFO] (monailabel.interfaces.utils.app:37) - Initializing App from: D:\Entornos\MONAILabel\sample-apps\radiology; studies: C:\Users\Usuario\Documents\JOSUE\TG2\MONAI_STUDIES; conf: {}
+[2025-09-22 15:47:56,824] [19804] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for MONAILabelApp Found: <class 'main.MyApp'>
+[2025-09-22 15:47:57,352] [19804] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.deepedit.DeepEdit'>
+[2025-09-22 15:47:57,380] [19804] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.deepgrow_2d.Deepgrow2D'>
+[2025-09-22 15:47:57,409] [19804] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.deepgrow_3d.Deepgrow3D'>
+[2025-09-22 15:47:57,438] [19804] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.localization_spine.LocalizationSpine'>
+[2025-09-22 15:47:57,469] [19804] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.localization_vertebra.LocalizationVertebra'>
+[2025-09-22 15:47:57,507] [19804] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.segmentation.Segmentation'>
+[2025-09-22 15:47:57,537] [19804] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.segmentation_spleen.SegmentationSpleen'>
+[2025-09-22 15:47:57,568] [19804] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.segmentation_vertebra.SegmentationVertebra'>
+[2025-09-22 15:47:57,599] [19804] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.sw_fastedit.SWFastEditConfig'>
+[2025-09-22 15:50:27,816] [2904] [MainThread] [INFO] (monailabel.interfaces.utils.app:37) - Initializing App from: D:\Entornos\MONAILabel\sample-apps\radiology; studies: C:\Users\Usuario\Documents\JOSUE\TG2\MONAI_STUDIES; conf: {'models': 'deepedit'}
+[2025-09-22 15:50:27,865] [2904] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for MONAILabelApp Found: <class 'main.MyApp'>
+[2025-09-22 15:50:27,882] [2904] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.deepedit.DeepEdit'>
+[2025-09-22 15:50:27,883] [2904] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.deepgrow_2d.Deepgrow2D'>
+[2025-09-22 15:50:27,883] [2904] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.deepgrow_3d.Deepgrow3D'>
+[2025-09-22 15:50:27,884] [2904] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.localization_spine.LocalizationSpine'>
+[2025-09-22 15:50:27,885] [2904] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.localization_vertebra.LocalizationVertebra'>
+[2025-09-22 15:50:27,887] [2904] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.segmentation.Segmentation'>
+[2025-09-22 15:50:27,887] [2904] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.segmentation_spleen.SegmentationSpleen'>
+[2025-09-22 15:50:27,888] [2904] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.segmentation_vertebra.SegmentationVertebra'>
+[2025-09-22 15:50:27,890] [2904] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.sw_fastedit.SWFastEditConfig'>
+[2025-09-22 15:50:27,891] [2904] [MainThread] [INFO] (main:95) - +++ Adding Model: deepedit => lib.configs.deepedit.DeepEdit
+[2025-09-22 15:50:27,891] [2904] [MainThread] [INFO] (monailabel.utils.others.generic:187) - Downloading resource: D:\Entornos\MONAILabel\sample-apps\radiology\model\pretrained_deepedit_dynunet.pt from https://github.com/Project-MONAI/MONAILabel/releases/download/pretrained/radiology_deepedit_dynunet_multilabel.pt
+[2025-09-22 15:51:41,152] [2904] [MainThread] [INFO] (lib.configs.deepedit:141) - EPISTEMIC Enabled: False; Samples: 5
+[2025-09-22 15:51:41,153] [2904] [MainThread] [INFO] (main:98) - +++ Using Models: ['deepedit']
+[2025-09-22 15:51:41,153] [2904] [MainThread] [INFO] (monailabel.interfaces.app:135) - Init Datastore for: C:\Users\Usuario\Documents\JOSUE\TG2\MONAI_STUDIES
+[2025-09-22 15:51:41,153] [2904] [MainThread] [INFO] (monailabel.datastore.local:130) - Auto Reload: True; Extensions: ['*.nii.gz', '*.nii', '*.nrrd', '*.jpg', '*.png', '*.tif', '*.svs', '*.xml']
+[2025-09-22 15:51:41,159] [2904] [MainThread] [INFO] (monailabel.datastore.local:577) - Invalidate count: 0
+[2025-09-22 15:51:41,159] [2904] [MainThread] [INFO] (monailabel.datastore.local:151) - Start observing external modifications on datastore (AUTO RELOAD)
+[2025-09-22 15:51:43,796] [2904] [MainThread] [INFO] (main:129) - +++ Adding Inferer:: deepedit => <lib.infers.deepedit.DeepEdit object at 0x000002960DAAD910>
+[2025-09-22 15:51:43,796] [2904] [MainThread] [INFO] (main:129) - +++ Adding Inferer:: deepedit_seg => <lib.infers.deepedit.DeepEdit object at 0x000002960DAAE790>
+[2025-09-22 15:51:44,702] [2904] [MainThread] [INFO] (monailabel.sam2.infer:65) - Image Cache Initialized: C:\Users\Usuario\.cache\monailabel\sam2
+[2025-09-22 15:51:44,704] [2904] [MainThread] [INFO] (timeloop:60) - Starting Timeloop..
+[2025-09-22 15:51:44,705] [2904] [MainThread] [INFO] (timeloop:42) - Registered job <function ImageCache.monitor.<locals>.run_scheduler at 0x000002961423F560>
+[2025-09-22 15:51:44,707] [2904] [MainThread] [INFO] (timeloop:63) - Timeloop now started. Jobs will run based on the interval set
+[2025-09-22 15:51:44,708] [2904] [MainThread] [INFO] (monailabel.utils.others.generic:187) - Downloading resource: D:\Entornos\MONAILabel\sample-apps\radiology\model\sam2_hiera_large.pt from https://huggingface.co/facebook/sam2-hiera-large/resolve/main/sam2_hiera_large.pt
+[2025-09-22 16:00:11,287] [2904] [MainThread] [INFO] (monailabel.utils.others.generic:187) - Downloading resource: D:\Entornos\MONAILabel\sample-apps\radiology\model\sam2_hiera_l.yaml from https://huggingface.co/facebook/sam2-hiera-large/resolve/main/sam2_hiera_l.yaml
+[2025-09-22 16:00:13,464] [2904] [MainThread] [INFO] (main:206) - {'deepedit': <lib.infers.deepedit.DeepEdit object at 0x000002960DAAD910>, 'deepedit_seg': <lib.infers.deepedit.DeepEdit object at 0x000002960DAAE790>, 'Histogram+GraphCut': <monailabel.scribbles.infer.HistogramBasedGraphCut object at 0x000002960C0BB410>, 'GMM+GraphCut': <monailabel.scribbles.infer.GMMBasedGraphCut object at 0x000002960C804850>, 'sam_2d': <monailabel.sam2.infer.Sam2InferTask object at 0x000002960C0BB450>, 'sam_3d': <monailabel.sam2.infer.Sam2InferTask object at 0x00000296142861D0>}
+[2025-09-22 16:00:13,465] [2904] [MainThread] [INFO] (main:221) - +++ Adding Trainer:: deepedit => <lib.trainers.deepedit.DeepEdit object at 0x0000029614286850>
+[2025-09-22 16:00:13,467] [2904] [MainThread] [INFO] (monailabel.utils.sessions:51) - Session Path: C:\Users\Usuario\.cache\monailabel\sessions
+[2025-09-22 16:00:13,469] [2904] [MainThread] [INFO] (monailabel.utils.sessions:52) - Session Expiry (max): 3600
+[2025-09-22 16:00:13,470] [2904] [MainThread] [INFO] (monailabel.interfaces.app:469) - App Init - completed
+[2025-09-22 16:00:13,472] [2904] [MainThread] [INFO] (timeloop:60) - Starting Timeloop..
+[2025-09-22 16:00:13,474] [2904] [MainThread] [INFO] (timeloop:42) - Registered job <function MONAILabelApp.on_init_complete.<locals>.run_scheduler at 0x000002960C9EFCE0>
+[2025-09-22 16:00:13,475] [2904] [MainThread] [INFO] (timeloop:63) - Timeloop now started. Jobs will run based on the interval set
+[2025-09-23 09:16:34,765] [1924] [MainThread] [WARNING] (pydicom:82) - get_frame_offsets is deprecated and will be removed in v4.0
+[2025-09-23 09:22:32,729] [20108] [MainThread] [WARNING] (pydicom:82) - get_frame_offsets is deprecated and will be removed in v4.0
+[2025-09-23 09:28:41,888] [18220] [MainThread] [WARNING] (pydicom:82) - get_frame_offsets is deprecated and will be removed in v4.0
+[2025-09-23 09:34:49,804] [19544] [MainThread] [INFO] (monailabel.interfaces.utils.app:37) - Initializing App from: D:\Entornos\MONAILabel\sample-apps\radiology; studies: C:\Users\Usuario\Documents\JOSUE\TG2\MONAI_STUDIES; conf: {'models': 'deepedit,segmentation,segmentation_spleen,sam_2d'}
+[2025-09-23 09:34:50,874] [19544] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for MONAILabelApp Found: <class 'main.MyApp'>
+[2025-09-23 09:34:51,032] [19544] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.deepedit.DeepEdit'>
+[2025-09-23 09:34:51,040] [19544] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.deepgrow_2d.Deepgrow2D'>
+[2025-09-23 09:34:51,053] [19544] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.deepgrow_3d.Deepgrow3D'>
+[2025-09-23 09:34:51,065] [19544] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.localization_spine.LocalizationSpine'>
+[2025-09-23 09:34:51,075] [19544] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.localization_vertebra.LocalizationVertebra'>
+[2025-09-23 09:34:51,088] [19544] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.segmentation.Segmentation'>
+[2025-09-23 09:34:51,098] [19544] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.segmentation_spleen.SegmentationSpleen'>
+[2025-09-23 09:34:51,108] [19544] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.segmentation_vertebra.SegmentationVertebra'>
+[2025-09-23 09:34:51,119] [19544] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.sw_fastedit.SWFastEditConfig'>
+[2025-09-23 09:37:43,300] [7896] [MainThread] [INFO] (monailabel.interfaces.utils.app:37) - Initializing App from: D:\Entornos\MONAILabel\sample-apps\radiology; studies: C:\Users\Usuario\Documents\JOSUE\TG2\MONAI_STUDIES; conf: {'models': 'all'}
+[2025-09-23 09:37:43,347] [7896] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for MONAILabelApp Found: <class 'main.MyApp'>
+[2025-09-23 09:37:43,359] [7896] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.deepedit.DeepEdit'>
+[2025-09-23 09:37:43,360] [7896] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.deepgrow_2d.Deepgrow2D'>
+[2025-09-23 09:37:43,361] [7896] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.deepgrow_3d.Deepgrow3D'>
+[2025-09-23 09:37:43,363] [7896] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.localization_spine.LocalizationSpine'>
+[2025-09-23 09:37:43,364] [7896] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.localization_vertebra.LocalizationVertebra'>
+[2025-09-23 09:37:43,367] [7896] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.segmentation.Segmentation'>
+[2025-09-23 09:37:43,369] [7896] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.segmentation_spleen.SegmentationSpleen'>
+[2025-09-23 09:37:43,369] [7896] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.segmentation_vertebra.SegmentationVertebra'>
+[2025-09-23 09:37:43,370] [7896] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.sw_fastedit.SWFastEditConfig'>
+[2025-09-23 09:37:43,370] [7896] [MainThread] [INFO] (main:95) - +++ Adding Model: deepedit => lib.configs.deepedit.DeepEdit
+[2025-09-23 09:37:44,313] [7896] [MainThread] [INFO] (lib.configs.deepedit:141) - EPISTEMIC Enabled: False; Samples: 5
+[2025-09-23 09:37:44,315] [7896] [MainThread] [INFO] (main:95) - +++ Adding Model: deepgrow_2d => lib.configs.deepgrow_2d.Deepgrow2D
+[2025-09-23 09:37:44,316] [7896] [MainThread] [INFO] (monailabel.utils.others.generic:187) - Downloading resource: D:\Entornos\MONAILabel\sample-apps\radiology\model\pretrained_deepgrow_2d.pt from https://github.com/Project-MONAI/MONAILabel/releases/download/pretrained/radiology_deepgrow_2d_bunet.pt
+[2025-09-23 09:38:04,251] [7896] [MainThread] [INFO] (main:95) - +++ Adding Model: deepgrow_3d => lib.configs.deepgrow_3d.Deepgrow3D
+[2025-09-23 09:38:04,252] [7896] [MainThread] [INFO] (monailabel.utils.others.generic:187) - Downloading resource: D:\Entornos\MONAILabel\sample-apps\radiology\model\pretrained_deepgrow_3d.pt from https://github.com/Project-MONAI/MONAILabel/releases/download/pretrained/radiology_deepgrow_3d_bunet.pt
+[2025-09-23 09:38:56,165] [7896] [MainThread] [INFO] (main:95) - +++ Adding Model: localization_spine => lib.configs.localization_spine.LocalizationSpine
+[2025-09-23 09:38:56,167] [7896] [MainThread] [INFO] (monailabel.utils.others.generic:187) - Downloading resource: D:\Entornos\MONAILabel\sample-apps\radiology\model\pretrained_localization_spine.pt from https://github.com/Project-MONAI/MONAILabel/releases/download/pretrained/radiology_segmentation_segresnet_localization_spine.pt
+[2025-09-23 09:39:53,182] [7896] [MainThread] [INFO] (main:95) - +++ Adding Model: localization_vertebra => lib.configs.localization_vertebra.LocalizationVertebra
+[2025-09-23 09:39:53,182] [7896] [MainThread] [INFO] (monailabel.utils.others.generic:187) - Downloading resource: D:\Entornos\MONAILabel\sample-apps\radiology\model\pretrained_localization_vertebra.pt from https://github.com/Project-MONAI/MONAILabel/releases/download/pretrained/radiology_segmentation_segresnet_localization_vertebra.pt
+[2025-09-23 09:40:48,056] [7896] [MainThread] [INFO] (main:95) - +++ Adding Model: segmentation => lib.configs.segmentation.Segmentation
+[2025-09-23 09:40:48,057] [7896] [MainThread] [INFO] (monailabel.utils.others.generic:187) - Downloading resource: D:\Entornos\MONAILabel\sample-apps\radiology\model\pretrained_segmentation.pt from https://github.com/Project-MONAI/MONAILabel/releases/download/pretrained/radiology_segmentation_segresnet_multilabel.pt
+[2025-09-23 09:41:38,707] [7896] [MainThread] [INFO] (main:95) - +++ Adding Model: segmentation_spleen => lib.configs.segmentation_spleen.SegmentationSpleen
+[2025-09-23 09:41:38,708] [7896] [MainThread] [INFO] (monailabel.utils.others.generic:187) - Downloading resource: D:\Entornos\MONAILabel\sample-apps\radiology\model\pretrained_segmentation_spleen.pt from https://github.com/Project-MONAI/MONAILabel/releases/download/pretrained/radiology_segmentation_unet_spleen_total_seg.pt
+[2025-09-23 09:41:51,867] [7896] [MainThread] [INFO] (lib.configs.segmentation_spleen:79) - EPISTEMIC Enabled: False; Samples: 5
+[2025-09-23 09:41:51,868] [7896] [MainThread] [INFO] (main:95) - +++ Adding Model: segmentation_vertebra => lib.configs.segmentation_vertebra.SegmentationVertebra
+[2025-09-23 09:41:51,869] [7896] [MainThread] [INFO] (monailabel.utils.others.generic:187) - Downloading resource: D:\Entornos\MONAILabel\sample-apps\radiology\model\pretrained_segmentation_vertebra.pt from https://github.com/Project-MONAI/MONAILabel/releases/download/pretrained/radiology_segmentation_segresnet_vertebra.pt
+[2025-09-23 09:42:35,262] [7896] [MainThread] [INFO] (main:95) - +++ Adding Model: sw_fastedit => lib.configs.sw_fastedit.SWFastEditConfig
+[2025-09-23 09:42:35,264] [7896] [MainThread] [INFO] (monailabel.utils.others.generic:187) - Downloading resource: D:\Entornos\MONAILabel\sample-apps\radiology\model\pretrained_sw_fastedit.pt from https://github.com/Project-MONAI/MONAILabel/releases/download/pretrained/radiology_segmentation_sw_fastedit_pet.pt
+[2025-09-23 09:43:48,061] [7896] [MainThread] [INFO] (main:98) - +++ Using Models: ['deepedit', 'deepgrow_2d', 'deepgrow_3d', 'localization_spine', 'localization_vertebra', 'segmentation', 'segmentation_spleen', 'segmentation_vertebra', 'sw_fastedit']
+[2025-09-23 09:43:48,062] [7896] [MainThread] [INFO] (monailabel.interfaces.app:135) - Init Datastore for: C:\Users\Usuario\Documents\JOSUE\TG2\MONAI_STUDIES
+[2025-09-23 09:43:48,063] [7896] [MainThread] [INFO] (monailabel.datastore.local:130) - Auto Reload: True; Extensions: ['*.nii.gz', '*.nii', '*.nrrd', '*.jpg', '*.png', '*.tif', '*.svs', '*.xml']
+[2025-09-23 09:43:48,768] [7896] [MainThread] [INFO] (monailabel.datastore.local:577) - Invalidate count: 0
+[2025-09-23 09:43:48,768] [7896] [MainThread] [INFO] (monailabel.datastore.local:151) - Start observing external modifications on datastore (AUTO RELOAD)
+[2025-09-23 09:43:50,557] [7896] [MainThread] [INFO] (main:129) - +++ Adding Inferer:: deepedit => <lib.infers.deepedit.DeepEdit object at 0x000001A4A0ADFBD0>
+[2025-09-23 09:43:50,558] [7896] [MainThread] [INFO] (main:129) - +++ Adding Inferer:: deepedit_seg => <lib.infers.deepedit.DeepEdit object at 0x000001A4A0ADFFD0>
+[2025-09-23 09:43:50,559] [7896] [MainThread] [INFO] (main:129) - +++ Adding Inferer:: deepgrow_2d => <lib.infers.deepgrow.Deepgrow object at 0x000001A4A0AFC550>
+[2025-09-23 09:43:50,561] [7896] [MainThread] [INFO] (main:129) - +++ Adding Inferer:: deepgrow_3d => <lib.infers.deepgrow.Deepgrow object at 0x000001A4A0AFC5D0>
+[2025-09-23 09:43:50,562] [7896] [MainThread] [INFO] (main:129) - +++ Adding Inferer:: localization_spine => <lib.infers.localization_spine.LocalizationSpine object at 0x000001A4A0AFC3D0>
+[2025-09-23 09:43:50,563] [7896] [MainThread] [INFO] (main:129) - +++ Adding Inferer:: localization_vertebra => <lib.infers.localization_vertebra.LocalizationVertebra object at 0x000001A4A0AFC810>
+[2025-09-23 09:43:50,564] [7896] [MainThread] [INFO] (main:129) - +++ Adding Inferer:: segmentation => <lib.infers.segmentation.Segmentation object at 0x000001A49F59AC90>
+[2025-09-23 09:43:50,565] [7896] [MainThread] [INFO] (main:129) - +++ Adding Inferer:: segmentation_spleen => <lib.infers.segmentation_spleen.SegmentationSpleen object at 0x000001A49EE430D0>
+[2025-09-23 09:43:50,567] [7896] [MainThread] [INFO] (main:129) - +++ Adding Inferer:: segmentation_vertebra => <lib.infers.segmentation_vertebra.SegmentationVertebra object at 0x000001A49F44EED0>
+[2025-09-23 09:43:52,617] [7896] [MainThread] [INFO] (main:129) - +++ Adding Inferer:: sw_fastedit => <lib.infers.sw_fastedit.SWFastEdit object at 0x000001A4A0AFC8D0>
+[2025-09-23 09:43:54,824] [7896] [MainThread] [INFO] (monailabel.sam2.infer:65) - Image Cache Initialized: C:\Users\Usuario\.cache\monailabel\sam2
+[2025-09-23 09:43:54,826] [7896] [MainThread] [INFO] (timeloop:60) - Starting Timeloop..
+[2025-09-23 09:43:54,829] [7896] [MainThread] [INFO] (timeloop:42) - Registered job <function ImageCache.monitor.<locals>.run_scheduler at 0x000001A4A734D9E0>
+[2025-09-23 09:43:54,833] [7896] [MainThread] [INFO] (timeloop:63) - Timeloop now started. Jobs will run based on the interval set
+[2025-09-23 09:43:54,837] [7896] [MainThread] [INFO] (main:206) - {'deepedit': <lib.infers.deepedit.DeepEdit object at 0x000001A4A0ADFBD0>, 'deepedit_seg': <lib.infers.deepedit.DeepEdit object at 0x000001A4A0ADFFD0>, 'deepgrow_2d': <lib.infers.deepgrow.Deepgrow object at 0x000001A4A0AFC550>, 'deepgrow_3d': <lib.infers.deepgrow.Deepgrow object at 0x000001A4A0AFC5D0>, 'localization_spine': <lib.infers.localization_spine.LocalizationSpine object at 0x000001A4A0AFC3D0>, 'localization_vertebra': <lib.infers.localization_vertebra.LocalizationVertebra object at 0x000001A4A0AFC810>, 'segmentation': <lib.infers.segmentation.Segmentation object at 0x000001A49F59AC90>, 'segmentation_spleen': <lib.infers.segmentation_spleen.SegmentationSpleen object at 0x000001A49EE430D0>, 'segmentation_vertebra': <lib.infers.segmentation_vertebra.SegmentationVertebra object at 0x000001A49F44EED0>, 'sw_fastedit': <lib.infers.sw_fastedit.SWFastEdit object at 0x000001A4A0AFC8D0>, 'Histogram+GraphCut': <monailabel.scribbles.infer.HistogramBasedGraphCut object at 0x000001A4F9B5B890>, 'GMM+GraphCut': <monailabel.scribbles.infer.GMMBasedGraphCut object at 0x000001A49EE4FE50>, 'sam_2d': <monailabel.sam2.infer.Sam2InferTask object at 0x000001A49F48DD10>, 'sam_3d': <monailabel.sam2.infer.Sam2InferTask object at 0x000001A4A733B990>, 'deepgrow_pipeline': <lib.infers.deepgrow_pipeline.InferDeepgrowPipeline object at 0x000001A4A6F93FD0>, 'vertebra_pipeline': <lib.infers.vertebra_pipeline.InferVertebraPipeline object at 0x000001A49EE54BD0>}
+[2025-09-23 09:43:54,837] [7896] [MainThread] [INFO] (main:221) - +++ Adding Trainer:: deepedit => <lib.trainers.deepedit.DeepEdit object at 0x000001A4A734B4D0>
+[2025-09-23 09:43:54,839] [7896] [MainThread] [INFO] (main:221) - +++ Adding Trainer:: deepgrow_2d => <lib.trainers.deepgrow.Deepgrow object at 0x000001A4A7225450>
+[2025-09-23 09:43:54,841] [7896] [MainThread] [INFO] (main:221) - +++ Adding Trainer:: deepgrow_3d => <lib.trainers.deepgrow.Deepgrow object at 0x000001A4A7248510>
+[2025-09-23 09:43:54,841] [7896] [MainThread] [INFO] (main:221) - +++ Adding Trainer:: localization_spine => <lib.trainers.localization_spine.LocalizationSpine object at 0x000001A4A7348110>
+[2025-09-23 09:43:54,842] [7896] [MainThread] [INFO] (main:221) - +++ Adding Trainer:: localization_vertebra => <lib.trainers.localization_vertebra.LocalizationVertebra object at 0x000001A49F49AE90>
+[2025-09-23 09:43:54,842] [7896] [MainThread] [INFO] (main:221) - +++ Adding Trainer:: segmentation => <lib.trainers.segmentation.Segmentation object at 0x000001A49F530310>
+[2025-09-23 09:43:54,842] [7896] [MainThread] [INFO] (main:221) - +++ Adding Trainer:: segmentation_spleen => <lib.trainers.segmentation_spleen.SegmentationSpleen object at 0x000001A498D12E90>
+[2025-09-23 09:43:54,843] [7896] [MainThread] [INFO] (main:221) - +++ Adding Trainer:: segmentation_vertebra => <lib.trainers.segmentation_vertebra.SegmentationVertebra object at 0x000001A4A72249D0>
+[2025-09-23 09:43:54,843] [7896] [MainThread] [INFO] (monailabel.utils.sessions:51) - Session Path: C:\Users\Usuario\.cache\monailabel\sessions
+[2025-09-23 09:43:54,843] [7896] [MainThread] [INFO] (monailabel.utils.sessions:52) - Session Expiry (max): 3600
+[2025-09-23 09:43:54,844] [7896] [MainThread] [INFO] (monailabel.interfaces.app:469) - App Init - completed
+[2025-09-23 09:43:54,844] [7896] [MainThread] [INFO] (timeloop:60) - Starting Timeloop..
+[2025-09-23 09:43:54,846] [7896] [MainThread] [INFO] (timeloop:42) - Registered job <function MONAILabelApp.on_init_complete.<locals>.run_scheduler at 0x000001A4A734D800>
+[2025-09-23 09:43:54,847] [7896] [MainThread] [INFO] (timeloop:63) - Timeloop now started. Jobs will run based on the interval set
+[2025-09-26 08:54:15,151] [18408] [MainThread] [INFO] (monailabel.interfaces.utils.app:37) - Initializing App from: D:\Entornos\MONAILabel\sample-apps\radiology; studies: C:\Users\Usuario\Documents\JOSUE\TG2\MONAI_STUDIES; conf: {'models': 'deepedit,segmentation,segmentation_spleen'}
+[2025-09-26 08:54:20,868] [18408] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for MONAILabelApp Found: <class 'main.MyApp'>
+[2025-09-26 08:54:22,089] [18408] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.deepedit.DeepEdit'>
+[2025-09-26 08:54:22,185] [18408] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.deepgrow_2d.Deepgrow2D'>
+[2025-09-26 08:54:22,213] [18408] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.deepgrow_3d.Deepgrow3D'>
+[2025-09-26 08:54:22,218] [18408] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.localization_spine.LocalizationSpine'>
+[2025-09-26 08:54:22,356] [18408] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.localization_vertebra.LocalizationVertebra'>
+[2025-09-26 08:54:22,429] [18408] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.segmentation.Segmentation'>
+[2025-09-26 08:54:22,481] [18408] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.segmentation_spleen.SegmentationSpleen'>
+[2025-09-26 08:54:22,514] [18408] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.segmentation_vertebra.SegmentationVertebra'>
+[2025-09-26 08:54:22,593] [18408] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.sw_fastedit.SWFastEditConfig'>
+[2025-09-26 08:54:22,595] [18408] [MainThread] [INFO] (main:95) - +++ Adding Model: deepedit => lib.configs.deepedit.DeepEdit
+[2025-09-26 08:54:23,892] [18408] [MainThread] [INFO] (lib.configs.deepedit:141) - EPISTEMIC Enabled: False; Samples: 5
+[2025-09-26 08:54:23,892] [18408] [MainThread] [INFO] (main:95) - +++ Adding Model: segmentation => lib.configs.segmentation.Segmentation
+[2025-09-26 08:54:24,198] [18408] [MainThread] [INFO] (main:95) - +++ Adding Model: segmentation_spleen => lib.configs.segmentation_spleen.SegmentationSpleen
+[2025-09-26 08:54:24,378] [18408] [MainThread] [INFO] (lib.configs.segmentation_spleen:79) - EPISTEMIC Enabled: False; Samples: 5
+[2025-09-26 08:54:24,378] [18408] [MainThread] [INFO] (main:98) - +++ Using Models: ['deepedit', 'segmentation', 'segmentation_spleen']
+[2025-09-26 08:54:24,380] [18408] [MainThread] [INFO] (monailabel.interfaces.app:135) - Init Datastore for: C:\Users\Usuario\Documents\JOSUE\TG2\MONAI_STUDIES
+[2025-09-26 08:54:24,381] [18408] [MainThread] [INFO] (monailabel.datastore.local:130) - Auto Reload: True; Extensions: ['*.nii.gz', '*.nii', '*.nrrd', '*.jpg', '*.png', '*.tif', '*.svs', '*.xml']
+[2025-09-26 08:54:25,320] [18408] [MainThread] [INFO] (monailabel.datastore.local:577) - Invalidate count: 0
+[2025-09-26 08:54:25,320] [18408] [MainThread] [INFO] (monailabel.datastore.local:151) - Start observing external modifications on datastore (AUTO RELOAD)
+[2025-09-26 08:54:26,785] [18408] [MainThread] [INFO] (main:129) - +++ Adding Inferer:: deepedit => <lib.infers.deepedit.DeepEdit object at 0x000001EC40B854D0>
+[2025-09-26 08:54:26,786] [18408] [MainThread] [INFO] (main:129) - +++ Adding Inferer:: deepedit_seg => <lib.infers.deepedit.DeepEdit object at 0x000001EC40CF09D0>
+[2025-09-26 08:54:26,786] [18408] [MainThread] [INFO] (main:129) - +++ Adding Inferer:: segmentation => <lib.infers.segmentation.Segmentation object at 0x000001EC40CF0890>
+[2025-09-26 08:54:26,787] [18408] [MainThread] [INFO] (main:129) - +++ Adding Inferer:: segmentation_spleen => <lib.infers.segmentation_spleen.SegmentationSpleen object at 0x000001EC40CDC490>
+[2025-09-26 08:54:28,946] [18408] [MainThread] [INFO] (monailabel.sam2.infer:65) - Image Cache Initialized: C:\Users\Usuario\.cache\monailabel\sam2
+[2025-09-26 08:54:28,947] [18408] [MainThread] [INFO] (timeloop:60) - Starting Timeloop..
+[2025-09-26 08:54:28,950] [18408] [MainThread] [INFO] (timeloop:42) - Registered job <function ImageCache.monitor.<locals>.run_scheduler at 0x000001EC4831A980>
+[2025-09-26 08:54:28,952] [18408] [MainThread] [INFO] (timeloop:63) - Timeloop now started. Jobs will run based on the interval set
+[2025-09-26 08:54:29,010] [18408] [MainThread] [INFO] (main:206) - {'deepedit': <lib.infers.deepedit.DeepEdit object at 0x000001EC40B854D0>, 'deepedit_seg': <lib.infers.deepedit.DeepEdit object at 0x000001EC40CF09D0>, 'segmentation': <lib.infers.segmentation.Segmentation object at 0x000001EC40CF0890>, 'segmentation_spleen': <lib.infers.segmentation_spleen.SegmentationSpleen object at 0x000001EC40CDC490>, 'Histogram+GraphCut': <monailabel.scribbles.infer.HistogramBasedGraphCut object at 0x000001EC4090E6D0>, 'GMM+GraphCut': <monailabel.scribbles.infer.GMMBasedGraphCut object at 0x000001EC4087CD10>, 'sam_2d': <monailabel.sam2.infer.Sam2InferTask object at 0x000001EC4820E010>, 'sam_3d': <monailabel.sam2.infer.Sam2InferTask object at 0x000001EC4831E950>}
+[2025-09-26 08:54:29,012] [18408] [MainThread] [INFO] (main:221) - +++ Adding Trainer:: deepedit => <lib.trainers.deepedit.DeepEdit object at 0x000001EC481F51D0>
+[2025-09-26 08:54:29,014] [18408] [MainThread] [INFO] (main:221) - +++ Adding Trainer:: segmentation => <lib.trainers.segmentation.Segmentation object at 0x000001EC40216550>
+[2025-09-26 08:54:29,015] [18408] [MainThread] [INFO] (main:221) - +++ Adding Trainer:: segmentation_spleen => <lib.trainers.segmentation_spleen.SegmentationSpleen object at 0x000001EC4083DB10>
+[2025-09-26 08:54:29,016] [18408] [MainThread] [INFO] (monailabel.utils.sessions:51) - Session Path: C:\Users\Usuario\.cache\monailabel\sessions
+[2025-09-26 08:54:29,017] [18408] [MainThread] [INFO] (monailabel.utils.sessions:52) - Session Expiry (max): 3600
+[2025-09-26 08:54:29,018] [18408] [MainThread] [INFO] (monailabel.interfaces.app:469) - App Init - completed
+[2025-09-26 08:54:29,021] [18408] [MainThread] [INFO] (timeloop:60) - Starting Timeloop..
+[2025-09-26 08:54:29,023] [18408] [MainThread] [INFO] (timeloop:42) - Registered job <function MONAILabelApp.on_init_complete.<locals>.run_scheduler at 0x000001EC4831AA20>
+[2025-09-26 08:54:29,024] [18408] [MainThread] [INFO] (timeloop:63) - Timeloop now started. Jobs will run based on the interval set
+[2025-10-01 17:43:36,333] [9308] [MainThread] [INFO] (monailabel.interfaces.utils.app:37) - Initializing App from: D:\Entornos\MONAILabel\sample-apps\radiology; studies: C:\Users\Usuario\Documents\JOSUE\TG2\MONAI_STUDIES; conf: {'models': 'deepedit,segmentation,segmentation_spleen'}
+[2025-10-01 17:43:45,336] [9308] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for MONAILabelApp Found: <class 'main.MyApp'>
+[2025-10-01 17:43:45,563] [9308] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.deepedit.DeepEdit'>
+[2025-10-01 17:43:45,587] [9308] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.deepgrow_2d.Deepgrow2D'>
+[2025-10-01 17:43:45,624] [9308] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.deepgrow_3d.Deepgrow3D'>
+[2025-10-01 17:43:45,630] [9308] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.localization_spine.LocalizationSpine'>
+[2025-10-01 17:43:45,643] [9308] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.localization_vertebra.LocalizationVertebra'>
+[2025-10-01 17:43:45,669] [9308] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.segmentation.Segmentation'>
+[2025-10-01 17:43:45,680] [9308] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.segmentation_spleen.SegmentationSpleen'>
+[2025-10-01 17:43:45,705] [9308] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.segmentation_vertebra.SegmentationVertebra'>
+[2025-10-01 17:43:45,718] [9308] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.sw_fastedit.SWFastEditConfig'>
+[2025-10-01 17:43:45,720] [9308] [MainThread] [INFO] (main:95) - +++ Adding Model: deepedit => lib.configs.deepedit.DeepEdit
+[2025-10-01 17:43:47,233] [9308] [MainThread] [INFO] (lib.configs.deepedit:141) - EPISTEMIC Enabled: False; Samples: 5
+[2025-10-01 17:43:47,234] [9308] [MainThread] [INFO] (main:95) - +++ Adding Model: segmentation => lib.configs.segmentation.Segmentation
+[2025-10-01 17:43:47,636] [9308] [MainThread] [INFO] (main:95) - +++ Adding Model: segmentation_spleen => lib.configs.segmentation_spleen.SegmentationSpleen
+[2025-10-01 17:43:47,725] [9308] [MainThread] [INFO] (lib.configs.segmentation_spleen:79) - EPISTEMIC Enabled: False; Samples: 5
+[2025-10-01 17:43:47,725] [9308] [MainThread] [INFO] (main:98) - +++ Using Models: ['deepedit', 'segmentation', 'segmentation_spleen']
+[2025-10-01 17:43:47,726] [9308] [MainThread] [INFO] (monailabel.interfaces.app:135) - Init Datastore for: C:\Users\Usuario\Documents\JOSUE\TG2\MONAI_STUDIES
+[2025-10-01 17:43:47,727] [9308] [MainThread] [INFO] (monailabel.datastore.local:130) - Auto Reload: True; Extensions: ['*.nii.gz', '*.nii', '*.nrrd', '*.jpg', '*.png', '*.tif', '*.svs', '*.xml']
+[2025-10-01 17:43:47,735] [9308] [MainThread] [INFO] (monailabel.datastore.local:577) - Invalidate count: 0
+[2025-10-01 17:43:47,736] [9308] [MainThread] [INFO] (monailabel.datastore.local:151) - Start observing external modifications on datastore (AUTO RELOAD)
+[2025-10-01 17:43:49,300] [9308] [MainThread] [INFO] (main:129) - +++ Adding Inferer:: deepedit => <lib.infers.deepedit.DeepEdit object at 0x000002A479AE5150>
+[2025-10-01 17:43:49,302] [9308] [MainThread] [INFO] (main:129) - +++ Adding Inferer:: deepedit_seg => <lib.infers.deepedit.DeepEdit object at 0x000002A479B9C1D0>
+[2025-10-01 17:43:49,303] [9308] [MainThread] [INFO] (main:129) - +++ Adding Inferer:: segmentation => <lib.infers.segmentation.Segmentation object at 0x000002A479C546D0>
+[2025-10-01 17:43:49,304] [9308] [MainThread] [INFO] (main:129) - +++ Adding Inferer:: segmentation_spleen => <lib.infers.segmentation_spleen.SegmentationSpleen object at 0x000002A4779D0BD0>
+[2025-10-01 17:43:50,624] [9308] [MainThread] [INFO] (monailabel.sam2.infer:65) - Image Cache Initialized: C:\Users\Usuario\.cache\monailabel\sam2
+[2025-10-01 17:43:50,625] [9308] [MainThread] [INFO] (timeloop:60) - Starting Timeloop..
+[2025-10-01 17:43:50,626] [9308] [MainThread] [INFO] (timeloop:42) - Registered job <function ImageCache.monitor.<locals>.run_scheduler at 0x000002A47B29A980>
+[2025-10-01 17:43:50,627] [9308] [MainThread] [INFO] (timeloop:63) - Timeloop now started. Jobs will run based on the interval set
+[2025-10-01 17:43:50,651] [9308] [MainThread] [INFO] (main:206) - {'deepedit': <lib.infers.deepedit.DeepEdit object at 0x000002A479AE5150>, 'deepedit_seg': <lib.infers.deepedit.DeepEdit object at 0x000002A479B9C1D0>, 'segmentation': <lib.infers.segmentation.Segmentation object at 0x000002A479C546D0>, 'segmentation_spleen': <lib.infers.segmentation_spleen.SegmentationSpleen object at 0x000002A4779D0BD0>, 'Histogram+GraphCut': <monailabel.scribbles.infer.HistogramBasedGraphCut object at 0x000002A47999B850>, 'GMM+GraphCut': <monailabel.scribbles.infer.GMMBasedGraphCut object at 0x000002A479AE4850>, 'sam_2d': <monailabel.sam2.infer.Sam2InferTask object at 0x000002A47B18CFD0>, 'sam_3d': <monailabel.sam2.infer.Sam2InferTask object at 0x000002A479AE4D10>}
+[2025-10-01 17:43:50,652] [9308] [MainThread] [INFO] (main:221) - +++ Adding Trainer:: deepedit => <lib.trainers.deepedit.DeepEdit object at 0x000002A47B29F3D0>
+[2025-10-01 17:43:50,652] [9308] [MainThread] [INFO] (main:221) - +++ Adding Trainer:: segmentation => <lib.trainers.segmentation.Segmentation object at 0x000002A479B1D410>
+[2025-10-01 17:43:50,653] [9308] [MainThread] [INFO] (main:221) - +++ Adding Trainer:: segmentation_spleen => <lib.trainers.segmentation_spleen.SegmentationSpleen object at 0x000002A479C54250>
+[2025-10-01 17:43:50,654] [9308] [MainThread] [INFO] (monailabel.utils.sessions:51) - Session Path: C:\Users\Usuario\.cache\monailabel\sessions
+[2025-10-01 17:43:50,654] [9308] [MainThread] [INFO] (monailabel.utils.sessions:52) - Session Expiry (max): 3600
+[2025-10-01 17:43:50,654] [9308] [MainThread] [INFO] (monailabel.interfaces.app:469) - App Init - completed
+[2025-10-01 17:43:50,655] [9308] [MainThread] [INFO] (timeloop:60) - Starting Timeloop..
+[2025-10-01 17:43:50,657] [9308] [MainThread] [INFO] (timeloop:42) - Registered job <function MONAILabelApp.on_init_complete.<locals>.run_scheduler at 0x000002A47B29AA20>
+[2025-10-01 17:43:50,657] [9308] [MainThread] [INFO] (timeloop:63) - Timeloop now started. Jobs will run based on the interval set
+[2025-10-01 17:47:06,647] [9308] [MainThread] [INFO] (monailabel.endpoints.activelearning:44) - Active Learning Request: {'strategy': 'random', 'client_id': 'user-xyz'}
+[2025-10-01 18:07:01,864] [9308] [MainThread] [INFO] (monailabel.endpoints.activelearning:44) - Active Learning Request: {'strategy': 'random', 'client_id': 'user-xyz'}
+[2025-10-02 16:46:58,980] [25452] [MainThread] [INFO] (monailabel.interfaces.utils.app:37) - Initializing App from: D:\Entornos\MONAILabel\sample-apps\radiology; studies: C:\Users\Usuario\Documents\JOSUE\TG2\MONAI_STUDIES; conf: {'models': 'deepedit,segmentation,segmentation_spleen'}
+[2025-10-02 16:47:00,294] [25452] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for MONAILabelApp Found: <class 'main.MyApp'>
+[2025-10-02 16:47:00,487] [25452] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.deepedit.DeepEdit'>
+[2025-10-02 16:47:00,524] [25452] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.deepgrow_2d.Deepgrow2D'>
+[2025-10-02 16:47:00,570] [25452] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.deepgrow_3d.Deepgrow3D'>
+[2025-10-02 16:47:00,582] [25452] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.localization_spine.LocalizationSpine'>
+[2025-10-02 16:47:00,589] [25452] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.localization_vertebra.LocalizationVertebra'>
+[2025-10-02 16:47:00,637] [25452] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.segmentation.Segmentation'>
+[2025-10-02 16:47:00,674] [25452] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.segmentation_spleen.SegmentationSpleen'>
+[2025-10-02 16:47:00,679] [25452] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.segmentation_vertebra.SegmentationVertebra'>
+[2025-10-02 16:47:00,687] [25452] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.sw_fastedit.SWFastEditConfig'>
+[2025-10-02 16:47:00,688] [25452] [MainThread] [INFO] (main:95) - +++ Adding Model: deepedit => lib.configs.deepedit.DeepEdit
+[2025-10-02 16:47:01,648] [25452] [MainThread] [INFO] (lib.configs.deepedit:141) - EPISTEMIC Enabled: False; Samples: 5
+[2025-10-02 16:47:01,649] [25452] [MainThread] [INFO] (main:95) - +++ Adding Model: segmentation => lib.configs.segmentation.Segmentation
+[2025-10-02 16:47:02,018] [25452] [MainThread] [INFO] (main:95) - +++ Adding Model: segmentation_spleen => lib.configs.segmentation_spleen.SegmentationSpleen
+[2025-10-02 16:47:02,472] [25452] [MainThread] [INFO] (lib.configs.segmentation_spleen:79) - EPISTEMIC Enabled: False; Samples: 5
+[2025-10-02 16:47:02,472] [25452] [MainThread] [INFO] (main:98) - +++ Using Models: ['deepedit', 'segmentation', 'segmentation_spleen']
+[2025-10-02 16:47:02,474] [25452] [MainThread] [INFO] (monailabel.interfaces.app:135) - Init Datastore for: C:\Users\Usuario\Documents\JOSUE\TG2\MONAI_STUDIES
+[2025-10-02 16:47:02,475] [25452] [MainThread] [INFO] (monailabel.datastore.local:130) - Auto Reload: True; Extensions: ['*.nii.gz', '*.nii', '*.nrrd', '*.jpg', '*.png', '*.tif', '*.svs', '*.xml']
+[2025-10-02 16:47:02,482] [25452] [MainThread] [INFO] (monailabel.datastore.local:577) - Invalidate count: 0
+[2025-10-02 16:47:02,483] [25452] [MainThread] [INFO] (monailabel.datastore.local:151) - Start observing external modifications on datastore (AUTO RELOAD)
+[2025-10-02 16:47:04,623] [25452] [MainThread] [INFO] (main:129) - +++ Adding Inferer:: deepedit => <lib.infers.deepedit.DeepEdit object at 0x0000023BB8864CD0>
+[2025-10-02 16:47:04,624] [25452] [MainThread] [INFO] (main:129) - +++ Adding Inferer:: deepedit_seg => <lib.infers.deepedit.DeepEdit object at 0x0000023BB89C3D50>
+[2025-10-02 16:47:04,625] [25452] [MainThread] [INFO] (main:129) - +++ Adding Inferer:: segmentation => <lib.infers.segmentation.Segmentation object at 0x0000023BB89C3C10>
+[2025-10-02 16:47:04,626] [25452] [MainThread] [INFO] (main:129) - +++ Adding Inferer:: segmentation_spleen => <lib.infers.segmentation_spleen.SegmentationSpleen object at 0x0000023BB851D890>
+[2025-10-02 16:47:06,546] [25452] [MainThread] [INFO] (monailabel.sam2.infer:65) - Image Cache Initialized: C:\Users\Usuario\.cache\monailabel\sam2
+[2025-10-02 16:47:06,547] [25452] [MainThread] [INFO] (timeloop:60) - Starting Timeloop..
+[2025-10-02 16:47:06,549] [25452] [MainThread] [INFO] (timeloop:42) - Registered job <function ImageCache.monitor.<locals>.run_scheduler at 0x0000023BC018A980>
+[2025-10-02 16:47:06,550] [25452] [MainThread] [INFO] (timeloop:63) - Timeloop now started. Jobs will run based on the interval set
+[2025-10-02 16:47:06,553] [25452] [MainThread] [INFO] (main:206) - {'deepedit': <lib.infers.deepedit.DeepEdit object at 0x0000023BB8864CD0>, 'deepedit_seg': <lib.infers.deepedit.DeepEdit object at 0x0000023BB89C3D50>, 'segmentation': <lib.infers.segmentation.Segmentation object at 0x0000023BB89C3C10>, 'segmentation_spleen': <lib.infers.segmentation_spleen.SegmentationSpleen object at 0x0000023BB851D890>, 'Histogram+GraphCut': <monailabel.scribbles.infer.HistogramBasedGraphCut object at 0x0000023BB7EF4E90>, 'GMM+GraphCut': <monailabel.scribbles.infer.GMMBasedGraphCut object at 0x0000023BB89C3AD0>, 'sam_2d': <monailabel.sam2.infer.Sam2InferTask object at 0x0000023BB84B3C10>, 'sam_3d': <monailabel.sam2.infer.Sam2InferTask object at 0x0000023BB8864810>}
+[2025-10-02 16:47:06,554] [25452] [MainThread] [INFO] (main:221) - +++ Adding Trainer:: deepedit => <lib.trainers.deepedit.DeepEdit object at 0x0000023BC006B790>
+[2025-10-02 16:47:06,555] [25452] [MainThread] [INFO] (main:221) - +++ Adding Trainer:: segmentation => <lib.trainers.segmentation.Segmentation object at 0x0000023BB8610990>
+[2025-10-02 16:47:06,555] [25452] [MainThread] [INFO] (main:221) - +++ Adding Trainer:: segmentation_spleen => <lib.trainers.segmentation_spleen.SegmentationSpleen object at 0x0000023BB86B3310>
+[2025-10-02 16:47:06,556] [25452] [MainThread] [INFO] (monailabel.utils.sessions:51) - Session Path: C:\Users\Usuario\.cache\monailabel\sessions
+[2025-10-02 16:47:06,556] [25452] [MainThread] [INFO] (monailabel.utils.sessions:52) - Session Expiry (max): 3600
+[2025-10-02 16:47:06,559] [25452] [MainThread] [INFO] (monailabel.interfaces.app:469) - App Init - completed
+[2025-10-02 16:47:06,587] [25452] [MainThread] [INFO] (timeloop:60) - Starting Timeloop..
+[2025-10-02 16:47:06,591] [25452] [MainThread] [INFO] (timeloop:42) - Registered job <function MONAILabelApp.on_init_complete.<locals>.run_scheduler at 0x0000023BC018AA20>
+[2025-10-02 16:47:06,592] [25452] [MainThread] [INFO] (timeloop:63) - Timeloop now started. Jobs will run based on the interval set
+[2025-10-02 16:48:43,765] [25452] [MainThread] [INFO] (monailabel.endpoints.activelearning:44) - Active Learning Request: {'strategy': 'random', 'client_id': 'user-xyz'}
+[2025-10-02 16:50:02,720] [25452] [MainThread] [INFO] (monailabel.endpoints.activelearning:44) - Active Learning Request: {'strategy': 'random', 'client_id': 'user-xyz'}
+[2025-10-02 16:50:07,712] [25452] [MainThread] [INFO] (monailabel.endpoints.activelearning:44) - Active Learning Request: {'strategy': 'random', 'client_id': 'user-xyz'}
+[2025-10-02 16:51:18,192] [25452] [MainThread] [INFO] (monailabel.endpoints.activelearning:44) - Active Learning Request: {'strategy': 'random', 'client_id': 'user-xyz'}
+[2025-10-02 17:04:42,835] [20112] [MainThread] [INFO] (monailabel.interfaces.utils.app:37) - Initializing App from: D:\Entornos\MONAILabel\sample-apps\radiology; studies: C:\Users\Usuario\Documents\JOSUE\TG2\MONAI_STUDIES; conf: {'models': 'deepedit,segmentation,segmentation_spleen'}
+[2025-10-02 17:04:42,892] [20112] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for MONAILabelApp Found: <class 'main.MyApp'>
+[2025-10-02 17:04:42,903] [20112] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.deepedit.DeepEdit'>
+[2025-10-02 17:04:42,905] [20112] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.deepgrow_2d.Deepgrow2D'>
+[2025-10-02 17:04:42,906] [20112] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.deepgrow_3d.Deepgrow3D'>
+[2025-10-02 17:04:42,907] [20112] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.localization_spine.LocalizationSpine'>
+[2025-10-02 17:04:42,908] [20112] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.localization_vertebra.LocalizationVertebra'>
+[2025-10-02 17:04:42,910] [20112] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.segmentation.Segmentation'>
+[2025-10-02 17:04:42,911] [20112] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.segmentation_spleen.SegmentationSpleen'>
+[2025-10-02 17:04:42,912] [20112] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.segmentation_vertebra.SegmentationVertebra'>
+[2025-10-02 17:04:42,913] [20112] [MainThread] [INFO] (monailabel.utils.others.class_utils:57) - Subclass for TaskConfig Found: <class 'lib.configs.sw_fastedit.SWFastEditConfig'>
+[2025-10-02 17:04:42,913] [20112] [MainThread] [INFO] (main:95) - +++ Adding Model: deepedit => lib.configs.deepedit.DeepEdit
+[2025-10-02 17:04:43,547] [20112] [MainThread] [INFO] (lib.configs.deepedit:141) - EPISTEMIC Enabled: False; Samples: 5
+[2025-10-02 17:04:43,547] [20112] [MainThread] [INFO] (main:95) - +++ Adding Model: segmentation => lib.configs.segmentation.Segmentation
+[2025-10-02 17:04:43,658] [20112] [MainThread] [INFO] (main:95) - +++ Adding Model: segmentation_spleen => lib.configs.segmentation_spleen.SegmentationSpleen
+[2025-10-02 17:04:43,698] [20112] [MainThread] [INFO] (lib.configs.segmentation_spleen:79) - EPISTEMIC Enabled: False; Samples: 5
+[2025-10-02 17:04:43,698] [20112] [MainThread] [INFO] (main:98) - +++ Using Models: ['deepedit', 'segmentation', 'segmentation_spleen']
+[2025-10-02 17:04:43,699] [20112] [MainThread] [INFO] (monailabel.interfaces.app:135) - Init Datastore for: C:\Users\Usuario\Documents\JOSUE\TG2\MONAI_STUDIES
+[2025-10-02 17:04:43,700] [20112] [MainThread] [INFO] (monailabel.datastore.local:130) - Auto Reload: True; Extensions: ['*.nii.gz', '*.nii', '*.nrrd', '*.jpg', '*.png', '*.tif', '*.svs', '*.xml']
+[2025-10-02 17:04:43,706] [20112] [MainThread] [INFO] (monailabel.datastore.local:577) - Invalidate count: 0
+[2025-10-02 17:04:43,706] [20112] [MainThread] [INFO] (monailabel.datastore.local:151) - Start observing external modifications on datastore (AUTO RELOAD)
+[2025-10-02 17:04:44,615] [20112] [MainThread] [INFO] (main:129) - +++ Adding Inferer:: deepedit => <lib.infers.deepedit.DeepEdit object at 0x000001FAB7E6CE10>
+[2025-10-02 17:04:44,616] [20112] [MainThread] [INFO] (main:129) - +++ Adding Inferer:: deepedit_seg => <lib.infers.deepedit.DeepEdit object at 0x000001FAB98F4B50>
+[2025-10-02 17:04:44,616] [20112] [MainThread] [INFO] (main:129) - +++ Adding Inferer:: segmentation => <lib.infers.segmentation.Segmentation object at 0x000001FAB98F4A10>
+[2025-10-02 17:04:44,617] [20112] [MainThread] [INFO] (main:129) - +++ Adding Inferer:: segmentation_spleen => <lib.infers.segmentation_spleen.SegmentationSpleen object at 0x000001FAB98F49D0>
+[2025-10-02 17:04:44,783] [20112] [MainThread] [INFO] (monailabel.sam2.infer:65) - Image Cache Initialized: C:\Users\Usuario\.cache\monailabel\sam2
+[2025-10-02 17:04:44,784] [20112] [MainThread] [INFO] (timeloop:60) - Starting Timeloop..
+[2025-10-02 17:04:44,786] [20112] [MainThread] [INFO] (timeloop:42) - Registered job <function ImageCache.monitor.<locals>.run_scheduler at 0x000001FAC00A2980>
+[2025-10-02 17:04:44,786] [20112] [MainThread] [INFO] (timeloop:63) - Timeloop now started. Jobs will run based on the interval set
+[2025-10-02 17:04:44,788] [20112] [MainThread] [INFO] (main:206) - {'deepedit': <lib.infers.deepedit.DeepEdit object at 0x000001FAB7E6CE10>, 'deepedit_seg': <lib.infers.deepedit.DeepEdit object at 0x000001FAB98F4B50>, 'segmentation': <lib.infers.segmentation.Segmentation object at 0x000001FAB98F4A10>, 'segmentation_spleen': <lib.infers.segmentation_spleen.SegmentationSpleen object at 0x000001FAB98F49D0>, 'Histogram+GraphCut': <monailabel.scribbles.infer.HistogramBasedGraphCut object at 0x000001FAB98F4790>, 'GMM+GraphCut': <monailabel.scribbles.infer.GMMBasedGraphCut object at 0x000001FAB87BEC50>, 'sam_2d': <monailabel.sam2.infer.Sam2InferTask object at 0x000001FAC00A67D0>, 'sam_3d': <monailabel.sam2.infer.Sam2InferTask object at 0x000001FAB84B2450>}
+[2025-10-02 17:04:44,789] [20112] [MainThread] [INFO] (main:221) - +++ Adding Trainer:: deepedit => <lib.trainers.deepedit.DeepEdit object at 0x000001FABFF93D50>
+[2025-10-02 17:04:44,789] [20112] [MainThread] [INFO] (main:221) - +++ Adding Trainer:: segmentation => <lib.trainers.segmentation.Segmentation object at 0x000001FAB86B8D50>
+[2025-10-02 17:04:44,789] [20112] [MainThread] [INFO] (main:221) - +++ Adding Trainer:: segmentation_spleen => <lib.trainers.segmentation_spleen.SegmentationSpleen object at 0x000001FAC00A6B10>
+[2025-10-02 17:04:44,790] [20112] [MainThread] [INFO] (monailabel.utils.sessions:51) - Session Path: C:\Users\Usuario\.cache\monailabel\sessions
+[2025-10-02 17:04:44,790] [20112] [MainThread] [INFO] (monailabel.utils.sessions:52) - Session Expiry (max): 3600
+[2025-10-02 17:04:44,790] [20112] [MainThread] [INFO] (monailabel.interfaces.app:469) - App Init - completed
+[2025-10-02 17:04:44,791] [20112] [MainThread] [INFO] (timeloop:60) - Starting Timeloop..
+[2025-10-02 17:04:44,792] [20112] [MainThread] [INFO] (timeloop:42) - Registered job <function MONAILabelApp.on_init_complete.<locals>.run_scheduler at 0x000001FAC00A2A20>
+[2025-10-02 17:04:44,793] [20112] [MainThread] [INFO] (timeloop:63) - Timeloop now started. Jobs will run based on the interval set
+[2025-10-02 17:17:54,161] [20112] [MainThread] [INFO] (monailabel.endpoints.activelearning:44) - Active Learning Request: {'strategy': 'random', 'client_id': 'user-xyz'}
+[2025-10-02 17:55:17,885] [1600] [MainThread] [INFO] (monailabel.interfaces.utils.app:37) - Initializing App from: D:\MONAI_APPS\sample-apps\radiology; studies: C:\Users\Usuario\Documents\JOSUE\TG2\MONAI_STUDIES; conf: {}

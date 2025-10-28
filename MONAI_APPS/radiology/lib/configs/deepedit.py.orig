@@ -1,0 +1,46 @@
+try:
+    # Intentamos importar el nuevo DeepEditInfer si existe
+    from monailabel.deepedit.handlers import DeepEditInfer
+except ImportError:
+    # Si no existe, importamos el clásico (no debería pasar con versiones recientes)
+    DeepEditInfer = None
+
+from monailabel.tasks.train.basic_train import BasicTrainTask
+from monailabel.interfaces.tasks import InferType
+from monailabel.interfaces.utils.config import TaskConfig
+
+
+class DeepEdit(TaskConfig):
+    def __init__(self):
+        super().__init__()
+
+        self.infer = {
+            "deepedit": {
+                "type": InferType.DEEPEdit,
+                "path": "deepedit",
+                "params": {
+                    "model": "dynunet",
+                    "labels": {"defecto": 1},
+                },
+                "infer_task": DeepEditInfer,
+            }
+        }
+
+        self.train = {
+            "deepedit": {
+                "path": "deepedit",
+                "params": {
+                    "model": "dynunet",
+                    "description": "Entrenamiento de segmentación interactiva para soldaduras",
+                },
+                "train_task": BasicTrainTask,
+            }
+        }
+
+    # 🔧 Método obligatorio para inicializar el modelo
+    def init(self, name, model_dir, conf, planner):
+        self.name = name
+        self.model_dir = model_dir
+        self.conf = conf or {}
+        self.planner = planner
+        print(f"[DeepEdit] Inicializado modelo '{name}' en {model_dir}")

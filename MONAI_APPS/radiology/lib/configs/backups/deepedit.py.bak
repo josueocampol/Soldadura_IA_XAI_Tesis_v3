@@ -1,0 +1,108 @@
+# deepedit.py (compat wrapper / tolerant config for different monailabel versions)
+# Backup original before replacing.
+
+# 1) Intentar múltiples ubicaciones para DeepEditInferTask / handlers (según versiones)
+DeepEditInferTask = None
+try:
+    # try the preferred modern location (if installed)
+    from monailabel.deepedit.tasks.infer import DeepEditInferTask  # newer layout
+except Exception:
+    try:
+        # older wheel-packages sometimes put it here
+        from monailabel.tasks.infer.deepedit_infer import DeepEditInferTask
+    except Exception:
+        try:
+            # monailabel.deepedit.handlers may contain handler class (observed on some installs)
+            from monailabel.deepedit.handlers import DeepEditInfer  # not same name but try
+            DeepEditInferTask = DeepEditInfer
+        except Exception:
+            DeepEditInferTask = None
+
+# 2) Intentar importar InferType (enum) desde posibles ubicaciones
+InferType = None
+try:
+    from monailabel.interfaces.tasks import InferType
+except Exception:
+    try:
+        # alguna versiones pueden exponerlo distinto
+        from monailabel.interfaces import tasks as _tasks_mod
+        InferType = getattr(_tasks_mod, "InferType", None)
+    except Exception:
+        InferType = None
+
+# 3) Intentar importar TaskConfig desde utilidades de monailabel
+TaskConfig = None
+try:
+    from monailabel.interfaces.utils.config import TaskConfig
+except Exception:
+    try:
+        from monailabel.interfaces.utils import config as _config_mod
+        TaskConfig = getattr(_config_mod, "TaskConfig", None)
+    except Exception:
+        TaskConfig = None
+
+# 4) Si no existen, crear stubs simples (mínimos) para permitir importación y lectura de 'infer' y 'train'.
+#    Estos stubs **no** implementan la lógica que MONAILabel espera de TaskConfig; sirven solo para que
+#    el servidor pueda cargar la configuración y seguir con la inicialización.
+if InferType is None:
+    class _InferTypeStub:
+        # valor por defecto que se usa en config, no importa el valor exacto mientras sea legible
+        DEEPEdit = "DEEPEdit"
+    InferType = _InferTypeStub
+
+if TaskConfig is None:
+    class _TaskConfigStub:
+        def __init__(self):
+            # MONAILabel normalmente espera atributos 'infer' y 'train' en la instancia.
+            self.infer = {}
+            self.train = {}
+    TaskConfig = _TaskConfigStub
+
+# 5) Si no hay DeepEditInferTask real, dejamos una función/placeholder para que la clave 'infer_task'
+#    pueda apuntar a algo importable. Esto evita errores de import pero si MONAILabel realmente intenta
+#    instanciar/ejecutar esta clase más adelante, puede fallar; en ese caso hay que instalar la versión
+#    correcta del paquete deepedit (ver notas abajo).
+if DeepEditInferTask is None:
+    # placeholder / fallback - clase mínima
+    class _DummyDeepEditInferTask:
+        def __init__(self, *args, **kwargs):
+            raise RuntimeError(
+                "DeepEditInferTask no está disponible en la instalación de monailabel.\n"
+                "Instala la extensión MONAILabel-Deepedit adecuada o usa una versión de monailabel "
+                "que la incluya. (Este es un stub para evitar ImportError en la carga de la app.)"
+            )
+    DeepEditInferTask = _DummyDeepEditInferTask
+
+
+# === Tu configuración concreta (ajusta nombres y etiquetas según quieras) ===
+from monailabel.tasks.train.basic_train import BasicTrainTask  # esto normalmente existe en monailabel
+
+class DeepEditWeld(TaskConfig):
+    def __init__(self):
+        super().__init__()
+        # bloque 'infer' que MONAILabel leerá desde la instancia
+        self.infer = {
+            "deepedit_weld": {
+                "type": InferType.DEEPEdit if hasattr(InferType, "DEEPEdit") else "DEEPEdit",
+                "path": "deepedit_weld",
+                "params": {
+                    "model": "dynunet",
+                    "labels": {"defecto": 1},
+                },
+                "infer_task": DeepEditInferTask,
+            }
+        }
+        # bloque 'train'
+        self.train = {
+            "deepedit_weld": {
+                "path": "deepedit_weld",
+                "params": {
+                    "model": "dynunet",
+                    "description": "Entrenamiento especializado para soldaduras",
+                },
+                "train_task": BasicTrainTask,
+            }
+        }
+
+# Export name esperado por radiology app
+DeepEdit = DeepEditWeld

@@ -1,0 +1,102 @@
+# deepedit_weld.py  (compat wrapper / tolerant config)
+# Haz backup antes de reemplazar: deepedit_weld.py.bak
+
+# Intentos de import (varias ubicaciones históricas)
+DeepEditInferTask = None
+try:
+    # intento preferido / más reciente
+    from monailabel.deepedit.tasks.infer import DeepEditInferTask
+except Exception:
+    try:
+        # intento alternativo que algunas guías usan
+        from monailabel.tasks.infer.deepedit_infer import DeepEditInferTask
+    except Exception:
+        try:
+            # en algunas instalaciones está en handlers con otra clase/función
+            from monailabel.deepedit.handlers import DeepEditInfer
+            DeepEditInferTask = DeepEditInfer
+        except Exception:
+            DeepEditInferTask = None
+
+# Import para BasicTrainTask (normalmente existe)
+try:
+    from monailabel.tasks.train.basic_train import BasicTrainTask
+except Exception:
+    # si no existe, creamos stub mínimo para no romper importación
+    class BasicTrainTask:
+        def __init__(self, *args, **kwargs):
+            raise RuntimeError("BasicTrainTask no está disponible en la instalación actual.")
+
+# Intentar InferType y TaskConfig o crear stubs si faltan
+InferType = None
+try:
+    from monailabel.interfaces.tasks import InferType
+except Exception:
+    try:
+        from monailabel.interfaces import tasks as _tasks_mod
+        InferType = getattr(_tasks_mod, "InferType", None)
+    except Exception:
+        InferType = None
+
+TaskConfig = None
+try:
+    from monailabel.interfaces.utils.config import TaskConfig
+except Exception:
+    try:
+        from monailabel.interfaces.utils import config as _config_mod
+        TaskConfig = getattr(_config_mod, "TaskConfig", None)
+    except Exception:
+        TaskConfig = None
+
+# Stubs mínimos si no existen
+if InferType is None:
+    class _InferTypeStub:
+        DEEPEdit = "DEEPEdit"
+    InferType = _InferTypeStub
+
+if TaskConfig is None:
+    class _TaskConfigStub:
+        def __init__(self):
+            self.infer = {}
+            self.train = {}
+    TaskConfig = _TaskConfigStub
+
+# Si no hay DeepEditInferTask real, colocamos un stub informativo
+if DeepEditInferTask is None:
+    class _DummyDeepEditInferTask:
+        def __init__(self, *args, **kwargs):
+            raise RuntimeError(
+                "DeepEditInferTask no está disponible en la instalación de monailabel.\n"
+                "Instala la extensión MONAILabel-Deepedit compatible o usa una versión de monailabel que la incluya."
+            )
+    DeepEditInferTask = _DummyDeepEditInferTask
+
+# ===== Configuración concreta del task =====
+class DeepEditWeld(TaskConfig):
+    def __init__(self):
+        super().__init__()
+        self.infer = {
+            "deepedit_weld": {
+                "type": InferType.DEEPEdit if hasattr(InferType, "DEEPEdit") else "DEEPEdit",
+                "path": "deepedit_weld",
+                "params": {
+                    "model": "dynunet",
+                    "labels": {"defecto": 1},
+                },
+                "infer_task": DeepEditInferTask,
+            }
+        }
+
+        self.train = {
+            "deepedit_weld": {
+                "path": "deepedit_weld",
+                "params": {
+                    "model": "dynunet",
+                    "description": "Entrenamiento especializado para soldaduras",
+                },
+                "train_task": BasicTrainTask,
+            }
+        }
+
+# Nombre exportado esperado por la app
+DeepEditWeld = DeepEditWeld

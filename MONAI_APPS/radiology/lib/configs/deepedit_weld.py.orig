@@ -1,0 +1,71 @@
+# deepedit_weld.py
+# Configuración para el caso "weld". Similarmente robusta.
+
+try:
+    from monailabel.deepedit.tasks.infer import DeepEditInferTask
+except Exception:
+    try:
+        from monailabel.tasks.infer.deepedit_infer import DeepEditInferTask
+    except Exception:
+        DeepEditInferTask = None
+
+try:
+    from monailabel.tasks.train.basic_train import BasicTrainTask
+except Exception:
+    BasicTrainTask = None
+
+try:
+    from monailabel.interfaces.tasks import InferType
+except Exception:
+    try:
+        from monailabel.interfaces.tasks.task import InferType
+    except Exception:
+        class InferType:
+            DEEPEdit = "deepedit"
+
+try:
+    from monailabel.interfaces.utils.config import TaskConfig
+except Exception:
+    try:
+        from monailabel.interfaces.utils import config as _config_module
+        TaskConfig = getattr(_config_module, "TaskConfig", object)
+    except Exception:
+        class TaskConfig:
+            def __init__(self):
+                self.infer = {}
+                self.train = {}
+
+class DeepEditWeld(TaskConfig):
+    def __init__(self):
+        super().__init__()
+
+        if DeepEditInferTask is not None:
+            infer_task_ref = DeepEditInferTask
+        else:
+            infer_task_ref = None
+
+        self.infer = {
+            "deepedit_weld": {
+                "type": getattr(InferType, "DEEPEdit", "deepedit"),
+                "path": "deepedit_weld",
+                "params": {
+                    "model": "dynunet",
+                    "labels": {"defecto": 1},
+                },
+                **({"infer_task": infer_task_ref} if infer_task_ref is not None else {}),
+            }
+        }
+
+        if BasicTrainTask is not None:
+            self.train = {
+                "deepedit_weld": {
+                    "path": "deepedit_weld",
+                    "params": {
+                        "model": "dynunet",
+                        "description": "Entrenamiento especializado para soldaduras",
+                    },
+                    "train_task": BasicTrainTask,
+                }
+            }
+        else:
+            self.train = {}
