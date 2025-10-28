@@ -1,0 +1,30 @@
+[DEBUG][Qt] 08.10.2025 16:43:20 [] (unknown:0) - Session start time .......: 20251008_164320
+[DEBUG][Qt] 08.10.2025 16:43:20 [] (unknown:0) - Slicer version ...........: 5.8.1 (revision 33241 / 11eaf62) win-amd64 - installed release
+[DEBUG][Qt] 08.10.2025 16:43:21 [] (unknown:0) - Operating system .........: Windows /  Personal / (Build 26100, Code Page 65001) - 64-bit
+[DEBUG][Qt] 08.10.2025 16:43:21 [] (unknown:0) - Memory ...................: 16165 MB physical, 17957 MB virtual
+[DEBUG][Qt] 08.10.2025 16:43:21 [] (unknown:0) - CPU ......................: GenuineIntel , 8 cores, 8 logical processors
+[DEBUG][Qt] 08.10.2025 16:43:21 [] (unknown:0) - VTK configuration ........: OpenGL2 rendering, TBB threading
+[DEBUG][Qt] 08.10.2025 16:43:21 [] (unknown:0) - Qt configuration .........: version 5.15.2, with SSL, requested OpenGL 3.2 (compatibility profile)
+[DEBUG][Qt] 08.10.2025 16:43:21 [] (unknown:0) - DCMTK configuration ......: version 3.6.8, no SSL
+[DEBUG][Qt] 08.10.2025 16:43:22 [] (unknown:0) - Internationalization .....: disabled, language=
+[DEBUG][Qt] 08.10.2025 16:43:22 [] (unknown:0) - Developer mode ...........: disabled
+[DEBUG][Qt] 08.10.2025 16:43:22 [] (unknown:0) - Application path .........: C:/Users/Usuario/AppData/Local/slicer.org/Slicer 5.8.1/bin
+[DEBUG][Qt] 08.10.2025 16:43:22 [] (unknown:0) - Additional module paths ..: slicer.org/Extensions-33241/Breast_DCEMRI_FTV/lib/Slicer-5.8/qt-scripted-modules, slicer.org/Extensions-33241/MONAIAuto3DSeg/lib/Slicer-5.8/qt-scripted-modules, slicer.org/Extensions-33241/PyTorch/lib/Slicer-5.8/qt-scripted-modules, slicer.org/Extensions-33241/Sandbox/lib/Slicer-5.8/qt-loadable-modules, slicer.org/Extensions-33241/Sandbox/lib/Slicer-5.8/qt-scripted-modules, slicer.org/Extensions-33241/MONAILabel/lib/Slicer-5.8/qt-scripted-modules
+[CRITICAL][Stream] 08.10.2025 16:43:59 [] (unknown:0) - C:\Users\Usuario\AppData\Local\slicer.org\Slicer 5.8.1\lib\Python\Lib\site-packages\dicom\__init__.py:53: UserWarning:
+[CRITICAL][Stream] 08.10.2025 16:43:59 [] (unknown:0) - This code is using an older version of pydicom, which is no longer
+[CRITICAL][Stream] 08.10.2025 16:43:59 [] (unknown:0) - maintained as of Jan 2017.  You can access the new pydicom features and API
+[CRITICAL][Stream] 08.10.2025 16:43:59 [] (unknown:0) - by installing `pydicom` from PyPI.
+[CRITICAL][Stream] 08.10.2025 16:43:59 [] (unknown:0) - See 'Transitioning to pydicom 1.x' section at pydicom.readthedocs.org
+[CRITICAL][Stream] 08.10.2025 16:43:59 [] (unknown:0) - for more information.
+[CRITICAL][Stream] 08.10.2025 16:43:59 [] (unknown:0) -
+[CRITICAL][Stream] 08.10.2025 16:43:59 [] (unknown:0) -   warnings.warn(msg)
+[DEBUG][Python] 08.10.2025 16:44:06 [Python] (C:\Users\Usuario\AppData\Local\slicer.org\Slicer 5.8.1\lib\Python\Lib\site-packages\matplotlib\__init__.py:341) - matplotlib data path: C:\Users\Usuario\AppData\Local\slicer.org\Slicer 5.8.1\lib\Python\Lib\site-packages\matplotlib\mpl-data
+[DEBUG][Python] 08.10.2025 16:44:06 [Python] (C:\Users\Usuario\AppData\Local\slicer.org\Slicer 5.8.1\lib\Python\Lib\site-packages\matplotlib\__init__.py:341) - CONFIGDIR=C:\Users\Usuario\.matplotlib
+[DEBUG][Python] 08.10.2025 16:44:06 [Python] (C:\Users\Usuario\AppData\Local\slicer.org\Slicer 5.8.1\lib\Python\Lib\site-packages\matplotlib\__init__.py:1512) - interactive is False
+[DEBUG][Python] 08.10.2025 16:44:06 [Python] (C:\Users\Usuario\AppData\Local\slicer.org\Slicer 5.8.1\lib\Python\Lib\site-packages\matplotlib\__init__.py:1513) - platform is win32
+[DEBUG][Python] 08.10.2025 16:44:07 [Python] (C:\Users\Usuario\AppData\Local\slicer.org\Slicer 5.8.1\lib\Python\Lib\site-packages\matplotlib\__init__.py:341) - CACHEDIR=C:\Users\Usuario\.matplotlib
+[DEBUG][Python] 08.10.2025 16:44:07 [Python] (C:\Users\Usuario\AppData\Local\slicer.org\Slicer 5.8.1\lib\Python\Lib\site-packages\matplotlib\font_manager.py:1580) - Using fontManager instance from C:\Users\Usuario\.matplotlib\fontlist-v390.json
+[DEBUG][Python] 08.10.2025 16:44:39 [Python] (C:\Users\Usuario\AppData\Local\slicer.org\Slicer 5.8.1\lib\Slicer-5.8\qt-scripted-modules\SubjectHierarchyPlugins\AbstractScriptedSubjectHierarchyPlugin.py:40) - Scripted subject hierarchy plugin registered: SegmentEditor
+[DEBUG][Python] 08.10.2025 16:44:39 [Python] (C:\Users\Usuario\AppData\Local\slicer.org\Slicer 5.8.1\lib\Slicer-5.8\qt-scripted-modules\SubjectHierarchyPlugins\AbstractScriptedSubjectHierarchyPlugin.py:40) - Scripted subject hierarchy plugin registered: SegmentStatistics
+[DEBUG][Qt] 08.10.2025 16:44:40 [] (unknown:0) - Switch to module:  "Welcome"
+[DEBUG][Qt] 08.10.2025 17:03:46 [] (unknown:0) - Switch to module:  ""
