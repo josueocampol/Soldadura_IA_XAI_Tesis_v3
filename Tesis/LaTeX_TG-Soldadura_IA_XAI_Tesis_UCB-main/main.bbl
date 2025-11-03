@@ -1,0 +1,2693 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{apa/apasortcite//global/global}
+    \entry{Barton_Gwennan_2020}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=588049e9101a69394588277f8ca3434f}{%
+           family={Barton},
+           familyi={B\bibinitperiod},
+           given={Gwennan},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{588049e9101a69394588277f8ca3434f}
+      \strng{fullhash}{588049e9101a69394588277f8ca3434f}
+      \strng{bibnamehash}{588049e9101a69394588277f8ca3434f}
+      \strng{authorbibnamehash}{588049e9101a69394588277f8ca3434f}
+      \strng{authornamehash}{588049e9101a69394588277f8ca3434f}
+      \strng{authorfullhash}{588049e9101a69394588277f8ca3434f}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Cognitive Psychology Bulletin}
+      \field{month}{03}
+      \field{title}{Designing and Conducting Mixed Methods Research (3rd Edition; International Student Edition) by John W. Creswell & Vicki L. Plano Clark}
+      \field{volume}{1}
+      \field{year}{2020}
+      \field{pages}{88\bibrangedash 89}
+      \range{pages}{2}
+      \verb{doi}
+      \verb 10.53841/bpscog.2020.1.5.88
+      \endverb
+    \endentry
+    \entry{Deepshikha_B_fnu_N_Amiruzzaman_2024}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=2b1cbc9ab1e91dd68bb645f4c3315978}{%
+           family={Bhati},
+           familyi={B\bibinitperiod},
+           given={Deepshikha},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=dc8e3cf066d94ef339c41bd9bfabaf3a}{%
+           family={Neha},
+           familyi={N\bibinitperiod},
+           given={Fnu},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5ee209c6ccbdd4a625f418c63ca0885e}{%
+           family={Amiruzzaman},
+           familyi={A\bibinitperiod},
+           given={Md},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Multidisciplinary Digital Publishing Institute}%
+      }
+      \strng{namehash}{8d5e53c972b7bd4d0b96d1d95702b5f3}
+      \strng{fullhash}{5a9d2bc329f1ebac3495c9dc49e75332}
+      \strng{bibnamehash}{5a9d2bc329f1ebac3495c9dc49e75332}
+      \strng{authorbibnamehash}{5a9d2bc329f1ebac3495c9dc49e75332}
+      \strng{authornamehash}{8d5e53c972b7bd4d0b96d1d95702b5f3}
+      \strng{authorfullhash}{5a9d2bc329f1ebac3495c9dc49e75332}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Imaging}
+      \field{month}{9}
+      \field{number}{10}
+      \field{title}{A Survey on Explainable Artificial Intelligence (XAI) Techniques for Visualizing Deep Learning Models in Medical Imaging}
+      \field{volume}{10}
+      \field{year}{2024}
+      \field{pages}{239\bibrangedash 239}
+      \range{pages}{1}
+      \verb{doi}
+      \verb https://doi.org/10.3390/jimaging10100239
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mdpi.com/2313-433X/10/10/239
+      \endverb
+      \verb{url}
+      \verb https://www.mdpi.com/2313-433X/10/10/239
+      \endverb
+    \endentry
+    \entry{bordekar_cersullo_brysch_philipp_hühne_2023}{article}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=b4dff0c755712641a851304a30ceef6c}{%
+           family={Bordekar},
+           familyi={B\bibinitperiod},
+           given={Harsh},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a9db017e1e1043817019d58b329c77a1}{%
+           family={Cersullo},
+           familyi={C\bibinitperiod},
+           given={Nicola},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=413082a746e91f242520e7a2e7c3f9d3}{%
+           family={Brysch},
+           familyi={B\bibinitperiod},
+           given={Marco},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3eaf0b5c950ef8fddf64e2fafa564a2f}{%
+           family={Philipp},
+           familyi={P\bibinitperiod},
+           given={Jens},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=68a66c0cd1221426463fea19e10847b1}{%
+           family={Hühne},
+           familyi={H\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{2}{%
+        {Springer Science}%
+        {Business Media LLC}%
+      }
+      \strng{namehash}{f3fbc5cad013db651c6cc90ead7bb06a}
+      \strng{fullhash}{f8b53b476ab1c5eee9416c7653ca15df}
+      \strng{bibnamehash}{f8b53b476ab1c5eee9416c7653ca15df}
+      \strng{authorbibnamehash}{f8b53b476ab1c5eee9416c7653ca15df}
+      \strng{authornamehash}{f3fbc5cad013db651c6cc90ead7bb06a}
+      \strng{authorfullhash}{f8b53b476ab1c5eee9416c7653ca15df}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Intelligent Manufacturing}
+      \field{month}{12}
+      \field{number}{2}
+      \field{title}{eXplainable artificial intelligence for automatic defect detection in additively manufactured parts using CT scan analysis}
+      \field{volume}{36}
+      \field{year}{2023}
+      \field{pages}{957\bibrangedash 974}
+      \range{pages}{18}
+      \verb{doi}
+      \verb https://doi.org/10.1007/s10845-023-02272-4
+      \endverb
+      \verb{urlraw}
+      \verb https://link.springer.com/article/10.1007/s10845-023-02272-4#:~:text=Testing%20,XAI%29%20methodology%20for%20defect
+      \endverb
+      \verb{url}
+      \verb https://link.springer.com/article/10.1007/s10845-023-02272-4#:~:text=Testing%20,XAI%29%20methodology%20for%20defect
+      \endverb
+    \endentry
+    \entry{soeren_ronneberger_2016}{misc}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=92bebfd041b279b80a17edf14c6e2226}{%
+           family={Çiçek},
+           familyi={Ç\bibinitperiod},
+           given={Özgün},
+           giveni={Ö\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=dd1cd1962dcb1b6e7ba1d5e3269c1a70}{%
+           family={Abdulkadir},
+           familyi={A\bibinitperiod},
+           given={Ahmed},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7f3f4d0039a4fa548905b16c7a2a088d}{%
+           family={Lienkamp},
+           familyi={L\bibinitperiod},
+           given={Soeren\bibnamedelima S},
+           giveni={S\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b452a32296958371572717940f900884}{%
+           family={Brox},
+           familyi={B\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8e46da9de9e53ea5d37089897d69cdd9}{%
+           family={Ronneberger},
+           familyi={R\bibinitperiod},
+           given={Olaf},
+           giveni={O\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{e64aa4ac842b67684c7c812957881c74}
+      \strng{fullhash}{5d78b6035963e7bd3240da1449f99a00}
+      \strng{bibnamehash}{5d78b6035963e7bd3240da1449f99a00}
+      \strng{authorbibnamehash}{5d78b6035963e7bd3240da1449f99a00}
+      \strng{authornamehash}{e64aa4ac842b67684c7c812957881c74}
+      \strng{authorfullhash}{5d78b6035963e7bd3240da1449f99a00}
+      \field{sortinit}{Ç}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv.org}
+      \field{title}{3D U-Net: Learning Dense Volumetric Segmentation from Sparse Annotation}
+      \field{year}{2016}
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/1606.06650#:~:text=,The
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/1606.06650#:~:text=,The
+      \endverb
+    \endentry
+    \entry{daniel_2021}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=262031397020fd8df478ec13b4b096c5}{%
+           family={Daniel},
+           familyi={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{262031397020fd8df478ec13b4b096c5}
+      \strng{fullhash}{262031397020fd8df478ec13b4b096c5}
+      \strng{bibnamehash}{262031397020fd8df478ec13b4b096c5}
+      \strng{authorbibnamehash}{262031397020fd8df478ec13b4b096c5}
+      \strng{authornamehash}{262031397020fd8df478ec13b4b096c5}
+      \strng{authorfullhash}{262031397020fd8df478ec13b4b096c5}
+      \field{extraname}{1}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradate}{1}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{DataScientest}
+      \field{month}{12}
+      \field{title}{¿Qué es el método Grad-CAM?}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://datascientest.com/es/que-es-el-metodo-grad-cam#:~:text=,de%20la%20capa%20convolucional%20final
+      \endverb
+      \verb{url}
+      \verb https://datascientest.com/es/que-es-el-metodo-grad-cam#:~:text=,de%20la%20capa%20convolucional%20final
+      \endverb
+    \endentry
+    \entry{daniel_Francis_2021}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=262031397020fd8df478ec13b4b096c5}{%
+           family={Daniel},
+           familyi={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{262031397020fd8df478ec13b4b096c5}
+      \strng{fullhash}{262031397020fd8df478ec13b4b096c5}
+      \strng{bibnamehash}{262031397020fd8df478ec13b4b096c5}
+      \strng{authorbibnamehash}{262031397020fd8df478ec13b4b096c5}
+      \strng{authornamehash}{262031397020fd8df478ec13b4b096c5}
+      \strng{authorfullhash}{262031397020fd8df478ec13b4b096c5}
+      \field{extraname}{2}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradate}{2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{DataScientest}
+      \field{month}{12}
+      \field{title}{¿Qué es el método Grad-CAM?}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://datascientest.com/es/que-es-el-metodo-grad-cam#:~:text=Una%20manera%20de%20asegurarse%20es,CAM
+      \endverb
+      \verb{url}
+      \verb https://datascientest.com/es/que-es-el-metodo-grad-cam#:~:text=Una%20manera%20de%20asegurarse%20es,CAM
+      \endverb
+    \endentry
+    \entry{daniel_2022}{article}{}
+      \name{author}{4}{}{%
+        {{un=1,uniquepart=given,hash=41e73633e5829196ea365116e7b443c7}{%
+           family={Daniel},
+           familyi={D\bibinitperiod},
+           given={López-Cabrera\bibnamedelima José},
+           giveni={L\bibinithyphendelim C\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=1}}%
+        {{un=0,uniquepart=base,hash=801533977219771cd00e6117030ea2b2}{%
+           family={Pérez-Díaz},
+           familyi={P\bibinithyphendelim D\bibinitperiod},
+           given={Marlen},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=41e73633e5829196ea365116e7b443c7}{%
+           family={Daniel},
+           familyi={D\bibinitperiod},
+           given={López-Cabrera\bibnamedelima José},
+           giveni={L\bibinithyphendelim C\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=801533977219771cd00e6117030ea2b2}{%
+           family={Pérez-Díaz},
+           familyi={P\bibinithyphendelim D\bibinitperiod},
+           given={Marlen},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {2002, Centro Provincial de Ciencias Médicas Provincia de Cienfuegos}%
+      }
+      \strng{namehash}{bb618dbb8ce8dcd41cdeb26712789b60}
+      \strng{fullhash}{7e2594b171af9feb1e033e4e97d92f77}
+      \strng{bibnamehash}{7e2594b171af9feb1e033e4e97d92f77}
+      \strng{authorbibnamehash}{7e2594b171af9feb1e033e4e97d92f77}
+      \strng{authornamehash}{bb618dbb8ce8dcd41cdeb26712789b60}
+      \strng{authorfullhash}{7e2594b171af9feb1e033e4e97d92f77}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{MediSur}
+      \field{number}{2}
+      \field{title}{Inteligencia artificial explicable, una perspectiva al problema de la clasificación automática de COVID-19 mediante radiografías de tórax}
+      \field{volume}{20}
+      \field{year}{2022}
+      \field{pages}{341\bibrangedash 351}
+      \range{pages}{11}
+      \verb{urlraw}
+      \verb http://scielo.sld.cu/scielo.php?script=sci_arttext&pid=S1727-897X2022000200341&lang=pt
+      \endverb
+      \verb{url}
+      \verb http://scielo.sld.cu/scielo.php?script=sci_arttext&pid=S1727-897X2022000200341&lang=pt
+      \endverb
+    \endentry
+    \entry{Unir_2025}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=8eb33c69e3cb6df7887b0fa09586529f}{%
+           family={de},
+           familyi={d\bibinitperiod},
+           given={Equipo},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Universidad Internacional de La Rioja}%
+      }
+      \strng{namehash}{8eb33c69e3cb6df7887b0fa09586529f}
+      \strng{fullhash}{8eb33c69e3cb6df7887b0fa09586529f}
+      \strng{bibnamehash}{8eb33c69e3cb6df7887b0fa09586529f}
+      \strng{authorbibnamehash}{8eb33c69e3cb6df7887b0fa09586529f}
+      \strng{authornamehash}{8eb33c69e3cb6df7887b0fa09586529f}
+      \strng{authorfullhash}{8eb33c69e3cb6df7887b0fa09586529f}
+      \field{sortinit}{d}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{UNIR}
+      \field{month}{8}
+      \field{title}{¿Qué es la Inteligencia Artificial Explicable (XAI)?}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://www.unir.net/revista/ingenieria/inteligencia-artificial-explicable-xai-que-es/#:~:text=Para%20definir%20qu%C3%A9%20es%20la,los%20algoritmos%20de%20machine%20learning
+      \endverb
+      \verb{url}
+      \verb https://www.unir.net/revista/ingenieria/inteligencia-artificial-explicable-xai-que-es/#:~:text=Para%20definir%20qu%C3%A9%20es%20la,los%20algoritmos%20de%20machine%20learning
+      \endverb
+    \endentry
+    \entry{Diaz_Pinto_2024}{article}{}
+      \name{author}{17}{}{%
+        {{un=0,uniquepart=base,hash=cda7ab58324a69413816838fdd4c39ad}{%
+           family={Diaz-Pinto},
+           familyi={D\bibinithyphendelim P\bibinitperiod},
+           given={Andres},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b3cb32a33521393f07c2c1bfa519f33c}{%
+           family={Alle},
+           familyi={A\bibinitperiod},
+           given={Sachidanand},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d0968ce3719368d26817f02301e44c29}{%
+           family={Nath},
+           familyi={N\bibinitperiod},
+           given={Vishwesh},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=caeb0e5523b56ad22085585d7f65afa4}{%
+           family={Tang},
+           familyi={T\bibinitperiod},
+           given={Yucheng},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f9a9cbf85bffc0767eb89ec04fe437bb}{%
+           family={Ihsani},
+           familyi={I\bibinitperiod},
+           given={Alvin},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a3c6a731fa44be8327191d0ed58523c8}{%
+           family={Asad},
+           familyi={A\bibinitperiod},
+           given={Muhammad},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5387d2c9d7c24dae0973e307652b413f}{%
+           family={Pérez-García},
+           familyi={P\bibinithyphendelim G\bibinitperiod},
+           given={Fernando},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bb2db42d6c8307db692f3d0f6e09436c}{%
+           family={Mehta},
+           familyi={M\bibinitperiod},
+           given={Pritesh},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d32ec3dde5f923678d38244353a95911}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Wenqi},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6f13542e79365113e4f2f26087b30bbb}{%
+           family={Flores},
+           familyi={F\bibinitperiod},
+           given={Mona},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=930b2a18b29ddf8edf110e14b3428bfc}{%
+           family={Roth},
+           familyi={R\bibinitperiod},
+           given={Holger},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=befa5547c0c5b07d62ba6f20e5977440}{%
+           family={Vercauteren},
+           familyi={V\bibinitperiod},
+           given={Tom},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=40c221ac11c898cb10013b2468fc229b}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Daguang},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7960fee10000dde8bb88f6d93d053053}{%
+           family={Dogra},
+           familyi={D\bibinitperiod},
+           given={Prerna},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=32246aa24a3f02a73916f12a384e1707}{%
+           family={Ourselin},
+           familyi={O\bibinitperiod},
+           given={Sebastien},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4b633bc43ae852d2f51a00e4555500e1}{%
+           family={Feng},
+           familyi={F\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ef4244db6daaefdd31109b9dcbc46dde}{%
+           family={Cardoso},
+           familyi={C\bibinitperiod},
+           given={Manuel\bibnamedelima Jorge},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{0de4cd97c18852ed6457fc2ccca3d5fd}
+      \strng{fullhash}{feaa488c69cc96cf377fa1a45f0bd56f}
+      \strng{bibnamehash}{feaa488c69cc96cf377fa1a45f0bd56f}
+      \strng{authorbibnamehash}{feaa488c69cc96cf377fa1a45f0bd56f}
+      \strng{authornamehash}{0de4cd97c18852ed6457fc2ccca3d5fd}
+      \strng{authorfullhash}{feaa488c69cc96cf377fa1a45f0bd56f}
+      \field{extraname}{1}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradate}{1}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Medical Image Analysis}
+      \field{month}{05}
+      \field{title}{MONAI Label: A framework for AI-assisted interactive labeling of 3D medical images}
+      \field{volume}{95}
+      \field{year}{2024}
+      \field{pages}{103207}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.media.2024.103207
+      \endverb
+    \endentry
+    \entry{Andres_Sachidanand_2024}{article}{}
+      \name{author}{17}{}{%
+        {{un=0,uniquepart=base,hash=cda7ab58324a69413816838fdd4c39ad}{%
+           family={Diaz-Pinto},
+           familyi={D\bibinithyphendelim P\bibinitperiod},
+           given={Andres},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b3cb32a33521393f07c2c1bfa519f33c}{%
+           family={Alle},
+           familyi={A\bibinitperiod},
+           given={Sachidanand},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d0968ce3719368d26817f02301e44c29}{%
+           family={Nath},
+           familyi={N\bibinitperiod},
+           given={Vishwesh},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=caeb0e5523b56ad22085585d7f65afa4}{%
+           family={Tang},
+           familyi={T\bibinitperiod},
+           given={Yucheng},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f9a9cbf85bffc0767eb89ec04fe437bb}{%
+           family={Ihsani},
+           familyi={I\bibinitperiod},
+           given={Alvin},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a3c6a731fa44be8327191d0ed58523c8}{%
+           family={Asad},
+           familyi={A\bibinitperiod},
+           given={Muhammad},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5387d2c9d7c24dae0973e307652b413f}{%
+           family={Pérez-García},
+           familyi={P\bibinithyphendelim G\bibinitperiod},
+           given={Fernando},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bb2db42d6c8307db692f3d0f6e09436c}{%
+           family={Mehta},
+           familyi={M\bibinitperiod},
+           given={Pritesh},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d32ec3dde5f923678d38244353a95911}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Wenqi},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6f13542e79365113e4f2f26087b30bbb}{%
+           family={Flores},
+           familyi={F\bibinitperiod},
+           given={Mona},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=930b2a18b29ddf8edf110e14b3428bfc}{%
+           family={Roth},
+           familyi={R\bibinitperiod},
+           given={Holger},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=befa5547c0c5b07d62ba6f20e5977440}{%
+           family={Vercauteren},
+           familyi={V\bibinitperiod},
+           given={Tom},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=40c221ac11c898cb10013b2468fc229b}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Daguang},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7960fee10000dde8bb88f6d93d053053}{%
+           family={Dogra},
+           familyi={D\bibinitperiod},
+           given={Prerna},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=32246aa24a3f02a73916f12a384e1707}{%
+           family={Ourselin},
+           familyi={O\bibinitperiod},
+           given={Sebastien},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4b633bc43ae852d2f51a00e4555500e1}{%
+           family={Feng},
+           familyi={F\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ef4244db6daaefdd31109b9dcbc46dde}{%
+           family={Cardoso},
+           familyi={C\bibinitperiod},
+           given={Manuel\bibnamedelima Jorge},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{0de4cd97c18852ed6457fc2ccca3d5fd}
+      \strng{fullhash}{feaa488c69cc96cf377fa1a45f0bd56f}
+      \strng{bibnamehash}{feaa488c69cc96cf377fa1a45f0bd56f}
+      \strng{authorbibnamehash}{feaa488c69cc96cf377fa1a45f0bd56f}
+      \strng{authornamehash}{0de4cd97c18852ed6457fc2ccca3d5fd}
+      \strng{authorfullhash}{feaa488c69cc96cf377fa1a45f0bd56f}
+      \field{extraname}{2}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradate}{2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Medical Image Analysis}
+      \field{month}{05}
+      \field{title}{MONAI Label: A framework for AI-assisted interactive labeling of 3D medical images}
+      \field{volume}{95}
+      \field{year}{2024}
+      \field{pages}{103207}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.media.2024.103207
+      \endverb
+    \endentry
+    \entry{elliott_2024}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=5be34907993078f774b9cf3d3b671be1}{%
+           family={Elliott},
+           familyi={E\bibinitperiod},
+           given={Alan},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Universidad Nacional del Litoral}%
+      }
+      \strng{namehash}{5be34907993078f774b9cf3d3b671be1}
+      \strng{fullhash}{5be34907993078f774b9cf3d3b671be1}
+      \strng{bibnamehash}{5be34907993078f774b9cf3d3b671be1}
+      \strng{authorbibnamehash}{5be34907993078f774b9cf3d3b671be1}
+      \strng{authornamehash}{5be34907993078f774b9cf3d3b671be1}
+      \strng{authorfullhash}{5be34907993078f774b9cf3d3b671be1}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Revista Eurolatinoamericana de Derecho Administrativo}
+      \field{month}{6}
+      \field{number}{1}
+      \field{title}{La responsabilidad por la función pública: naturaleza jurídica de la responsabilidad administrativa en la jurisprudencia constitucional boliviana}
+      \field{volume}{11}
+      \field{year}{2024}
+      \field{pages}{e250\bibrangedash e250}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb https://doi.org/10.14409/redoeda.v11i1.13046
+      \endverb
+      \verb{urlraw}
+      \verb https://bibliotecavirtual.unl.edu.ar/publicaciones/index.php/Redoeda/es/article/view/13046
+      \endverb
+      \verb{url}
+      \verb https://bibliotecavirtual.unl.edu.ar/publicaciones/index.php/Redoeda/es/article/view/13046
+      \endverb
+    \endentry
+    \entry{farahani_fiok_lahijanian_karwowski_douglas_2022}{article}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=8d0ed7a4d3bffee864e15ac602599569}{%
+           family={Farahani},
+           familyi={F\bibinitperiod},
+           given={Farzad\bibnamedelima V.},
+           giveni={F\bibinitperiod\bibinitdelim V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=10ef093348d58ae466bcf9528c81f7dd}{%
+           family={Fiok},
+           familyi={F\bibinitperiod},
+           given={Krzysztof},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=fae19484df9faf9fe11f0d99cfe22361}{%
+           family={Lahijanian},
+           familyi={L\bibinitperiod},
+           given={Behshad},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=037e27b991d474ea0d025044ae4f227b}{%
+           family={Karwowski},
+           familyi={K\bibinitperiod},
+           given={Waldemar},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=35da2049560bd7d325acf3702222b513}{%
+           family={Douglas},
+           familyi={D\bibinitperiod},
+           given={Pamela\bibnamedelima K.},
+           giveni={P\bibinitperiod\bibinitdelim K\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Frontiers Media SA}%
+      }
+      \strng{namehash}{bde53cce9279bf9d08c94c95bf111a27}
+      \strng{fullhash}{18272310619ac8d0f19a4ff397bf90d1}
+      \strng{bibnamehash}{18272310619ac8d0f19a4ff397bf90d1}
+      \strng{authorbibnamehash}{18272310619ac8d0f19a4ff397bf90d1}
+      \strng{authornamehash}{bde53cce9279bf9d08c94c95bf111a27}
+      \strng{authorfullhash}{18272310619ac8d0f19a4ff397bf90d1}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Frontiers in Neuroscience}
+      \field{month}{12}
+      \field{title}{Explainable AI: A review of applications to neuroimaging data}
+      \field{volume}{16}
+      \field{year}{2022}
+      \verb{doi}
+      \verb https://doi.org/10.3389/fnins.2022.906290
+      \endverb
+      \verb{urlraw}
+      \verb https://pmc.ncbi.nlm.nih.gov/articles/PMC9793854/
+      \endverb
+      \verb{url}
+      \verb https://pmc.ncbi.nlm.nih.gov/articles/PMC9793854/
+      \endverb
+    \endentry
+    \entry{lindgren_zach_2022}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=2ac64fe3f20d05b7d3ec7a9697269cbe}{%
+           family={Lindgren},
+           familyi={L\bibinitperiod},
+           given={Erik},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a23d5e394103a0e517bc6107e11ce09b}{%
+           family={Zach},
+           familyi={Z\bibinitperiod},
+           given={Christopher},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Multidisciplinary Digital Publishing Institute}%
+      }
+      \strng{namehash}{70aa2053728e58b9dfe2a437a65e4d8b}
+      \strng{fullhash}{70aa2053728e58b9dfe2a437a65e4d8b}
+      \strng{bibnamehash}{70aa2053728e58b9dfe2a437a65e4d8b}
+      \strng{authorbibnamehash}{70aa2053728e58b9dfe2a437a65e4d8b}
+      \strng{authornamehash}{70aa2053728e58b9dfe2a437a65e4d8b}
+      \strng{authorfullhash}{70aa2053728e58b9dfe2a437a65e4d8b}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Metals}
+      \field{month}{11}
+      \field{number}{11}
+      \field{title}{Industrial X-ray Image Analysis with Deep Neural Networks Robust to Unexpected Input Data}
+      \field{volume}{12}
+      \field{year}{2022}
+      \field{pages}{1963\bibrangedash 1963}
+      \range{pages}{1}
+      \verb{doi}
+      \verb https://doi.org/10.3390/met12111963
+      \endverb
+      \verb{urlraw}
+      \verb https://hv.diva-portal.org/smash/record.jsf?pid=diva2%3A1712874&dswid=-9663
+      \endverb
+      \verb{url}
+      \verb https://hv.diva-portal.org/smash/record.jsf?pid=diva2%3A1712874&dswid=-9663
+      \endverb
+    \endentry
+    \entry{Miguel_Medina_2025}{misc}{}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Inudi.edu.pe}
+      \field{title}{Método mixto de investigación: Cuantitativo y cualitativo}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://editorial.inudi.edu.pe/index.php/editorialinudi/catalog/download/118/160/189?inline=1
+      \endverb
+      \verb{url}
+      \verb https://editorial.inudi.edu.pe/index.php/editorialinudi/catalog/download/118/160/189?inline=1
+      \endverb
+    \endentry
+    \entry{mohandas_2024}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=187e89d8dae072f4ed29aec3e529fdee}{%
+           family={Mohandas},
+           familyi={M\bibinitperiod},
+           given={Reenu},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=34c206233209cae26bbd01153cfc0f24}{%
+           family={Mongan},
+           familyi={M\bibinitperiod},
+           given={Patrick},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=098039d69b476e05f5fbbc0b2a436148}{%
+           family={Hayes},
+           familyi={H\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {MDPI AG}%
+      }
+      \strng{namehash}{40ec9d98698bc2e7d08e72b557754fea}
+      \strng{fullhash}{a15eae7c7e7acf1b536424b8e363b25f}
+      \strng{bibnamehash}{a15eae7c7e7acf1b536424b8e363b25f}
+      \strng{authorbibnamehash}{a15eae7c7e7acf1b536424b8e363b25f}
+      \strng{authornamehash}{40ec9d98698bc2e7d08e72b557754fea}
+      \strng{authorfullhash}{a15eae7c7e7acf1b536424b8e363b25f}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Sensors}
+      \field{month}{10}
+      \field{number}{20}
+      \field{title}{Ultrasonic Weld Quality Inspection Involving Strength Prediction and Defect Detection in Data-Constrained Training Environments}
+      \field{volume}{24}
+      \field{year}{2024}
+      \field{pages}{6553}
+      \range{pages}{1}
+      \verb{doi}
+      \verb https://doi.org/10.3390/s24206553
+      \endverb
+      \verb{urlraw}
+      \verb https://pmc.ncbi.nlm.nih.gov/articles/PMC11510777/
+      \endverb
+      \verb{url}
+      \verb https://pmc.ncbi.nlm.nih.gov/articles/PMC11510777/
+      \endverb
+    \endentry
+    \entry{Darlinton_2024}{document}{}
+      \list{publisher}{1}{%
+        {UNAD, ECISA, TRID}%
+      }
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labeltitlesource}{title}
+      \field{title}{Optimización basada en algoritmos de IA para la mejora de la calidad de imagen en tomografía computarizada}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://repository.unad.edu.co/bitstream/handle/10596/65625/rserranose.pdf?sequence=4&isAllowed=y
+      \endverb
+      \verb{url}
+      \verb https://repository.unad.edu.co/bitstream/handle/10596/65625/rserranose.pdf?sequence=4&isAllowed=y
+      \endverb
+    \endentry
+    \entry{pascual_2023}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=eb75061f42bf26e772553eaf33367c0e}{%
+           family={Pascual},
+           familyi={P\bibinitperiod},
+           given={Luis},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{eb75061f42bf26e772553eaf33367c0e}
+      \strng{fullhash}{eb75061f42bf26e772553eaf33367c0e}
+      \strng{bibnamehash}{eb75061f42bf26e772553eaf33367c0e}
+      \strng{authorbibnamehash}{eb75061f42bf26e772553eaf33367c0e}
+      \strng{authornamehash}{eb75061f42bf26e772553eaf33367c0e}
+      \strng{authorfullhash}{eb75061f42bf26e772553eaf33367c0e}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Umsa.bo}
+      \field{title}{Mejoramiento del factor de potencia para la empresa Laboratorios Farmacéuticos Vita.}
+      \field{year}{2023}
+      \verb{doi}
+      \verb http://repositorio.umsa.bo/xmlui/handle/123456789/31245
+      \endverb
+      \verb{urlraw}
+      \verb https://repositorio.umsa.bo/handle/123456789/31245
+      \endverb
+      \verb{url}
+      \verb https://repositorio.umsa.bo/handle/123456789/31245
+      \endverb
+    \endentry
+    \entry{pedro_márquez_segovia_ramírez_2025}{book}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=18a21dc1be0ea3c7e3059105323859a6}{%
+           family={Pedro},
+           familyi={P\bibinitperiod},
+           given={Fausto},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c98b3461a949985ea44d29affb64231d}{%
+           family={Márquez},
+           familyi={M\bibinitperiod},
+           given={García},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bd37a0add035c9543e81ac8daf9047af}{%
+           family={Segovia\bibnamedelima Ramírez},
+           familyi={S\bibinitperiod\bibinitdelim R\bibinitperiod},
+           given={Isaac},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{a46f3f5dec16a5217f5f1a1bdf5fdee3}
+      \strng{fullhash}{54f071c90eb681ab684058f6d7f4195e}
+      \strng{bibnamehash}{54f071c90eb681ab684058f6d7f4195e}
+      \strng{authorbibnamehash}{54f071c90eb681ab684058f6d7f4195e}
+      \strng{authornamehash}{a46f3f5dec16a5217f5f1a1bdf5fdee3}
+      \strng{authorfullhash}{54f071c90eb681ab684058f6d7f4195e}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labeldatesource}{nodate}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{ARTÍCULOS TÉCNICOS 18 END no 97}
+      \verb{urlraw}
+      \verb https://ingenium.uclm.es/wp-content/uploads/2022/02/R97-AT1.-Analisis-e.-arte-Parte-1a.pdf
+      \endverb
+      \verb{url}
+      \verb https://ingenium.uclm.es/wp-content/uploads/2022/02/R97-AT1.-Analisis-e.-arte-Parte-1a.pdf
+      \endverb
+    \endentry
+    \entry{poudel_jha_meeker_phan_bhowmik_2025}{article}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=ec8946dadcfcc514a8ab2fea1b041eba}{%
+           family={Poudel},
+           familyi={P\bibinitperiod},
+           given={Lokendra},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=047ba2b59fe023b21d755e66de2e67ff}{%
+           family={Jha},
+           familyi={J\bibinitperiod},
+           given={Sushant},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2062ec65a4ea399ff1286269adb1c321}{%
+           family={Meeker},
+           familyi={M\bibinitperiod},
+           given={Ryan},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=db3dc06429d21637942c27f41af89cd8}{%
+           family={Phan},
+           familyi={P\bibinitperiod},
+           given={Duy-Nhat},
+           giveni={D\bibinithyphendelim N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9321f33b952909f1914f91453477ab3c}{%
+           family={Bhowmik},
+           familyi={B\bibinitperiod},
+           given={Rahul},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{2}{%
+        {Springer Science}%
+        {Business Media LLC}%
+      }
+      \strng{namehash}{91fe4762e2f040ac31e975f8fde7fc03}
+      \strng{fullhash}{fd86550accb625ca1ed69154a2af5d92}
+      \strng{bibnamehash}{fd86550accb625ca1ed69154a2af5d92}
+      \strng{authorbibnamehash}{fd86550accb625ca1ed69154a2af5d92}
+      \strng{authornamehash}{91fe4762e2f040ac31e975f8fde7fc03}
+      \strng{authorfullhash}{fd86550accb625ca1ed69154a2af5d92}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Intelligent Manufacturing}
+      \field{month}{2}
+      \field{title}{Advanced predictive quality assessment for ultrasonic additive manufacturing with deep learning model}
+      \field{year}{2025}
+      \verb{doi}
+      \verb https://doi.org/10.1007/s10845-025-02582-9
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2410.24055
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2410.24055
+      \endverb
+    \endentry
+    \entry{project-monai_2023}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=a10d918c9e28e4f4445ce9b93055ff68}{%
+           family={Project-MONAI},
+           familyi={P\bibinithyphendelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{a10d918c9e28e4f4445ce9b93055ff68}
+      \strng{fullhash}{a10d918c9e28e4f4445ce9b93055ff68}
+      \strng{bibnamehash}{a10d918c9e28e4f4445ce9b93055ff68}
+      \strng{authorbibnamehash}{a10d918c9e28e4f4445ce9b93055ff68}
+      \strng{authornamehash}{a10d918c9e28e4f4445ce9b93055ff68}
+      \strng{authorfullhash}{a10d918c9e28e4f4445ce9b93055ff68}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{GitHub}
+      \field{month}{10}
+      \field{title}{GitHub - Project-MONAI/MONAILabel: MONAI Label is an intelligent open source image labeling and learning tool.}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://github.com/Project-MONAI/MONAILabel
+      \endverb
+      \verb{url}
+      \verb https://github.com/Project-MONAI/MONAILabel
+      \endverb
+    \endentry
+    \entry{rojas-barrientos_2024}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=bae86f988cabb7096389c28129397271}{%
+           family={Rojas-Barrientos},
+           familyi={R\bibinithyphendelim B\bibinitperiod},
+           given={Sergio},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{bae86f988cabb7096389c28129397271}
+      \strng{fullhash}{bae86f988cabb7096389c28129397271}
+      \strng{bibnamehash}{bae86f988cabb7096389c28129397271}
+      \strng{authorbibnamehash}{bae86f988cabb7096389c28129397271}
+      \strng{authornamehash}{bae86f988cabb7096389c28129397271}
+      \strng{authorfullhash}{bae86f988cabb7096389c28129397271}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Revista Eurolatinoamericana de Derecho Administrativo}
+      \field{number}{1}
+      \field{title}{La actividad administrativa extemporánea en Bolivia: una jurisprudencia tolerante con la Administración contra legem}
+      \field{volume}{11}
+      \field{year}{2024}
+      \field{pages}{-}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb https://doi.org/10.14409/redoeda.v11i1.13493.
+      \endverb
+      \verb{urlraw}
+      \verb https://www.scielo.org.ar/scielo.php?pid=S2362-583X2024000100009&script=sci_abstract&tlng=en
+      \endverb
+      \verb{url}
+      \verb https://www.scielo.org.ar/scielo.php?pid=S2362-583X2024000100009&script=sci_abstract&tlng=en
+      \endverb
+      \warn{\item Range field 'pages' in entry 'rojas-barrientos_2024' is malformed, falling back to literal}
+    \endentry
+    \entry{Sanchez_R_llerena_I_2023}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=3969a4be907905fe8af30eb59a32456a}{%
+           family={Sanchez\bibnamedelima R.},
+           familyi={S\bibinitperiod\bibinitdelim R\bibinitperiod},
+           given={Jonathan},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a68f06a39dd976b001a129eb0f8cf507}{%
+           family={Llerena\bibnamedelima I.},
+           familyi={L\bibinitperiod\bibinitdelim I\bibinitperiod},
+           given={Joe},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{8d459091ef026b49f8f3ab71401103d7}
+      \strng{fullhash}{8d459091ef026b49f8f3ab71401103d7}
+      \strng{bibnamehash}{8d459091ef026b49f8f3ab71401103d7}
+      \strng{authorbibnamehash}{8d459091ef026b49f8f3ab71401103d7}
+      \strng{authornamehash}{8d459091ef026b49f8f3ab71401103d7}
+      \strng{authorfullhash}{8d459091ef026b49f8f3ab71401103d7}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Revista InGenio}
+      \field{month}{7}
+      \field{number}{2}
+      \field{title}{Revisión de la literatura sobre el uso del aprendizaje profundo enfocado en sistemas de inspección ópticos automatizados para la detección de defectos superficiales en el sector de la manufactura}
+      \field{volume}{6}
+      \field{year}{2023}
+      \field{pages}{1\bibrangedash 19}
+      \range{pages}{19}
+      \verb{doi}
+      \verb https://doi.org/10.18779/ingenio.v6i2.680
+      \endverb
+    \endentry
+    \entry{takase_2023}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=822918dbf0d1bb47df87a3948ebc271e}{%
+           family={Takase},
+           familyi={T\bibinitperiod},
+           given={Aya},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Rigaku Americas - A Division of Rigaku Americas Holding}%
+      }
+      \strng{namehash}{822918dbf0d1bb47df87a3948ebc271e}
+      \strng{fullhash}{822918dbf0d1bb47df87a3948ebc271e}
+      \strng{bibnamehash}{822918dbf0d1bb47df87a3948ebc271e}
+      \strng{authorbibnamehash}{822918dbf0d1bb47df87a3948ebc271e}
+      \strng{authornamehash}{822918dbf0d1bb47df87a3948ebc271e}
+      \strng{authorfullhash}{822918dbf0d1bb47df87a3948ebc271e}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Rigaku.com}
+      \field{month}{1}
+      \field{title}{Industrial vs. Medical CT Scanners: What Are the Differences?}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://rigaku.com/products/imaging-ndt/x-ray-ct/learning/blog/industrial-vs-medical-ct-scanners#:~:text=Allowed%20dosage
+      \endverb
+      \verb{url}
+      \verb https://rigaku.com/products/imaging-ndt/x-ray-ct/learning/blog/industrial-vs-medical-ct-scanners#:~:text=Allowed%20dosage
+      \endverb
+    \endentry
+    \entry{Miguel_Vera_MgSc_PhD_2024}{book}{}
+      \name{author}{11}{}{%
+        {{un=0,uniquepart=base,hash=c31f757373eab03c14b41249eb2792b5}{%
+           family={Vera},
+           familyi={V\bibinitperiod},
+           given={Miguel},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=aa4ba6b759a185e8846d670c23e4e65c}{%
+           family={Huérfano},
+           familyi={H\bibinitperiod},
+           given={Yoleidy},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8531ebca4e796f806aed2dca44818f13}{%
+           family={Contreras},
+           familyi={C\bibinitperiod},
+           given={Julio},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0e708cffaad78ffe84194aa934913e73}{%
+           family={Vera},
+           familyi={V\bibinitperiod},
+           given={María},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=84cdb34d4934c3c6744d6421a2067555}{%
+           family={Mar3},
+           familyi={M\bibinitperiod},
+           given={Atilio},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a96a4c5c35715664c5190ac5acb6b3c4}{%
+           family={Chacón},
+           familyi={C\bibinitperiod},
+           given={José},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=219c2a2c45ad1942534dbd8478ff6669}{%
+           family={Wilches-Durán},
+           familyi={W\bibinithyphendelim D\bibinitperiod},
+           given={Sandra},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1836016d744c4d225eedda1fb46db52a}{%
+           family={Graterol-Rivas},
+           familyi={G\bibinithyphendelim R\bibinitperiod},
+           given={Modesto},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6f56ce1420a286df3296c30f73a9f191}{%
+           family={Riaño-Wilches},
+           familyi={R\bibinithyphendelim W\bibinitperiod},
+           given={Daniela},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a9ad0c9703f7fff9a5e4fa046938a4c2}{%
+           family={Rojas},
+           familyi={R\bibinitperiod},
+           given={Joselyn},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5a3a5524340e678d2864a45c09cf7848}{%
+           family={Bermúdez},
+           familyi={B\bibinitperiod},
+           given={Valmore},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{ea865ae36869f8dde3c9554dab67a421}
+      \strng{fullhash}{fcb49032c194f3346cc2ba5da14ed971}
+      \strng{bibnamehash}{fcb49032c194f3346cc2ba5da14ed971}
+      \strng{authorbibnamehash}{fcb49032c194f3346cc2ba5da14ed971}
+      \strng{authornamehash}{ea865ae36869f8dde3c9554dab67a421}
+      \strng{authorfullhash}{fcb49032c194f3346cc2ba5da14ed971}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{labeldatesource}{nodate}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Segmentación automática de la arteria aorta torácica en imágenes de tomografía computarizada cardiaca}
+      \verb{urlraw}
+      \verb https://www.revhipertension.com/rlh_11_4_2016/segmentacion_automatica_arteria.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.revhipertension.com/rlh_11_4_2016/segmentacion_automatica_arteria.pdf
+      \endverb
+    \endentry
+    \entry{zhang_2025}{article}{}
+      \name{author}{8}{}{%
+        {{un=0,uniquepart=base,hash=9ec479cc1fd34d627b4085f7e15527e1}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Wenpin},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c8962301f564cbe7b4b972f9a0767cb5}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Wangwang},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3fdb97238ade5d1398529f785e790ad6}{%
+           family={Yu},
+           familyi={Y\bibinitperiod},
+           given={Xinghua},
+           giveni={X\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=110db7d0f33f53dc1182ca2651e0f2a4}{%
+           family={Kang},
+           familyi={K\bibinitperiod},
+           given={Dugang},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1a3aaab59e8fbb45b7d277fe6d84a63d}{%
+           family={Xiong},
+           familyi={X\bibinitperiod},
+           given={Zhi},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0261af8ffb5922c5da696e41d4389d06}{%
+           family={Lv},
+           familyi={L\bibinitperiod},
+           given={Xiao},
+           giveni={X\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f300aafcc35c75152afb1a85de17d1e1}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Song},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=92e14a8c19eb5a0c7c199c85db74f106}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Yan},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Multidisciplinary Digital Publishing Institute}%
+      }
+      \strng{namehash}{07d086c7cc2c7b79a578576f90643e61}
+      \strng{fullhash}{d7bf49536f54836373fc7dca4ffa5ed3}
+      \strng{bibnamehash}{d7bf49536f54836373fc7dca4ffa5ed3}
+      \strng{authorbibnamehash}{d7bf49536f54836373fc7dca4ffa5ed3}
+      \strng{authornamehash}{07d086c7cc2c7b79a578576f90643e61}
+      \strng{authorfullhash}{d7bf49536f54836373fc7dca4ffa5ed3}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Coatings}
+      \field{month}{7}
+      \field{number}{7}
+      \field{title}{Deep Learning-Based Automated Detection of Welding Defects in Pressure Pipeline Radiograph}
+      \field{volume}{15}
+      \field{year}{2025}
+      \field{pages}{808\bibrangedash 808}
+      \range{pages}{1}
+      \verb{doi}
+      \verb https://doi.org/10.3390/coatings15070808
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mdpi.com/2079-6412/15/7/808#:~:text=This%20study%20applies%20deep%20learning,of%20pipelines%20of%20pressure%20equipment
+      \endverb
+      \verb{url}
+      \verb https://www.mdpi.com/2079-6412/15/7/808#:~:text=This%20study%20applies%20deep%20learning,of%20pipelines%20of%20pressure%20equipment
+      \endverb
+    \endentry
+  \enddatalist
+  \datalist[entry]{apa/global//global/global}
+    \entry{Barton_Gwennan_2020}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=588049e9101a69394588277f8ca3434f}{%
+           family={Barton},
+           familyi={B\bibinitperiod},
+           given={Gwennan},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{588049e9101a69394588277f8ca3434f}
+      \strng{fullhash}{588049e9101a69394588277f8ca3434f}
+      \strng{bibnamehash}{588049e9101a69394588277f8ca3434f}
+      \strng{authorbibnamehash}{588049e9101a69394588277f8ca3434f}
+      \strng{authornamehash}{588049e9101a69394588277f8ca3434f}
+      \strng{authorfullhash}{588049e9101a69394588277f8ca3434f}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Cognitive Psychology Bulletin}
+      \field{month}{03}
+      \field{title}{Designing and Conducting Mixed Methods Research (3rd Edition; International Student Edition) by John W. Creswell & Vicki L. Plano Clark}
+      \field{volume}{1}
+      \field{year}{2020}
+      \field{pages}{88\bibrangedash 89}
+      \range{pages}{2}
+      \verb{doi}
+      \verb 10.53841/bpscog.2020.1.5.88
+      \endverb
+    \endentry
+    \entry{Deepshikha_B_fnu_N_Amiruzzaman_2024}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=2b1cbc9ab1e91dd68bb645f4c3315978}{%
+           family={Bhati},
+           familyi={B\bibinitperiod},
+           given={Deepshikha},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=dc8e3cf066d94ef339c41bd9bfabaf3a}{%
+           family={Neha},
+           familyi={N\bibinitperiod},
+           given={Fnu},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5ee209c6ccbdd4a625f418c63ca0885e}{%
+           family={Amiruzzaman},
+           familyi={A\bibinitperiod},
+           given={Md},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Multidisciplinary Digital Publishing Institute}%
+      }
+      \strng{namehash}{8d5e53c972b7bd4d0b96d1d95702b5f3}
+      \strng{fullhash}{5a9d2bc329f1ebac3495c9dc49e75332}
+      \strng{bibnamehash}{5a9d2bc329f1ebac3495c9dc49e75332}
+      \strng{authorbibnamehash}{5a9d2bc329f1ebac3495c9dc49e75332}
+      \strng{authornamehash}{8d5e53c972b7bd4d0b96d1d95702b5f3}
+      \strng{authorfullhash}{5a9d2bc329f1ebac3495c9dc49e75332}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Imaging}
+      \field{month}{9}
+      \field{number}{10}
+      \field{title}{A Survey on Explainable Artificial Intelligence (XAI) Techniques for Visualizing Deep Learning Models in Medical Imaging}
+      \field{volume}{10}
+      \field{year}{2024}
+      \field{pages}{239\bibrangedash 239}
+      \range{pages}{1}
+      \verb{doi}
+      \verb https://doi.org/10.3390/jimaging10100239
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mdpi.com/2313-433X/10/10/239
+      \endverb
+      \verb{url}
+      \verb https://www.mdpi.com/2313-433X/10/10/239
+      \endverb
+    \endentry
+    \entry{bordekar_cersullo_brysch_philipp_hühne_2023}{article}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=b4dff0c755712641a851304a30ceef6c}{%
+           family={Bordekar},
+           familyi={B\bibinitperiod},
+           given={Harsh},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a9db017e1e1043817019d58b329c77a1}{%
+           family={Cersullo},
+           familyi={C\bibinitperiod},
+           given={Nicola},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=413082a746e91f242520e7a2e7c3f9d3}{%
+           family={Brysch},
+           familyi={B\bibinitperiod},
+           given={Marco},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3eaf0b5c950ef8fddf64e2fafa564a2f}{%
+           family={Philipp},
+           familyi={P\bibinitperiod},
+           given={Jens},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=68a66c0cd1221426463fea19e10847b1}{%
+           family={Hühne},
+           familyi={H\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{2}{%
+        {Springer Science}%
+        {Business Media LLC}%
+      }
+      \strng{namehash}{f3fbc5cad013db651c6cc90ead7bb06a}
+      \strng{fullhash}{f8b53b476ab1c5eee9416c7653ca15df}
+      \strng{bibnamehash}{f8b53b476ab1c5eee9416c7653ca15df}
+      \strng{authorbibnamehash}{f8b53b476ab1c5eee9416c7653ca15df}
+      \strng{authornamehash}{f3fbc5cad013db651c6cc90ead7bb06a}
+      \strng{authorfullhash}{f8b53b476ab1c5eee9416c7653ca15df}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Intelligent Manufacturing}
+      \field{month}{12}
+      \field{number}{2}
+      \field{title}{eXplainable artificial intelligence for automatic defect detection in additively manufactured parts using CT scan analysis}
+      \field{volume}{36}
+      \field{year}{2023}
+      \field{pages}{957\bibrangedash 974}
+      \range{pages}{18}
+      \verb{doi}
+      \verb https://doi.org/10.1007/s10845-023-02272-4
+      \endverb
+      \verb{urlraw}
+      \verb https://link.springer.com/article/10.1007/s10845-023-02272-4#:~:text=Testing%20,XAI%29%20methodology%20for%20defect
+      \endverb
+      \verb{url}
+      \verb https://link.springer.com/article/10.1007/s10845-023-02272-4#:~:text=Testing%20,XAI%29%20methodology%20for%20defect
+      \endverb
+    \endentry
+    \entry{soeren_ronneberger_2016}{misc}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=92bebfd041b279b80a17edf14c6e2226}{%
+           family={Çiçek},
+           familyi={Ç\bibinitperiod},
+           given={Özgün},
+           giveni={Ö\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=dd1cd1962dcb1b6e7ba1d5e3269c1a70}{%
+           family={Abdulkadir},
+           familyi={A\bibinitperiod},
+           given={Ahmed},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7f3f4d0039a4fa548905b16c7a2a088d}{%
+           family={Lienkamp},
+           familyi={L\bibinitperiod},
+           given={Soeren\bibnamedelima S},
+           giveni={S\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b452a32296958371572717940f900884}{%
+           family={Brox},
+           familyi={B\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8e46da9de9e53ea5d37089897d69cdd9}{%
+           family={Ronneberger},
+           familyi={R\bibinitperiod},
+           given={Olaf},
+           giveni={O\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{e64aa4ac842b67684c7c812957881c74}
+      \strng{fullhash}{5d78b6035963e7bd3240da1449f99a00}
+      \strng{bibnamehash}{5d78b6035963e7bd3240da1449f99a00}
+      \strng{authorbibnamehash}{5d78b6035963e7bd3240da1449f99a00}
+      \strng{authornamehash}{e64aa4ac842b67684c7c812957881c74}
+      \strng{authorfullhash}{5d78b6035963e7bd3240da1449f99a00}
+      \field{sortinit}{Ç}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv.org}
+      \field{title}{3D U-Net: Learning Dense Volumetric Segmentation from Sparse Annotation}
+      \field{year}{2016}
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/1606.06650#:~:text=,The
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/1606.06650#:~:text=,The
+      \endverb
+    \endentry
+    \entry{daniel_2021}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=262031397020fd8df478ec13b4b096c5}{%
+           family={Daniel},
+           familyi={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{262031397020fd8df478ec13b4b096c5}
+      \strng{fullhash}{262031397020fd8df478ec13b4b096c5}
+      \strng{bibnamehash}{262031397020fd8df478ec13b4b096c5}
+      \strng{authorbibnamehash}{262031397020fd8df478ec13b4b096c5}
+      \strng{authornamehash}{262031397020fd8df478ec13b4b096c5}
+      \strng{authorfullhash}{262031397020fd8df478ec13b4b096c5}
+      \field{extraname}{1}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradate}{1}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{DataScientest}
+      \field{month}{12}
+      \field{title}{¿Qué es el método Grad-CAM?}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://datascientest.com/es/que-es-el-metodo-grad-cam#:~:text=,de%20la%20capa%20convolucional%20final
+      \endverb
+      \verb{url}
+      \verb https://datascientest.com/es/que-es-el-metodo-grad-cam#:~:text=,de%20la%20capa%20convolucional%20final
+      \endverb
+    \endentry
+    \entry{daniel_Francis_2021}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=262031397020fd8df478ec13b4b096c5}{%
+           family={Daniel},
+           familyi={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{262031397020fd8df478ec13b4b096c5}
+      \strng{fullhash}{262031397020fd8df478ec13b4b096c5}
+      \strng{bibnamehash}{262031397020fd8df478ec13b4b096c5}
+      \strng{authorbibnamehash}{262031397020fd8df478ec13b4b096c5}
+      \strng{authornamehash}{262031397020fd8df478ec13b4b096c5}
+      \strng{authorfullhash}{262031397020fd8df478ec13b4b096c5}
+      \field{extraname}{2}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradate}{2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{DataScientest}
+      \field{month}{12}
+      \field{title}{¿Qué es el método Grad-CAM?}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://datascientest.com/es/que-es-el-metodo-grad-cam#:~:text=Una%20manera%20de%20asegurarse%20es,CAM
+      \endverb
+      \verb{url}
+      \verb https://datascientest.com/es/que-es-el-metodo-grad-cam#:~:text=Una%20manera%20de%20asegurarse%20es,CAM
+      \endverb
+    \endentry
+    \entry{daniel_2022}{article}{}
+      \name{author}{4}{}{%
+        {{un=1,uniquepart=given,hash=41e73633e5829196ea365116e7b443c7}{%
+           family={Daniel},
+           familyi={D\bibinitperiod},
+           given={López-Cabrera\bibnamedelima José},
+           giveni={L\bibinithyphendelim C\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=1}}%
+        {{un=0,uniquepart=base,hash=801533977219771cd00e6117030ea2b2}{%
+           family={Pérez-Díaz},
+           familyi={P\bibinithyphendelim D\bibinitperiod},
+           given={Marlen},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=41e73633e5829196ea365116e7b443c7}{%
+           family={Daniel},
+           familyi={D\bibinitperiod},
+           given={López-Cabrera\bibnamedelima José},
+           giveni={L\bibinithyphendelim C\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=801533977219771cd00e6117030ea2b2}{%
+           family={Pérez-Díaz},
+           familyi={P\bibinithyphendelim D\bibinitperiod},
+           given={Marlen},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {2002, Centro Provincial de Ciencias Médicas Provincia de Cienfuegos}%
+      }
+      \strng{namehash}{bb618dbb8ce8dcd41cdeb26712789b60}
+      \strng{fullhash}{7e2594b171af9feb1e033e4e97d92f77}
+      \strng{bibnamehash}{7e2594b171af9feb1e033e4e97d92f77}
+      \strng{authorbibnamehash}{7e2594b171af9feb1e033e4e97d92f77}
+      \strng{authornamehash}{bb618dbb8ce8dcd41cdeb26712789b60}
+      \strng{authorfullhash}{7e2594b171af9feb1e033e4e97d92f77}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{MediSur}
+      \field{number}{2}
+      \field{title}{Inteligencia artificial explicable, una perspectiva al problema de la clasificación automática de COVID-19 mediante radiografías de tórax}
+      \field{volume}{20}
+      \field{year}{2022}
+      \field{pages}{341\bibrangedash 351}
+      \range{pages}{11}
+      \verb{urlraw}
+      \verb http://scielo.sld.cu/scielo.php?script=sci_arttext&pid=S1727-897X2022000200341&lang=pt
+      \endverb
+      \verb{url}
+      \verb http://scielo.sld.cu/scielo.php?script=sci_arttext&pid=S1727-897X2022000200341&lang=pt
+      \endverb
+    \endentry
+    \entry{Unir_2025}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=8eb33c69e3cb6df7887b0fa09586529f}{%
+           family={de},
+           familyi={d\bibinitperiod},
+           given={Equipo},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Universidad Internacional de La Rioja}%
+      }
+      \strng{namehash}{8eb33c69e3cb6df7887b0fa09586529f}
+      \strng{fullhash}{8eb33c69e3cb6df7887b0fa09586529f}
+      \strng{bibnamehash}{8eb33c69e3cb6df7887b0fa09586529f}
+      \strng{authorbibnamehash}{8eb33c69e3cb6df7887b0fa09586529f}
+      \strng{authornamehash}{8eb33c69e3cb6df7887b0fa09586529f}
+      \strng{authorfullhash}{8eb33c69e3cb6df7887b0fa09586529f}
+      \field{sortinit}{d}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{UNIR}
+      \field{month}{8}
+      \field{title}{¿Qué es la Inteligencia Artificial Explicable (XAI)?}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://www.unir.net/revista/ingenieria/inteligencia-artificial-explicable-xai-que-es/#:~:text=Para%20definir%20qu%C3%A9%20es%20la,los%20algoritmos%20de%20machine%20learning
+      \endverb
+      \verb{url}
+      \verb https://www.unir.net/revista/ingenieria/inteligencia-artificial-explicable-xai-que-es/#:~:text=Para%20definir%20qu%C3%A9%20es%20la,los%20algoritmos%20de%20machine%20learning
+      \endverb
+    \endentry
+    \entry{Diaz_Pinto_2024}{article}{}
+      \name{author}{17}{}{%
+        {{un=0,uniquepart=base,hash=cda7ab58324a69413816838fdd4c39ad}{%
+           family={Diaz-Pinto},
+           familyi={D\bibinithyphendelim P\bibinitperiod},
+           given={Andres},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b3cb32a33521393f07c2c1bfa519f33c}{%
+           family={Alle},
+           familyi={A\bibinitperiod},
+           given={Sachidanand},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d0968ce3719368d26817f02301e44c29}{%
+           family={Nath},
+           familyi={N\bibinitperiod},
+           given={Vishwesh},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=caeb0e5523b56ad22085585d7f65afa4}{%
+           family={Tang},
+           familyi={T\bibinitperiod},
+           given={Yucheng},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f9a9cbf85bffc0767eb89ec04fe437bb}{%
+           family={Ihsani},
+           familyi={I\bibinitperiod},
+           given={Alvin},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a3c6a731fa44be8327191d0ed58523c8}{%
+           family={Asad},
+           familyi={A\bibinitperiod},
+           given={Muhammad},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5387d2c9d7c24dae0973e307652b413f}{%
+           family={Pérez-García},
+           familyi={P\bibinithyphendelim G\bibinitperiod},
+           given={Fernando},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bb2db42d6c8307db692f3d0f6e09436c}{%
+           family={Mehta},
+           familyi={M\bibinitperiod},
+           given={Pritesh},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d32ec3dde5f923678d38244353a95911}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Wenqi},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6f13542e79365113e4f2f26087b30bbb}{%
+           family={Flores},
+           familyi={F\bibinitperiod},
+           given={Mona},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=930b2a18b29ddf8edf110e14b3428bfc}{%
+           family={Roth},
+           familyi={R\bibinitperiod},
+           given={Holger},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=befa5547c0c5b07d62ba6f20e5977440}{%
+           family={Vercauteren},
+           familyi={V\bibinitperiod},
+           given={Tom},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=40c221ac11c898cb10013b2468fc229b}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Daguang},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7960fee10000dde8bb88f6d93d053053}{%
+           family={Dogra},
+           familyi={D\bibinitperiod},
+           given={Prerna},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=32246aa24a3f02a73916f12a384e1707}{%
+           family={Ourselin},
+           familyi={O\bibinitperiod},
+           given={Sebastien},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4b633bc43ae852d2f51a00e4555500e1}{%
+           family={Feng},
+           familyi={F\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ef4244db6daaefdd31109b9dcbc46dde}{%
+           family={Cardoso},
+           familyi={C\bibinitperiod},
+           given={Manuel\bibnamedelima Jorge},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{0de4cd97c18852ed6457fc2ccca3d5fd}
+      \strng{fullhash}{feaa488c69cc96cf377fa1a45f0bd56f}
+      \strng{bibnamehash}{feaa488c69cc96cf377fa1a45f0bd56f}
+      \strng{authorbibnamehash}{feaa488c69cc96cf377fa1a45f0bd56f}
+      \strng{authornamehash}{0de4cd97c18852ed6457fc2ccca3d5fd}
+      \strng{authorfullhash}{feaa488c69cc96cf377fa1a45f0bd56f}
+      \field{extraname}{1}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradate}{1}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Medical Image Analysis}
+      \field{month}{05}
+      \field{title}{MONAI Label: A framework for AI-assisted interactive labeling of 3D medical images}
+      \field{volume}{95}
+      \field{year}{2024}
+      \field{pages}{103207}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.media.2024.103207
+      \endverb
+    \endentry
+    \entry{Andres_Sachidanand_2024}{article}{}
+      \name{author}{17}{}{%
+        {{un=0,uniquepart=base,hash=cda7ab58324a69413816838fdd4c39ad}{%
+           family={Diaz-Pinto},
+           familyi={D\bibinithyphendelim P\bibinitperiod},
+           given={Andres},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b3cb32a33521393f07c2c1bfa519f33c}{%
+           family={Alle},
+           familyi={A\bibinitperiod},
+           given={Sachidanand},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d0968ce3719368d26817f02301e44c29}{%
+           family={Nath},
+           familyi={N\bibinitperiod},
+           given={Vishwesh},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=caeb0e5523b56ad22085585d7f65afa4}{%
+           family={Tang},
+           familyi={T\bibinitperiod},
+           given={Yucheng},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f9a9cbf85bffc0767eb89ec04fe437bb}{%
+           family={Ihsani},
+           familyi={I\bibinitperiod},
+           given={Alvin},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a3c6a731fa44be8327191d0ed58523c8}{%
+           family={Asad},
+           familyi={A\bibinitperiod},
+           given={Muhammad},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5387d2c9d7c24dae0973e307652b413f}{%
+           family={Pérez-García},
+           familyi={P\bibinithyphendelim G\bibinitperiod},
+           given={Fernando},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bb2db42d6c8307db692f3d0f6e09436c}{%
+           family={Mehta},
+           familyi={M\bibinitperiod},
+           given={Pritesh},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d32ec3dde5f923678d38244353a95911}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Wenqi},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6f13542e79365113e4f2f26087b30bbb}{%
+           family={Flores},
+           familyi={F\bibinitperiod},
+           given={Mona},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=930b2a18b29ddf8edf110e14b3428bfc}{%
+           family={Roth},
+           familyi={R\bibinitperiod},
+           given={Holger},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=befa5547c0c5b07d62ba6f20e5977440}{%
+           family={Vercauteren},
+           familyi={V\bibinitperiod},
+           given={Tom},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=40c221ac11c898cb10013b2468fc229b}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Daguang},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7960fee10000dde8bb88f6d93d053053}{%
+           family={Dogra},
+           familyi={D\bibinitperiod},
+           given={Prerna},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=32246aa24a3f02a73916f12a384e1707}{%
+           family={Ourselin},
+           familyi={O\bibinitperiod},
+           given={Sebastien},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4b633bc43ae852d2f51a00e4555500e1}{%
+           family={Feng},
+           familyi={F\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ef4244db6daaefdd31109b9dcbc46dde}{%
+           family={Cardoso},
+           familyi={C\bibinitperiod},
+           given={Manuel\bibnamedelima Jorge},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{0de4cd97c18852ed6457fc2ccca3d5fd}
+      \strng{fullhash}{feaa488c69cc96cf377fa1a45f0bd56f}
+      \strng{bibnamehash}{feaa488c69cc96cf377fa1a45f0bd56f}
+      \strng{authorbibnamehash}{feaa488c69cc96cf377fa1a45f0bd56f}
+      \strng{authornamehash}{0de4cd97c18852ed6457fc2ccca3d5fd}
+      \strng{authorfullhash}{feaa488c69cc96cf377fa1a45f0bd56f}
+      \field{extraname}{2}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradate}{2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Medical Image Analysis}
+      \field{month}{05}
+      \field{title}{MONAI Label: A framework for AI-assisted interactive labeling of 3D medical images}
+      \field{volume}{95}
+      \field{year}{2024}
+      \field{pages}{103207}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.media.2024.103207
+      \endverb
+    \endentry
+    \entry{elliott_2024}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=5be34907993078f774b9cf3d3b671be1}{%
+           family={Elliott},
+           familyi={E\bibinitperiod},
+           given={Alan},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Universidad Nacional del Litoral}%
+      }
+      \strng{namehash}{5be34907993078f774b9cf3d3b671be1}
+      \strng{fullhash}{5be34907993078f774b9cf3d3b671be1}
+      \strng{bibnamehash}{5be34907993078f774b9cf3d3b671be1}
+      \strng{authorbibnamehash}{5be34907993078f774b9cf3d3b671be1}
+      \strng{authornamehash}{5be34907993078f774b9cf3d3b671be1}
+      \strng{authorfullhash}{5be34907993078f774b9cf3d3b671be1}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Revista Eurolatinoamericana de Derecho Administrativo}
+      \field{month}{6}
+      \field{number}{1}
+      \field{title}{La responsabilidad por la función pública: naturaleza jurídica de la responsabilidad administrativa en la jurisprudencia constitucional boliviana}
+      \field{volume}{11}
+      \field{year}{2024}
+      \field{pages}{e250\bibrangedash e250}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb https://doi.org/10.14409/redoeda.v11i1.13046
+      \endverb
+      \verb{urlraw}
+      \verb https://bibliotecavirtual.unl.edu.ar/publicaciones/index.php/Redoeda/es/article/view/13046
+      \endverb
+      \verb{url}
+      \verb https://bibliotecavirtual.unl.edu.ar/publicaciones/index.php/Redoeda/es/article/view/13046
+      \endverb
+    \endentry
+    \entry{farahani_fiok_lahijanian_karwowski_douglas_2022}{article}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=8d0ed7a4d3bffee864e15ac602599569}{%
+           family={Farahani},
+           familyi={F\bibinitperiod},
+           given={Farzad\bibnamedelima V.},
+           giveni={F\bibinitperiod\bibinitdelim V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=10ef093348d58ae466bcf9528c81f7dd}{%
+           family={Fiok},
+           familyi={F\bibinitperiod},
+           given={Krzysztof},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=fae19484df9faf9fe11f0d99cfe22361}{%
+           family={Lahijanian},
+           familyi={L\bibinitperiod},
+           given={Behshad},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=037e27b991d474ea0d025044ae4f227b}{%
+           family={Karwowski},
+           familyi={K\bibinitperiod},
+           given={Waldemar},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=35da2049560bd7d325acf3702222b513}{%
+           family={Douglas},
+           familyi={D\bibinitperiod},
+           given={Pamela\bibnamedelima K.},
+           giveni={P\bibinitperiod\bibinitdelim K\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Frontiers Media SA}%
+      }
+      \strng{namehash}{bde53cce9279bf9d08c94c95bf111a27}
+      \strng{fullhash}{18272310619ac8d0f19a4ff397bf90d1}
+      \strng{bibnamehash}{18272310619ac8d0f19a4ff397bf90d1}
+      \strng{authorbibnamehash}{18272310619ac8d0f19a4ff397bf90d1}
+      \strng{authornamehash}{bde53cce9279bf9d08c94c95bf111a27}
+      \strng{authorfullhash}{18272310619ac8d0f19a4ff397bf90d1}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Frontiers in Neuroscience}
+      \field{month}{12}
+      \field{title}{Explainable AI: A review of applications to neuroimaging data}
+      \field{volume}{16}
+      \field{year}{2022}
+      \verb{doi}
+      \verb https://doi.org/10.3389/fnins.2022.906290
+      \endverb
+      \verb{urlraw}
+      \verb https://pmc.ncbi.nlm.nih.gov/articles/PMC9793854/
+      \endverb
+      \verb{url}
+      \verb https://pmc.ncbi.nlm.nih.gov/articles/PMC9793854/
+      \endverb
+    \endentry
+    \entry{lindgren_zach_2022}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=2ac64fe3f20d05b7d3ec7a9697269cbe}{%
+           family={Lindgren},
+           familyi={L\bibinitperiod},
+           given={Erik},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a23d5e394103a0e517bc6107e11ce09b}{%
+           family={Zach},
+           familyi={Z\bibinitperiod},
+           given={Christopher},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Multidisciplinary Digital Publishing Institute}%
+      }
+      \strng{namehash}{70aa2053728e58b9dfe2a437a65e4d8b}
+      \strng{fullhash}{70aa2053728e58b9dfe2a437a65e4d8b}
+      \strng{bibnamehash}{70aa2053728e58b9dfe2a437a65e4d8b}
+      \strng{authorbibnamehash}{70aa2053728e58b9dfe2a437a65e4d8b}
+      \strng{authornamehash}{70aa2053728e58b9dfe2a437a65e4d8b}
+      \strng{authorfullhash}{70aa2053728e58b9dfe2a437a65e4d8b}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Metals}
+      \field{month}{11}
+      \field{number}{11}
+      \field{title}{Industrial X-ray Image Analysis with Deep Neural Networks Robust to Unexpected Input Data}
+      \field{volume}{12}
+      \field{year}{2022}
+      \field{pages}{1963\bibrangedash 1963}
+      \range{pages}{1}
+      \verb{doi}
+      \verb https://doi.org/10.3390/met12111963
+      \endverb
+      \verb{urlraw}
+      \verb https://hv.diva-portal.org/smash/record.jsf?pid=diva2%3A1712874&dswid=-9663
+      \endverb
+      \verb{url}
+      \verb https://hv.diva-portal.org/smash/record.jsf?pid=diva2%3A1712874&dswid=-9663
+      \endverb
+    \endentry
+    \entry{Miguel_Medina_2025}{misc}{}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Inudi.edu.pe}
+      \field{title}{Método mixto de investigación: Cuantitativo y cualitativo}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://editorial.inudi.edu.pe/index.php/editorialinudi/catalog/download/118/160/189?inline=1
+      \endverb
+      \verb{url}
+      \verb https://editorial.inudi.edu.pe/index.php/editorialinudi/catalog/download/118/160/189?inline=1
+      \endverb
+    \endentry
+    \entry{mohandas_2024}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=187e89d8dae072f4ed29aec3e529fdee}{%
+           family={Mohandas},
+           familyi={M\bibinitperiod},
+           given={Reenu},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=34c206233209cae26bbd01153cfc0f24}{%
+           family={Mongan},
+           familyi={M\bibinitperiod},
+           given={Patrick},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=098039d69b476e05f5fbbc0b2a436148}{%
+           family={Hayes},
+           familyi={H\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {MDPI AG}%
+      }
+      \strng{namehash}{40ec9d98698bc2e7d08e72b557754fea}
+      \strng{fullhash}{a15eae7c7e7acf1b536424b8e363b25f}
+      \strng{bibnamehash}{a15eae7c7e7acf1b536424b8e363b25f}
+      \strng{authorbibnamehash}{a15eae7c7e7acf1b536424b8e363b25f}
+      \strng{authornamehash}{40ec9d98698bc2e7d08e72b557754fea}
+      \strng{authorfullhash}{a15eae7c7e7acf1b536424b8e363b25f}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Sensors}
+      \field{month}{10}
+      \field{number}{20}
+      \field{title}{Ultrasonic Weld Quality Inspection Involving Strength Prediction and Defect Detection in Data-Constrained Training Environments}
+      \field{volume}{24}
+      \field{year}{2024}
+      \field{pages}{6553}
+      \range{pages}{1}
+      \verb{doi}
+      \verb https://doi.org/10.3390/s24206553
+      \endverb
+      \verb{urlraw}
+      \verb https://pmc.ncbi.nlm.nih.gov/articles/PMC11510777/
+      \endverb
+      \verb{url}
+      \verb https://pmc.ncbi.nlm.nih.gov/articles/PMC11510777/
+      \endverb
+    \endentry
+    \entry{Darlinton_2024}{document}{}
+      \list{publisher}{1}{%
+        {UNAD, ECISA, TRID}%
+      }
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labeltitlesource}{title}
+      \field{title}{Optimización basada en algoritmos de IA para la mejora de la calidad de imagen en tomografía computarizada}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://repository.unad.edu.co/bitstream/handle/10596/65625/rserranose.pdf?sequence=4&isAllowed=y
+      \endverb
+      \verb{url}
+      \verb https://repository.unad.edu.co/bitstream/handle/10596/65625/rserranose.pdf?sequence=4&isAllowed=y
+      \endverb
+    \endentry
+    \entry{pascual_2023}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=eb75061f42bf26e772553eaf33367c0e}{%
+           family={Pascual},
+           familyi={P\bibinitperiod},
+           given={Luis},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{eb75061f42bf26e772553eaf33367c0e}
+      \strng{fullhash}{eb75061f42bf26e772553eaf33367c0e}
+      \strng{bibnamehash}{eb75061f42bf26e772553eaf33367c0e}
+      \strng{authorbibnamehash}{eb75061f42bf26e772553eaf33367c0e}
+      \strng{authornamehash}{eb75061f42bf26e772553eaf33367c0e}
+      \strng{authorfullhash}{eb75061f42bf26e772553eaf33367c0e}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Umsa.bo}
+      \field{title}{Mejoramiento del factor de potencia para la empresa Laboratorios Farmacéuticos Vita.}
+      \field{year}{2023}
+      \verb{doi}
+      \verb http://repositorio.umsa.bo/xmlui/handle/123456789/31245
+      \endverb
+      \verb{urlraw}
+      \verb https://repositorio.umsa.bo/handle/123456789/31245
+      \endverb
+      \verb{url}
+      \verb https://repositorio.umsa.bo/handle/123456789/31245
+      \endverb
+    \endentry
+    \entry{pedro_márquez_segovia_ramírez_2025}{book}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=18a21dc1be0ea3c7e3059105323859a6}{%
+           family={Pedro},
+           familyi={P\bibinitperiod},
+           given={Fausto},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c98b3461a949985ea44d29affb64231d}{%
+           family={Márquez},
+           familyi={M\bibinitperiod},
+           given={García},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bd37a0add035c9543e81ac8daf9047af}{%
+           family={Segovia\bibnamedelima Ramírez},
+           familyi={S\bibinitperiod\bibinitdelim R\bibinitperiod},
+           given={Isaac},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{a46f3f5dec16a5217f5f1a1bdf5fdee3}
+      \strng{fullhash}{54f071c90eb681ab684058f6d7f4195e}
+      \strng{bibnamehash}{54f071c90eb681ab684058f6d7f4195e}
+      \strng{authorbibnamehash}{54f071c90eb681ab684058f6d7f4195e}
+      \strng{authornamehash}{a46f3f5dec16a5217f5f1a1bdf5fdee3}
+      \strng{authorfullhash}{54f071c90eb681ab684058f6d7f4195e}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labeldatesource}{nodate}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{ARTÍCULOS TÉCNICOS 18 END no 97}
+      \verb{urlraw}
+      \verb https://ingenium.uclm.es/wp-content/uploads/2022/02/R97-AT1.-Analisis-e.-arte-Parte-1a.pdf
+      \endverb
+      \verb{url}
+      \verb https://ingenium.uclm.es/wp-content/uploads/2022/02/R97-AT1.-Analisis-e.-arte-Parte-1a.pdf
+      \endverb
+    \endentry
+    \entry{poudel_jha_meeker_phan_bhowmik_2025}{article}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=ec8946dadcfcc514a8ab2fea1b041eba}{%
+           family={Poudel},
+           familyi={P\bibinitperiod},
+           given={Lokendra},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=047ba2b59fe023b21d755e66de2e67ff}{%
+           family={Jha},
+           familyi={J\bibinitperiod},
+           given={Sushant},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2062ec65a4ea399ff1286269adb1c321}{%
+           family={Meeker},
+           familyi={M\bibinitperiod},
+           given={Ryan},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=db3dc06429d21637942c27f41af89cd8}{%
+           family={Phan},
+           familyi={P\bibinitperiod},
+           given={Duy-Nhat},
+           giveni={D\bibinithyphendelim N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9321f33b952909f1914f91453477ab3c}{%
+           family={Bhowmik},
+           familyi={B\bibinitperiod},
+           given={Rahul},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{2}{%
+        {Springer Science}%
+        {Business Media LLC}%
+      }
+      \strng{namehash}{91fe4762e2f040ac31e975f8fde7fc03}
+      \strng{fullhash}{fd86550accb625ca1ed69154a2af5d92}
+      \strng{bibnamehash}{fd86550accb625ca1ed69154a2af5d92}
+      \strng{authorbibnamehash}{fd86550accb625ca1ed69154a2af5d92}
+      \strng{authornamehash}{91fe4762e2f040ac31e975f8fde7fc03}
+      \strng{authorfullhash}{fd86550accb625ca1ed69154a2af5d92}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Intelligent Manufacturing}
+      \field{month}{2}
+      \field{title}{Advanced predictive quality assessment for ultrasonic additive manufacturing with deep learning model}
+      \field{year}{2025}
+      \verb{doi}
+      \verb https://doi.org/10.1007/s10845-025-02582-9
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2410.24055
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2410.24055
+      \endverb
+    \endentry
+    \entry{project-monai_2023}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=a10d918c9e28e4f4445ce9b93055ff68}{%
+           family={Project-MONAI},
+           familyi={P\bibinithyphendelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{a10d918c9e28e4f4445ce9b93055ff68}
+      \strng{fullhash}{a10d918c9e28e4f4445ce9b93055ff68}
+      \strng{bibnamehash}{a10d918c9e28e4f4445ce9b93055ff68}
+      \strng{authorbibnamehash}{a10d918c9e28e4f4445ce9b93055ff68}
+      \strng{authornamehash}{a10d918c9e28e4f4445ce9b93055ff68}
+      \strng{authorfullhash}{a10d918c9e28e4f4445ce9b93055ff68}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{GitHub}
+      \field{month}{10}
+      \field{title}{GitHub - Project-MONAI/MONAILabel: MONAI Label is an intelligent open source image labeling and learning tool.}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://github.com/Project-MONAI/MONAILabel
+      \endverb
+      \verb{url}
+      \verb https://github.com/Project-MONAI/MONAILabel
+      \endverb
+    \endentry
+    \entry{rojas-barrientos_2024}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=bae86f988cabb7096389c28129397271}{%
+           family={Rojas-Barrientos},
+           familyi={R\bibinithyphendelim B\bibinitperiod},
+           given={Sergio},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{bae86f988cabb7096389c28129397271}
+      \strng{fullhash}{bae86f988cabb7096389c28129397271}
+      \strng{bibnamehash}{bae86f988cabb7096389c28129397271}
+      \strng{authorbibnamehash}{bae86f988cabb7096389c28129397271}
+      \strng{authornamehash}{bae86f988cabb7096389c28129397271}
+      \strng{authorfullhash}{bae86f988cabb7096389c28129397271}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Revista Eurolatinoamericana de Derecho Administrativo}
+      \field{number}{1}
+      \field{title}{La actividad administrativa extemporánea en Bolivia: una jurisprudencia tolerante con la Administración contra legem}
+      \field{volume}{11}
+      \field{year}{2024}
+      \field{pages}{-}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb https://doi.org/10.14409/redoeda.v11i1.13493.
+      \endverb
+      \verb{urlraw}
+      \verb https://www.scielo.org.ar/scielo.php?pid=S2362-583X2024000100009&script=sci_abstract&tlng=en
+      \endverb
+      \verb{url}
+      \verb https://www.scielo.org.ar/scielo.php?pid=S2362-583X2024000100009&script=sci_abstract&tlng=en
+      \endverb
+      \warn{\item Range field 'pages' in entry 'rojas-barrientos_2024' is malformed, falling back to literal}
+    \endentry
+    \entry{Sanchez_R_llerena_I_2023}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=3969a4be907905fe8af30eb59a32456a}{%
+           family={Sanchez\bibnamedelima R.},
+           familyi={S\bibinitperiod\bibinitdelim R\bibinitperiod},
+           given={Jonathan},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a68f06a39dd976b001a129eb0f8cf507}{%
+           family={Llerena\bibnamedelima I.},
+           familyi={L\bibinitperiod\bibinitdelim I\bibinitperiod},
+           given={Joe},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{8d459091ef026b49f8f3ab71401103d7}
+      \strng{fullhash}{8d459091ef026b49f8f3ab71401103d7}
+      \strng{bibnamehash}{8d459091ef026b49f8f3ab71401103d7}
+      \strng{authorbibnamehash}{8d459091ef026b49f8f3ab71401103d7}
+      \strng{authornamehash}{8d459091ef026b49f8f3ab71401103d7}
+      \strng{authorfullhash}{8d459091ef026b49f8f3ab71401103d7}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Revista InGenio}
+      \field{month}{7}
+      \field{number}{2}
+      \field{title}{Revisión de la literatura sobre el uso del aprendizaje profundo enfocado en sistemas de inspección ópticos automatizados para la detección de defectos superficiales en el sector de la manufactura}
+      \field{volume}{6}
+      \field{year}{2023}
+      \field{pages}{1\bibrangedash 19}
+      \range{pages}{19}
+      \verb{doi}
+      \verb https://doi.org/10.18779/ingenio.v6i2.680
+      \endverb
+    \endentry
+    \entry{takase_2023}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=822918dbf0d1bb47df87a3948ebc271e}{%
+           family={Takase},
+           familyi={T\bibinitperiod},
+           given={Aya},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Rigaku Americas - A Division of Rigaku Americas Holding}%
+      }
+      \strng{namehash}{822918dbf0d1bb47df87a3948ebc271e}
+      \strng{fullhash}{822918dbf0d1bb47df87a3948ebc271e}
+      \strng{bibnamehash}{822918dbf0d1bb47df87a3948ebc271e}
+      \strng{authorbibnamehash}{822918dbf0d1bb47df87a3948ebc271e}
+      \strng{authornamehash}{822918dbf0d1bb47df87a3948ebc271e}
+      \strng{authorfullhash}{822918dbf0d1bb47df87a3948ebc271e}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Rigaku.com}
+      \field{month}{1}
+      \field{title}{Industrial vs. Medical CT Scanners: What Are the Differences?}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://rigaku.com/products/imaging-ndt/x-ray-ct/learning/blog/industrial-vs-medical-ct-scanners#:~:text=Allowed%20dosage
+      \endverb
+      \verb{url}
+      \verb https://rigaku.com/products/imaging-ndt/x-ray-ct/learning/blog/industrial-vs-medical-ct-scanners#:~:text=Allowed%20dosage
+      \endverb
+    \endentry
+    \entry{Miguel_Vera_MgSc_PhD_2024}{book}{}
+      \name{author}{11}{}{%
+        {{un=0,uniquepart=base,hash=c31f757373eab03c14b41249eb2792b5}{%
+           family={Vera},
+           familyi={V\bibinitperiod},
+           given={Miguel},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=aa4ba6b759a185e8846d670c23e4e65c}{%
+           family={Huérfano},
+           familyi={H\bibinitperiod},
+           given={Yoleidy},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8531ebca4e796f806aed2dca44818f13}{%
+           family={Contreras},
+           familyi={C\bibinitperiod},
+           given={Julio},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0e708cffaad78ffe84194aa934913e73}{%
+           family={Vera},
+           familyi={V\bibinitperiod},
+           given={María},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=84cdb34d4934c3c6744d6421a2067555}{%
+           family={Mar3},
+           familyi={M\bibinitperiod},
+           given={Atilio},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a96a4c5c35715664c5190ac5acb6b3c4}{%
+           family={Chacón},
+           familyi={C\bibinitperiod},
+           given={José},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=219c2a2c45ad1942534dbd8478ff6669}{%
+           family={Wilches-Durán},
+           familyi={W\bibinithyphendelim D\bibinitperiod},
+           given={Sandra},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1836016d744c4d225eedda1fb46db52a}{%
+           family={Graterol-Rivas},
+           familyi={G\bibinithyphendelim R\bibinitperiod},
+           given={Modesto},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6f56ce1420a286df3296c30f73a9f191}{%
+           family={Riaño-Wilches},
+           familyi={R\bibinithyphendelim W\bibinitperiod},
+           given={Daniela},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a9ad0c9703f7fff9a5e4fa046938a4c2}{%
+           family={Rojas},
+           familyi={R\bibinitperiod},
+           given={Joselyn},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5a3a5524340e678d2864a45c09cf7848}{%
+           family={Bermúdez},
+           familyi={B\bibinitperiod},
+           given={Valmore},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{ea865ae36869f8dde3c9554dab67a421}
+      \strng{fullhash}{fcb49032c194f3346cc2ba5da14ed971}
+      \strng{bibnamehash}{fcb49032c194f3346cc2ba5da14ed971}
+      \strng{authorbibnamehash}{fcb49032c194f3346cc2ba5da14ed971}
+      \strng{authornamehash}{ea865ae36869f8dde3c9554dab67a421}
+      \strng{authorfullhash}{fcb49032c194f3346cc2ba5da14ed971}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{labeldatesource}{nodate}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Segmentación automática de la arteria aorta torácica en imágenes de tomografía computarizada cardiaca}
+      \verb{urlraw}
+      \verb https://www.revhipertension.com/rlh_11_4_2016/segmentacion_automatica_arteria.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.revhipertension.com/rlh_11_4_2016/segmentacion_automatica_arteria.pdf
+      \endverb
+    \endentry
+    \entry{zhang_2025}{article}{}
+      \name{author}{8}{}{%
+        {{un=0,uniquepart=base,hash=9ec479cc1fd34d627b4085f7e15527e1}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Wenpin},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c8962301f564cbe7b4b972f9a0767cb5}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Wangwang},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3fdb97238ade5d1398529f785e790ad6}{%
+           family={Yu},
+           familyi={Y\bibinitperiod},
+           given={Xinghua},
+           giveni={X\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=110db7d0f33f53dc1182ca2651e0f2a4}{%
+           family={Kang},
+           familyi={K\bibinitperiod},
+           given={Dugang},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1a3aaab59e8fbb45b7d277fe6d84a63d}{%
+           family={Xiong},
+           familyi={X\bibinitperiod},
+           given={Zhi},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0261af8ffb5922c5da696e41d4389d06}{%
+           family={Lv},
+           familyi={L\bibinitperiod},
+           given={Xiao},
+           giveni={X\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f300aafcc35c75152afb1a85de17d1e1}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Song},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=92e14a8c19eb5a0c7c199c85db74f106}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Yan},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Multidisciplinary Digital Publishing Institute}%
+      }
+      \strng{namehash}{07d086c7cc2c7b79a578576f90643e61}
+      \strng{fullhash}{d7bf49536f54836373fc7dca4ffa5ed3}
+      \strng{bibnamehash}{d7bf49536f54836373fc7dca4ffa5ed3}
+      \strng{authorbibnamehash}{d7bf49536f54836373fc7dca4ffa5ed3}
+      \strng{authornamehash}{07d086c7cc2c7b79a578576f90643e61}
+      \strng{authorfullhash}{d7bf49536f54836373fc7dca4ffa5ed3}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Coatings}
+      \field{month}{7}
+      \field{number}{7}
+      \field{title}{Deep Learning-Based Automated Detection of Welding Defects in Pressure Pipeline Radiograph}
+      \field{volume}{15}
+      \field{year}{2025}
+      \field{pages}{808\bibrangedash 808}
+      \range{pages}{1}
+      \verb{doi}
+      \verb https://doi.org/10.3390/coatings15070808
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mdpi.com/2079-6412/15/7/808#:~:text=This%20study%20applies%20deep%20learning,of%20pipelines%20of%20pressure%20equipment
+      \endverb
+      \verb{url}
+      \verb https://www.mdpi.com/2079-6412/15/7/808#:~:text=This%20study%20applies%20deep%20learning,of%20pipelines%20of%20pressure%20equipment
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

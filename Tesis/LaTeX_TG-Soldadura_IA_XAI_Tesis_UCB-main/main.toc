@@ -1,0 +1,88 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\numberline {1}Análisis del problema de investigación}{1}{}%
+\contentsline {subsection}{\numberline {1.1}Descripción del Problema}{1}{}%
+\contentsline {subsection}{\numberline {1.2}Situación o Fenómeno}{1}{}%
+\contentsline {subsection}{\numberline {1.3}Incertidumbre y afectación}{2}{}%
+\contentsline {subsection}{\numberline {1.4}Punto de Partida y Definición}{3}{}%
+\contentsline {subsection}{\numberline {1.5}Importancia de Investigar}{3}{}%
+\contentsline {section}{\numberline {2}Estructura general de la Investigación}{4}{}%
+\contentsline {subsection}{\numberline {2.1}Introducción}{4}{}%
+\contentsline {subsubsection}{\numberline {2.1.1}Presentación del tema de investigación}{4}{}%
+\contentsline {subsubsection}{\numberline {2.1.2}Antecedentes y contexto del problema}{4}{}%
+\contentsline {subsection}{\numberline {2.2}Formulación del Problema}{4}{}%
+\contentsline {subsection}{\numberline {2.3}Pregunta de investigación}{5}{}%
+\contentsline {subsection}{\numberline {2.4}Hipótesis}{5}{}%
+\contentsline {subsection}{\numberline {2.5}Objetivos de investigación}{7}{}%
+\contentsline {subsubsection}{\numberline {2.5.1}Objetivo general}{7}{}%
+\contentsline {subsubsection}{\numberline {2.5.2}Objetivos específicos}{7}{}%
+\contentsline {subsection}{\numberline {2.6}Delimitación de la investigación}{8}{}%
+\contentsline {subsubsection}{\numberline {2.6.1}Límitaciones de estudio}{8}{}%
+\contentsline {subsubsection}{\numberline {2.6.2}Alcances}{9}{}%
+\contentsline {subsection}{\numberline {2.7}Justificación}{9}{}%
+\contentsline {subsubsection}{\numberline {2.7.1}Justificación Técnica}{10}{}%
+\contentsline {subsubsection}{\numberline {2.7.2}Justificación Socioeconómica}{10}{}%
+\contentsline {subsection}{\numberline {2.8}Importancia del estudio}{11}{}%
+\contentsline {section}{\numberline {3}Marco Teórico}{12}{}%
+\contentsline {subsection}{\numberline {3.1}Inspección automatizada de defectos en soldadura}{12}{}%
+\contentsline {subsection}{\numberline {3.2}Ensayos No Destructivos (END) en la inspección de soldaduras}{12}{}%
+\contentsline {subsection}{\numberline {3.3}Antecedentes y referencias}{13}{}%
+\contentsline {subsubsection}{\numberline {3.3.1}Antecedentes (2020-2025)}{13}{}%
+\contentsline {subsection}{\numberline {3.4}Estado del arte}{15}{}%
+\contentsline {subsection}{\numberline {3.5}Desarrollo de teorías y modelos}{18}{}%
+\contentsline {subsubsection}{\numberline {3.5.1}Bases teóricas}{18}{}%
+\contentsline {subsection}{\numberline {3.6}Definición de términos básicos}{23}{}%
+\contentsline {subsubsection}{\numberline {3.6.1}Marco Conceptual}{23}{}%
+\contentsline {subsubsection}{\numberline {3.6.2}Pipeline del Sistema Propuesto}{24}{}%
+\contentsline {section}{\numberline {4}Marco tecnológico}{25}{}%
+\contentsline {subsection}{\numberline {4.1}Tecnologías utilizadas y tendencias}{26}{}%
+\contentsline {subsubsection}{\numberline {4.1.1}Contexto de Ingeniería: }{27}{}%
+\contentsline {subsubsection}{\numberline {4.1.2}Características de las soldaduras y materiales: }{27}{}%
+\contentsline {subsection}{\numberline {4.2}Comparación de tecnologías}{28}{}%
+\contentsline {subsubsection}{\numberline {4.2.1}TC Industrial vs. Médica: }{28}{}%
+\contentsline {subsubsection}{\numberline {4.2.2}Ultrasonido vs. Radiografía: }{29}{}%
+\contentsline {subsubsection}{\numberline {4.2.3}Segmentación Manual vs. IA: }{29}{}%
+\contentsline {subsubsection}{\numberline {4.2.4}Redes 2D vs. 3D CNN: }{29}{}%
+\contentsline {subsubsection}{\numberline {4.2.5}Comparación de Tecnologías Clave}{29}{}%
+\contentsline {section}{\numberline {5}Marco metodológico}{33}{}%
+\contentsline {subsection}{\numberline {5.1}Enfoque de la investigación}{33}{}%
+\contentsline {subsubsection}{\numberline {5.1.1}Justificación del enfoque mixto y uso de métodos cuantitativos y cualitativos}{33}{}%
+\contentsline {subsection}{\numberline {5.2}Método de investigación}{33}{}%
+\contentsline {subsubsection}{\numberline {5.2.1}Método experimental}{34}{}%
+\contentsline {subsubsection}{\numberline {5.2.2}Herramientas y entornos de prueba}{36}{}%
+\contentsline {subsection}{\numberline {5.3}Diseño de la investigación}{36}{}%
+\contentsline {subsubsection}{\numberline {5.3.1}Evaluación de desempeño (métricas cuantitativas)}{37}{}%
+\contentsline {subsubsection}{\numberline {5.3.2}Evaluación cualitativa interpretativa (visualización de regiones relevantes)}{37}{}%
+\contentsline {subsection}{\numberline {5.4}Técnica de la investigación}{37}{}%
+\contentsline {subsection}{\numberline {5.5}Plan de trabajo}{37}{}%
+\contentsline {subsection}{\numberline {5.6}Alcance de la investigación}{38}{}%
+\contentsline {subsection}{\numberline {5.7}Universo, población y muestra}{38}{}%
+\contentsline {subsection}{\numberline {5.8}Hipótesis estadística}{38}{}%
+\contentsline {subsection}{\numberline {5.9}Arquitectura del sistema propuesto}{39}{}%
+\contentsline {section}{\numberline {6}Marco legal}{42}{}%
+\contentsline {subsection}{\numberline {6.1}Fundamentación normativa general}{42}{}%
+\contentsline {subsection}{\numberline {6.2}Normativa técnica aplicable a soldadura e inspección}{42}{}%
+\contentsline {subsection}{\numberline {6.3}Normativa relacionada con el uso de IA y datos técnicos}{43}{}%
+\contentsline {subsection}{\numberline {6.4}Normativa boliviana aplicable}{44}{}%
+\contentsline {subsection}{\numberline {6.5}Consideraciones éticas y legales en la aplicación de IA}{44}{}%
+\contentsline {subsection}{\numberline {6.6}Responsabilidad Legal y Administrativa en Procesos de Inspección}{44}{}%
+\contentsline {section}{\numberline {7}Resultados y Discución}{46}{}%
+\contentsline {subsection}{\numberline {7.1}Resultados Cuantitativos}{46}{}%
+\contentsline {subsection}{\numberline {7.2}Resultados Cualitativos}{46}{}%
+\contentsline {subsection}{\numberline {7.3}Desempeño del modelo CNN-3D en detección volumétrica de defectos y análisis descriptivo de las métricas de rendimiento}{47}{}%
+\contentsline {subsection}{\numberline {7.4}Consistencia interna entre métricas}{47}{}%
+\contentsline {subsection}{\numberline {7.5}Visualización de métricas principales}{48}{}%
+\contentsline {subsection}{\numberline {7.6}Validación del protocolo experimental}{48}{}%
+\contentsline {subsection}{\numberline {7.7}Discusión de Resultados}{53}{}%
+\contentsline {section}{\numberline {8}PRUEBA PILOTO Y VALIDACIÓN CUALITATIVA}{53}{}%
+\contentsline {subsection}{\numberline {8.1}Diseño de la Prueba Piloto}{53}{}%
+\contentsline {subsection}{\numberline {8.2}Validación Cualitativa}{54}{}%
+\contentsline {section}{\numberline {9}Conclusiones y Recomendaciones}{56}{}%
+\contentsline {subsection}{\numberline {9.1}Conclusiones}{56}{}%
+\contentsline {subsection}{\numberline {9.2}Recomendaciones}{56}{}%
+\contentsline {chapter}{Bibliograf\'{\i }a}{57}{}%
+\contentsline {section}{Anexos}{60}{}%
+\contentsline {section}{Anexos Gráficos}{66}{}%
+\contentsline {subsection}{Anexo Gráfico A: Preparación y Conversión de Datos}{66}{}%
+\contentsline {subsection}{Anexo Gráfico B: Preprocesamiento y Normalización}{67}{}%
+\contentsline {subsection}{Anexo Gráfico C: Segmentación Automática y Manual}{68}{}%
+\contentsline {subsection}{Anexo Gráfico D: Análisis e Interpretabilidad}{69}{}%

@@ -1,0 +1,1873 @@
+% Archivo principal: main.tex
+\documentclass[12pt,letterpaper]{report}
+%---------------------------------------------------------------------
+% Paquetes
+%---------------------------------------------------------------------
+\usepackage[justification=centering]{caption}
+\usepackage{multicol}
+\usepackage{pdfpages}
+\usepackage{ragged2e}
+%\usepackage{geometry}
+%\geometry{a4paper, margin=2.5cm}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{placeins}
+\usepackage{needspace} % ← clave
+\usepackage{setspace}
+\usepackage{times}
+\usepackage{adjustbox}
+\usepackage{float}
+
+%\usepackage[colorlinks=true, citecolor=blue]{hyperref}
+\usepackage[
+backend=biber,
+style = apa,
+sortcites,
+url = true
+]{biblatex}
+\addbibresource{biblio.bib}
+
+%---------------------------------------------------------------------
+% Importar configuración externa
+%---------------------------------------------------------------------
+\input{configuracion}
+\renewcommand{\cfttabpresnum}{Tabla ~ } % Prefijo: "Tabla "
+\renewcommand{\cfttabaftersnum}{: }   % Sufijo: ": "
+\setlength{\cfttabnumwidth}{4em} 
+%---------------------------------------------------------------------
+% Definir datos del documento
+%---------------------------------------------------------------------
+\departamento{Ciencias de la Tecnología e Innovación}
+\titulo{SISTEMA INSPECTOR DE DEFECTOS EN SOLDADURA CON EXPLICABILIDAD XAI Y VALIDACIÓN NDT MEDIANTE CNN 3D Y TOMOGRAFIA COMPUTARIZADA}
+\autor{OCAMPO YUCA JOSUE}
+\tutor{MENDOZA JURADO HELMER FELLMAN}
+\fecha{\number\year}
+\carrera{Ingeniería Mecatrónica}
+%---------------------------------------------------------------------
+% Ajustes de numeración y estilos de página
+%---------------------------------------------------------------------
+\setcounter{secnumdepth}{5}  % Hasta subparagraph numerado
+\fancypagestyle{inicio}{
+  \fancyhf{} % Limpia encabezados y pies
+  % Define el encabezado a la izquierda tanto para páginas pares como impares
+  \fancyhead[LO,LE]{Mi Encabezado Personalizado}
+  \renewcommand{\headrulewidth}{0.4pt} % Línea de separación (opcional)
+}
+%---------------------------------------------------------------------
+% Inicio documento
+%---------------------------------------------------------------------
+\begin{document}
+	
+	%---------------------------------------------------------------------
+	% Portadas
+	%---------------------------------------------------------------------
+	\caratulaTapa
+	\caratulaContenido
+	\newpage
+	\flushright
+	\section*{Pensamiento}
+	Este trabajo es fruto de la curiosidad constante, del disernimiento y la convicción de que el análisis riguroso puede iluminar incluso los rincones más complejos de nuestro entendimiento. Espero que estas páginas contribuyan modestamente a la reflexión y al avance del conocimiento en el área explorada.
+	\thispagestyle{empty}
+	\newpage
+	\section*{Dedicatoria}
+	Con profundo cariño y gratitud, dedico esta tesis a mis padres Joel Ocanpo y Nelly Yuca, cuyo amor, apoyo incondicional, inspiración y aliento fueron pilares fundamentales en este largo camino. 
+	\thispagestyle{empty}
+	\newpage
+	\section*{Agradecimientos}
+	Doy gracias a Dios,  mi familia, empresas que de algún modo dieron su apoyo, guía, paciencia y generosidad intelectual a lo largo  de la investigación por su apoyo y colaboración.
+	A mi pareja Vania Celeste Caliva por acompañarme convertirse en un pilar fundamental en mi vida, amigos y compañeros por la amistad brindada durante todos estos años.
+	A la excelencia docente de la UCB Sede Tarija por ser un apoyo y guía en el proceso de mi de Tesis de grado.
+	\thispagestyle{empty}
+	\newpage
+	\clearpage
+	\pagestyle{empty}
+	%---------------------------------------------------------------------
+	% Insertar artículo IEEE (compilado por separado)
+	%---------------------------------------------------------------------
+	{
+	\includepdf[pages=-,scale=1]{IEEE/IEEE-conference-template-062824.pdf}
+	}
+	
+	\newpage
+	%---------------------------------------------------------------------
+	% Resumen Ejecutivo
+	%---------------------------------------------------------------------
+	\begin{center}
+	\section*{Resumen Ejecutivo}
+	\end{center}
+	\begin{justify}
+	La detección de defectos en uniones soldadas es crucial en sectores industriales críticos como en el transporte de carburantes y gasoductos, una inspección automatizada mediante Inteligencia Artificial (IA) está actualmente en campo abierto a investigación, esta Tesis valida el uso combinado de Redes Neuronales Convolucionales 3D (CNN 3D) y Tomografía Computarizada (TC) para inspeccionar la estructura interna en soldaduras, la tecnología TC ha mejorado significativamente la detección de defectos en soldaduras industriales, en esta Tesis se abordó una visión profunda a la naturaleza de "caja negra"  de estos modelos tan avanzados derivando así un diseño de Explicabilidad XAI, contrarrestando la generación de desconfianza y dificultad en su adopción en aplicaciones críticas, bajo completo uso de un operador que no comprende el razonamiento detrás de las predicciones del modelo, se evaluó el desarrollo de Sistemas Inspectores Explicables (EIS) que integran técnicas de IA con el objetivo de validar la composición volumétrica con la obtención de parámetros, aumentando la transparencia y la confianza, con métodos XAI post-hoc (Grad-CAM, SHAP) \parencite{farahani_fiok_lahijanian_karwowski_douglas_2022} y arquitecturas intrínsecamente interpretables (MONAILabel, DeepEdit, Segmentación 3D), para proporcionar explicaciones fiables, comprensibles y accionables sobre la detección de defectos. Se evaluó su impacto en la confianza del operador y la toma de decisiones mediante métricas computacionales y estudios centrados en el humano radicando en el uso de un motor de etiquetado y aprendizaje asistido por IA con aprendizaje activo para optimizar el proceso creando un conjunto de datos anotados.
+	\begin{center}
+	\section*{Palabras Claves}
+	\end{center}
+	Inteligencia Artificial Explicable (XAI), Inspección de Soldaduras, Tomografía Computarizada (TC), Redes Neuronales Convolucionales 3D (CNN 3D), Detección de Defectos, MONAILabel. 
+	\end{justify}
+	\thispagestyle{empty}
+	\newpage
+	%---------------------------------------------------------------------
+	% Abstract
+	%---------------------------------------------------------------------
+	\begin{center}
+	\section*{Abstract}
+	\end{center}
+	\begin{justify}
+	The detection of defects in welded joints is crucial in critical industrial sectors such as fuel transport and gas pipelines. Automated inspection using Artificial Intelligence (AI) is currently being researched in the field. This thesis validates the combined use of 3D Convolutional Neural Networks (3D CNN) and Computed Tomography (CT) to validate the internal structure of welds. CT technology has significantly improved the detection of defects in industrial welds. This thesis took an in-depth look at the “black box” nature of these advanced models, deriving an XAI (Explainable AI) design to counteract the mistrust and difficulty in adopting them in critical applications, where operators do not fully understand the reasoning behind the model's predictions. The development of Explainable Inspection Systems (EIS) that integrate AI techniques was evaluated with the aim of validating volumetric composition by obtaining parameters, increasing transparency and trust, with post-hoc XAI methods (Grad-CAM, SHAP) \parencite{farahani_fiok_lahijanian_karwowski_douglas_2022} and intrinsically interpretable architectures (MONAILabel, DeepEdit, 3D Segmentation) to provide reliable, understandable, and actionable explanations about defect detection. Its impact on operator confidence and decision-making was evaluated using computational metrics and human-centered studies based on the use of an AI-assisted labeling and learning engine with active learning to optimize the process by creating an annotated dataset.
+	\end{justify}
+	\centering \section*{Keywords}
+	\begin{justify}
+	Explainable Artificial Intelligence (XAI), Weld Inspection, Computed Tomography (CT), 3D Convolutional Neural Networks (3D CNN), Defect Detection, MONAILabel.
+	\end{justify}
+	\thispagestyle{empty}
+	\newpage
+	
+%---------------------------------------------------------------------
+% Índices (índice general, figuras, tablas)
+%---------------------------------------------------------------------
+	\configurarIndices
+    \tableofcontents
+    \thispagestyle{empty}
+    \newpage
+    \listoffigures
+    \thispagestyle{empty}
+    \newpage
+    \listoftables
+    \thispagestyle{empty}
+    \newpage
+	
+	%---------------------------------------------------------------------
+	% Iniciar numeración normal
+	%---------------------------------------------------------------------
+	\iniciarNumeracion
+	%---------------------------------------------------------------------
+	% Secciones principales
+	%---------------------------------------------------------------------
+	\renewcommand{\thesection}{\arabic{section}}
+	\begin{center}
+	\section{Análisis del problema de investigación}
+	\end{center}
+	\subsection{Descripción del Problema}
+	\begin{justify}
+	Los procesos de inspección de soldaduras mediante Ensayos No Destructivos (END) han enfrentado una creciente complejidad en los últimos años debido a la necesidad de garantizar niveles elevados de seguridad estructural y mayor trazabilidad en la industria 4.0. No obstante, los procedimientos convencionales actuales —como ultrasonido, radiografía, partículas magnéticas o termografía— manifiestan serias limitaciones en la detección precisa y cuantificación interna de defectos, haciendo énfasis en uniones críticas o geometrías complejas.
+	Para variar, a todo este dilema se le suma la dificultad de interpretación de operadores, cuya evaluación depende en gran medida de la experiencia individual y de la calidad de las imágenes obtenidas, lo que puede llevar a errores de diagnóstico y retrasos en los procesos de control de calidad con pérdidas económicas asociadas.
+	El incremento en el volumen de datos generados por nuevas modalidades de inspección volumétrica, como la Tomografía Computarizada (TC) industrial, plantea desafíos en cuanto a procesamiento, análisis e interpretación eficiente de la información. Surge así la necesidad de explorar enfoques inteligentes que permitan comprender y explicar el comportamiento de los modelos de detección automática de defectos, promoviendo la confianza del operador y una toma de decisiones más fundamentada dentro de entornos industriales críticos.
+	\end{justify}
+	\centering \subsection{Situación o Fenómeno}
+	\begin{justify}
+	La industria moderna enfrenta crecientes desafíos en la inspección de soldaduras debido al material, la presencia de defectos internos que comprometen la seguridad estructural especialmente en la Aleación 1010 y electrodos usados para unir este material.
+	Los métodos de ensayos no destructivos tradicionales detallados en el marco teórico, aunque eficaces, presentan limitaciones en resolución, costo y tiempo de inspección. Entre las alternativas actuales se encuentran técnicas avanzadas de análisis tridimensional que ofrecen una visión más detallada de la estructura interna de las uniones soldadas. Sin embargo, el análisis manual de estos volúmenes resulta muy dependiente de la experiencia del especialista.
+	En este contexto, las redes neuronales convolucionales 3D permiten automatizar la detección de defectos con alta precisión.
+	La incorporación de técnicas de explicabilidad (XAI) aporta confianza y transparencia al proceso, favoreciendo su viabilidad industrial.
+	Es importante destacar que la opacidad o naturaleza generada de esta "caja negra" de los modelos avanzados de IA, como las redes neuronales profundas, utilizados en sistemas de inspección automatizada, particularmente en la inspección de soldaduras mediante TC industrial, a la cuál irá centrada, ha revolucionado bastante en países de Europa y Asia, aunque estos modelos logran alta precisión predictiva, su funcionamiento interno y las razones detrás de sus decisiones (p. ej., clasificar una soldadura como defectuosa) no son fácilmente comprensibles para los operadores humanos, ni para la validación de la estructura interna de los distintos materiales.
+	\end{justify}
+	\subsection{Incertidumbre y afectación}
+	\begin{justify}
+	En el mundo de hoy existe un mayor énfasis en la necesidad de la calidad y
+	la calidad de la soldadura es una parte importante en el esfuerzo global de
+	la calidad. La preocupación por productos de mayor calidad se debe a
+	varios factores como son económicos, seguridad, competencia global y el uso de diseños sofisticados.
+	Aun cuando no es el único responsable de lograr la calidad de la soldadura,
+	el inspector de soldadura juega un papel muy importante en cualquier
+	programa de control de calidad exitoso.
+	En realidad mucha gente participa en la creación de un producto de calidad,
+	sin embargo el inspector de soldadura es uno de los individuos de la "línea
+	de fuego" que debe revisar que todos los pasos de fabricación han sido
+	completados en forma correcta, de acuerdo a los códigos Ó especificaciones existentes(ver fig. 1).
+	\end{justify}
+	\par\vspace{0em} % pequeño espacio antes de la imagen
+	% --- FIGURA FIJA (no flotante, no se mueve) ---
+	\begin{justify}
+	\refstepcounter{figure}
+	\textbf{Figura \thefigure}\\[0em]
+	\textit{Aporte de un Inspector de Soldadura SMAW}\\[0em]
+	\begin{center}
+		\includegraphics[width=0.7\textwidth]{habilidades_inspector.png}\\[0em]
+	\end{center}
+	\normalsize \textit{Nota}: Aspectos básicos para la Inspección de Soldadura
+	(AWS Chihuahua, 2021).
+	\addcontentsline{lof}{figure}{Figura \thefigure. \textit{Aporte de un Inspector de Soldadura SMAW}}
+	% --- FIN FIGURA FIJA ---
+	\end{justify}	
+	\begin{justify}
+	Ahora bien, hay que tener en claro que la opacidad ya mencionada genera incertidumbre sobre la fiabilidad y el razonamiento de los sistemas actuales, es verdad que afecta a operadores, ingenieros de calidad en aplicaciones análogas, reguladores y, en última instancia, a la seguridad del producto o la infraestructura; y la solución actual de "confiar ciegamente en la predicción" es desconocida en términos de sus implicaciones a largo plazo y riesgos ocultos.
+	\end{justify}
+	\subsection{Punto de Partida y Definición}
+	\begin{justify}
+	La necesidad de transparencia y principalmente la verificación de la penetración de los cordones de soldadura ´para validar la profundidad  y el mejoramiento de explicabilidad en sistemas de Inteligencia Artificial críticos es el punto de partida. Destacando para la validación de la estructura interna. Involucrando e Integrando la búsqueda de métodos (XAI) para mitigar la opacidad de los modelos de inspección basados en IA (CNN 3D) para defectos de soldadura proponiendo escaneos de Tomografía Computarizada.
+	\end{justify}
+	\subsection{Importancia de Investigar}
+	\begin{justify}
+	Hoy en día la industria manufacturera está en auge, esta Tesis tiene un alcance a escala global aportando a un claro creciente ámbito del análisis de uniones soldadas, porponiendo el uso de tecnologías de vanguardia y generando una visión a profundidad de la estructura interna de los cordones de soldadura, respaldando con la fiabilidad y validando un sistema genuinamente distinto al punto de mostrar claramente defectos internos a los operadores, dejando de lado la implementación, la investigación abarca unos reslutados a un conjunto solución de mejorar la capacidad de procesamiento con el uso de las ya mencionadas tecnologías.
+	\end{justify}
+	
+	
+	\newpage
+	\begin{center}
+	\section{Estructura general de la Investigación}
+	\end{center}
+	\subsection{Introducción}
+	\begin{justify}
+	A tiempos modernos, la inspección de calidad y la detección de anomalías son tareas fundamentales en una amplia gama de dominios, desde la manufactura industrial hasta el diagnóstico médico y el mantenimiento de infraestructuras. Tradicionalmente, estas tareas han dependido en gran medida de la inspección humana, un proceso que, si bien es valioso por la capacidad de juicio humano, adolece de limitaciones inherentes como la fatiga, la subjetividad, la inconsistencia entre inspectores y la limitada velocidad de procesamiento, especialmente en entornos de alta producción o con grandes volúmenes de datos.
+	\end{justify}
+	\subsubsection{Presentación del tema de investigación}
+	\begin{justify}
+	La inspección de calidad y la detección de anomalías son tareas fundamentales en dominios como la manufactura y el mantenimiento de infraestructuras, tradicionalmente limitadas por la subjetividad y fatiga de la inspección humana. La automatización, impulsada por la Inteligencia Artificial (IA) y el Aprendizaje Profundo, específicamente las Redes Neuronales Convolucionales (CNNs) aplicadas a datos de Tomografía Computarizada (TC) industrial, ofrece mejoras significativas en eficiencia y precisión. 
+	\end{justify} 
+	\subsubsection{Antecedentes y contexto del problema}
+	\begin{justify}
+	La búsqueda de mayor eficiencia, consistencia y fiabilidad impulsó la transición hacia sistemas de inspección automatizada, las primeras generaciones se basaron en visión artificial tradicional, con limitaciones ante escenarios complejos, variabilidad de productos, condiciones cambiantes y defectos sutiles. La revolución llegó con la Inteligencia Artificial (IA) y el Aprendizaje Profundo (Deep Learning), especialmente las Redes Neuronales Convolucionales (CNNs), que superaron estas limitaciones al aprender características directamente de los datos. Las CNNs se han convertido en el estándar para clasificación, detección y segmentación en inspección visual. Sin embargo, en la actualidad tenemos a estos modelos tan potentes que a menudo operan como "cajas negras", dificultando la comprensión de su proceso de toma de decisiones, tal es el caso de distintos operadores.
+	\end{justify}
+	\subsection{Formulación del Problema}
+	\begin{justify}
+	Se debe ser claro en que la inspección de soldaduras mediante varios ensayos no destructivos tradicionales presenta limitaciones en cuanto a resolución VOLUMETRICA, tiempos de procesamiento y dependencia del criterio del operador, lo que compromete la confiabilidad de los resultados.
+	A su vez, sistemas actuales basados en inteligencia artificial y visión computacional —particularmente los que utilizan Tomografía Computarizada y Redes Neuronales Convolucionales tridimensionales—, aunque prometen automatizar y mejorar la detección de defectos, enfrentan una barrera crítica: su falta de transparencia.
+	La naturaleza de “caja negra” de estos modelos impide comprender por qué se clasifica o segmenta una región como defectuosa, generando desconfianza, dificultando la validación técnica y afectando la adecuación en aplicaciones de entornos industriales donde la seguridad es primordial, la rendición de cuentas son esenciales, afectando plenamente áreas que dependen de ensayos no destructivos (aeroespacial, automotriz, energía, transporte de gasoductos y carburantes, etc.), diseñadores y responsables de mantenimiento y seguridad.
+	Es importante garantizar el despliegue responsable de la IA en inspecciones críticas, buscando avanzar en el campo y haciéndola más cercana y útil para el operador, combinando lo mejor de la Visión Artificial y tecnologías de vanguardia que, determinarán la viabilidad técnica y práctica de un sistema inspector nuevo, comparado con métodos NDT convencionales, evaluando su precisión, interpretabilidad y aplicabilidad en contextos industriales reales.
+	\end{justify}
+	\subsection{Pregunta de investigación}
+	\begin{justify}
+	¿Es viable y posible desarrollar un sistema inspector explicable de defectos en soldaduras, basado en Tomografía Computarizada industrial y Redes Neuronales Convolucionales 3D entrenadas, que mediante técnicas de explicabilidad genere explicaciones claras y fiables capaces de aumentar la confianza en Inspecciones No Destructivas, mejorar la toma de decisiones sobre la conformidad de la soldadura validando la estructura interna de los cordones, alcanzando resultados con diferentes parámetros precisos y comparables entre sí, en entornos industriales críticos? o simplemente, ¿Es viable desarrollar un sistema inspector explicable basado en TC y CNN 3D que genere confianza en inspecciones de soldaduras?
+	\end{justify}
+	\subsection{Hipótesis}
+	\begin{justify}
+	La aplicación e incorporación de métodos de explicabilidad post-hoc (XAI), particularmente Grad-CAM 3D, como de naturaleza intrínsecamente interpretable sobre modelos CNN tridimensionales entrenados para la detección de defectos en soldaduras mediante tomografía computarizada, permite generar interpretaciones visuales comprensibles que identifican las regiones características más influyentes en la predicción del modelo, mejorando la transparencia, interpretabilidad local y global del sistema, comprensión del proceso de inspección, validación de estructura interna, la confianza del operador y la validez técnica de las decisiones de aceptación o rechazo de piezas. Asimismo, la evaluación combinada de métricas computacionales (fidelidad, robustez) junto con criterios de percepción humana (comprensibilidad, accionabilidad) permitirá seleccionar el método de explicabilidad más adecuado para la aplicación industrial de control de calidad en soldadura asistida por TC \textbf(ver tabla 1).
+	\end{justify}
+		
+	% Table generated by Excel2LaTeX from sheet 'Hoja1'
+	\begin{table}[htbp]
+		\centering
+		\caption{\textit{Tabla Matriz resumen de la hipótesis general}}
+		\begin{tabular}{p{17.285em}p{23.93em}}
+			\hline
+			\textbf{Elemento} & \textbf{Descripción} \\
+			\hline
+			\textbf{Hipótesis General} & La aplicación de métodos de explicabilidad post-hoc (XAI), sobre modelos entrenados para la detección de defectos en soldaduras, datos escaneados y obtenidos por tomografía computarizada, que se pueda generar parámetros e interpretaciones visuales comprensibles que identifican las partes más influyentes en la predicción, mejorando así la transparencia, comprensión del proceso de inspección, verificación y validación de la estructura cordón. \\
+			\textbf{Variable Independiente} & Implementación de métodos XAI post-hoc (Grad-CAM 3D) aplicados a modelos CNN tridimensionales. \\
+			\textbf{Variable Dependiente} & Nivel de interpretabilidad y comprensión de las predicciones en la inspección de soldaduras por datos volumétricos de tomografía. \\
+			\textbf{Variables Intervinientes / de Control} & Tipo de arquitectura CNN, calidad del dataset creado, precisión del modelo base, visualización 3D generada, resultados sobrepuestos. \\
+			\textbf{Método de Evaluación Ejecutado} & Análisis cuantitativo de métricas (Accuracy, Dice, matriz de confusión) y análisis cualitativo de interpretabilidad visual (comprensibilidad, relevancia de regiones activadas). \\
+			\textbf{Enfoque Metodológico} & Mixto: • Cuantitativo: Validación de desempeño mediante métricas computacionales. • Cualitativo: Evaluación visual y análisis interpretativo de la explicabilidad generada. \\
+			\textbf{Tipo de Validación} & Experimental (en entornos computacionales basados en MONAI Label, Pytotch y sus módulos dependientes Deepedit, plataformas de segmentación, Dynamic UNet) y analítica (discusión interpretativa de resultados visuales XAI (Grad-CAM 3D)). \\
+			\hline
+		\end{tabular}%
+		\begin{flushleft}
+			\textit{Nota}. Fuente: Elaboración propia. La tabla creada en base a todas las implicancias redactadas en la hipótesis, demostrando así un camino hacia el enfoque de la investigación.
+		\end{flushleft}3
+		\label{tab:addlabel}%
+	\end{table}%
+	
+	
+	\begin{table}[htbp]
+		\centering
+		\caption{\textit{Tabla Resumen de las hipótesis propuestas en un principio(No Aplicadas)}}
+		\begin{tabular}{p{3.355em}p{12.215em}p{15em}p{9.285em}}
+			\hline
+			\textbf{Hipótesis} & \centering\textbf{Variables Implicadas} & \centering\textbf{Método de Evaluación Propuesto} & \textbf{Enfoque Metodológico} \\
+			\hline
+			\centering\textbf{H1} & Método XAI post-hoc (Grad-CAM, SHAP, LIME), Modelo CNN 3D, Datos TC, Explicaciones & Métricas computacionales (fidelidad, robustez), Evaluación visual de mapas de calor/importancia & \textbf{Cuantitativo} \\
+			\centering\textbf{H2} & Arquitectura CNN 3D (intrínseca vs. caja negra), Precisión predictiva, Transparencia & Comparación de precisión (Dice, IoU), Métricas de fidelidad de explicación, Análisis cualitativo de interpretabilidad & \textbf{Cuantitativo} \\
+			\centering\textbf{H3} & Interfaz EIS, Explicaciones XAI, Confianza del usuario, Toma de decisiones & Estudios de usuario (encuestas, entrevistas, observación de tareas), Métricas de rendimiento en tareas (tiempo, precisión) & \textbf{Cualitativo/Mixto} \\
+			\centering\textbf{H4} & Métodos XAI (post-hoc, intrínseco), Calidad de explicación, Métricas evaluación & "Métricas computacionales (fidelidad, robustez), Métricas de usuario (comprensibilidad, accionabilidad)"° & \textbf{Mixto} \\
+			\hline
+		\end{tabular}%
+		
+		\begin{flushleft}
+			\textit{Nota}. Fuente: Elaboración propia. Se muestra la tabla creada en base a todas las implicancias redactadas en la hipótesis, en un principio, demostrando así un camino previo hacia el enfoque de la investigación. De estas 4 hipótesis se concluyó con 1 hipótesis integrada (Ver Tabla 1)
+		\end{flushleft}
+		
+		\label{tab:addlabel7}%
+	\end{table}%
+	
+	
+	
+	
+	\subsection{Objetivos de investigación}
+	\subsubsection{Objetivo general}
+	\begin{justify}
+	Desarrollar el estudio y evaluar si es viable un Sistema de IA Inspector Explicable (EIS) para la detección y segmentación de defectos en soldaduras validando la estructura interna mediante TC industrial y CNN 3D, con el fin de proporcionar explicaciones fiables y comprensibles en el operador a través de tecnologías de vanguardia.
+	\end{justify}
+	\subsubsection{Objetivos específicos}
+	\begin{justify}
+	- Identificar, describir y clasificar las técnicas de IA Explicable aplicables a modelos CNN 3D para datos volumétricos de TC, diferenciando un enfoque post-hoc (Grad-CAM 3D) e intrínseco (modelos con atención o prototipos interpretables)
+	
+	\end{justify}
+	\begin{justify}
+	- Evaluar los desafíos técnicos y de adquisición (artefactos de reconstrucción, ruido estructural, baja resolución de voxel, etc.) en la inspección de soldaduras por TC que afectan la explicabilidad y en la detección automatizada de defectos.
+	\end{justify}
+	\begin{justify}
+	- Implementar y Configurar un entorno experimental de inspección explicable (EIS) mediante el uso de MONAI Label, PyTorch y entornos DICOM para la gestión, anotación y validación de volúmenes TC, integrando modelos CNN 3D y módulos de segmentación como DeepEdit y segmentation spleen adaptados al dominio de soldadura.
+	\end{justify}
+	\begin{justify}
+	- Implementar e integrar métodos XAI 3D especialmente Grad-CAM 3D, aplicados sobre modelos CNN 3D entrenados y evaluados en el entorno de MONAI Label, con el fin de generar explicaciones visuales volumétricas interpretables por el operador técnico.
+	\end{justify}
+	\begin{justify}
+	- Comparar y analizar la fidelidad de las explicaciones generadas por los métodos XAI implementados, evaluando su coherencia espacial, robustez ante perturbaciones y correspondencia con las regiones críticas del cordón de soldadura utilizando métricas cuantitativas adecuadas.
+	\end{justify}
+	\begin{justify}
+	- Diseñar el modelo conceptual del Sistema Inspector Explicable de soldaduras, orientado a su futura implementación en una plataforma de computación en el borde embebida basada en Arduino 1Q, integrando modelos CNN 3D (como 3D-UNet, DeepEdit o DynUNet) y métodos XAI para la generación de explicaciones visuales en la detección de defectos mediante TC, evaluando su viabilidad técnica y potencial.
+	\end{justify}
+	\begin{justify}
+	- Proponer un protocolo de evaluación centrado en el usuario para medir el impacto del EIS en la confianza y la toma de decisiones.
+	\end{justify}
+	\begin{justify}
+	- Evaluar la comprensibilidad y accionabilidad de las explicaciones generadas mediante un estudio piloto con usuarios expertos (ingenieros de NDT/soldadura).
+	\end{justify}
+	\begin{justify}
+	- Realizar un diagnóstico sobre la viabilidad general del enfoque EIS propuesto para su implementación en un entorno industrial simulado o real
+	\end{justify}
+	\subsection{Delimitación de la investigación}
+	\subsubsection{Límitaciones de estudio}
+	\begin{justify}
+	\textbf{¿Qué aspectos NO serán abordados?} No se abordará el desarrollo de nuevos algoritmos de reconstrucción de TC ni la optimización exhaustiva de los parámetros de adquisición de volúmenes. No se considerarán todos los tipos posibles de defectos de soldadura ni todos los materiales. La investigación se centrará en un conjunto limitado de técnicas XAI (p. ej., Grad-CAM, SHAP, LIME, un enfoque intrínseco). No se realizará una implementación a gran escala en una línea de producción real.
+	Se utilizará un conjunto de datos real y propio de datos de soldadura usando Tomografía Computarizada, hecho específca y especialmente para fines de este estudio. El énfasis estudio se centrará en la explicabilidad del modelo de IA, no en la optimización del proceso de soldadura en sí.
+	
+	\end{justify}
+	\begin{justify}
+	\textbf{¿Qué restricciones metodológicas existen?} La evaluación cualitativa de la explicabilidad depende de la disponibilidad de expertos de soldadura en ensayos no destructivos (NDT) y así poder participar en los estudios de validación centrados en el usuario. Para añadir, el cálculo ciertas métricas computacionales (p. ej., GradCam o SHAP) puede verse limitada frente a  los requerimientos de cómputo y memoria, además de que la calidad de los datos de TC (p. ej., ruido, artefactos) puede limitar la efectividad de algunos métodos XAI, afectando así la precisión de las visualizaciones explicativas y la robustez del modelo entrenado.  
+	
+	\end{justify}
+	\subsubsection{Alcances}
+	\begin{justify}
+	\textbf{¿Qué se espera lograr?} Se espera lograr una comprensión profunda de cómo aplicar y evaluar XAI en el contexto de la inspección de soldaduras por Tomografía Computarizada. Se desarrollará un diseño de EIS Sistema de Inspección Explicable con capacidades de explicación demostradas, utilizando datos obtenidos en laboratorio y procesados en un entorno computacional controlado (Python, MONAI Label, 3D Slicer). Se generarán recomendaciones sobre qué métodos XAI son más adecuados para este dominio.
+	\end{justify}
+	\begin{justify}
+	\textbf{Impacto y contribución:} Contribuirá al conocimiento sobre IA explicable en NDT industrial. Proporcionará una metodología para evaluar EIS. Potencialmente, sentará las bases validando bajo un escenario experimental para para su futura aplicación en contextos industriales reales.
+	Se pretende obtener un modelo CNN 3D entrenado para detección de defectos. Implementaciones funcionales de métodos XAI seleccionados. Un informe comparativo de los métodos XAI evaluados (cuantitativa y cualitativamente). Recomendaciones para futuras investigaciones o implementaciones. 
+	\end{justify}
+	\subsection{Justificación}
+	\begin{justify}
+	La validación experimental es base para futuras aplicaciones de sistemas de inspección automatizada basados en IA, específicamente CNN 3D para análisis de datos de TC industrial, promete revolucionar el control de calidad en la manufactura, particularmente en la evaluación y observación interna de soldaduras críticas haciendo uso de tecnología de vanguardia y efectuando el uso de IA, Sin embargo, la naturaleza de "caja negra" de estos modelos representa una barrera significativa para su adopción generalizada y confiable. Esta investigación se justifica por la necesidad apremiante de abordar esta limitación mediante la Inteligencia Artificial Explicable (XAI) y el uso de tecnologías vanguardistas para aportar una visión clave en el desarrollo de los modelos. Las fallas en las soldaduras representan una amenaza significativa para la integridad estructural de instalaciones críticas. Por ejemplo, informes de mercado señalan que el tamaño del mercado global de inspección por ensayos no destructivos (END) para soldadura se estimó en cerca de USD 19.05 mil millones en 2025, con un crecimiento proyectado hacia USD 36.91 mil millones para 2032 (Pooja Tayade, 2025).
+	\end{justify}
+	\subsubsection{Justificación Técnica}
+	\begin{justify}
+	La inspección tradicional de soldaduras NDT con IA, además de las ya mencionadas (Ultrasonido (PAUT/FMC), Radiografía (RT/CR/DR), Termografía (TT), Líquidos Penetrantes (PT), y Corrientes Inducidas (ECT/ECA)), a menudo manual o basadas en visión artificial clásica, enfrenta limitaciones significativas en cuanto a velocidad, consistencia, subjetividad y capacidad para detectar defectos internos \parencite{Sanchez_R_llerena_I_2023} complejos, especialmente en entornos industriales de alta exigencia. La Tomografía Computarizada (TC) industrial ofrece una visión volumétrica detallada \parencite{Darlinton_2024}, y la Inteligencia Artificial (IA), mediante Redes Neuronales Convolucionales 3D (CNN 3D), ha demostrado una capacidad superior para analizar estos datos y detectar patrones de defectos sutiles \parencite{Deepshikha_B_fnu_N_Amiruzzaman_2024}. Sin embargo, el principal desafío técnico reside en la naturaleza de "caja negra" de estos modelos de IA avanzados. Su complejidad interna impide comprender cómo se llega a una decisión, lo cual es inaceptable para la validación, depuración y mejora continua en aplicaciones críticas. La Inteligencia Artificial Explicable (XAI) surge como la solución técnica necesaria, ofreciendo métodos (como Grad-CAM, SHAP, LIME, o modelos intrínsecamente interpretables para desmitificar el proceso de decisión de la IA. La viabilidad técnica de esta investigación se sustenta en la disponibilidad de estas técnicas XAI, los avances en arquitecturas CNN 3D , la madurez de la tecnología TC y la existencia de herramientas computacionales (GPU, software como TensorFlow/PyTorch, MONAI) capaces de implementar y evaluar estos sistemas complejos. Por lo tanto, esta investigación es técnicamente justificada para abordar una limitación fundamental de la IA actual en NDT y explorar soluciones que permitan su aplicación fiable.
+	\end{justify}
+	\subsubsection{Justificación Socioeconómica}
+	\begin{justify}
+	Contar desde ya con un diseño para una futura implementación de Sistemas Inspectores Explicables (EIS) en la inspección de soldaduras por TC industrial tiene un avance significativo con repercusión fuerte y directa en el ámbito socioeconómico e industrial. 
+	La implementación de este sistema permitiría reducir los costos asociados a inspecciones manuales y ensayos destructivos, optimizando tiempos de diagnóstico y evitando rechazos innecesarios de piezas conformes, de igual importancia, la capacidad del modelo en detectar y segmentar defectos de forma automatizada aumenta la eficiencia del proceso de control de calidad, generando un impacto positivo en la productividad y rentabilidad de las operaciones industriales, comprometiendo a mejorar la seguridad estructural de cordones de soldadura, minimizando la probabilidad de fallas en servicio que puedan derivar en accidentes o pérdidas materiales, dedicado a un plano social.
+	Existen beneficios económicos directos. Una detección temprana y fiable de defectos reduce los costos asociados con el retrabajo, el desperdicio de material y posible riesgo de reemplazar costosos materiales relacionados al transporte de gasoductos y carburantes, además, las explicaciones proporcionadas por los EIS guían la optimización de los procesos de soldadura, aumentando la eficiencia general de la inspección. La explicabilidad fomenta la adopción de IA combinando enfoques adyacentes a tecnicidades en IA y análisis no destructivos (NDT) de Industria 4.0 en el sector manufacturero nacional, potenciando la competitividad tecnológica de la región.
+	Contribuye a la incorporación de tecnologías, promoviendo y fomentando el uso de IA potente de una manera directa, transparente y responsable en el entorno laboral, lo que tiene un impacto positivo en la competitividad industrial y la innovación tecnológica de la región a un nivel estratégico.
+	En conjunto, estos factores justifican la relevancia socioeconómica del estudio, al integrar innovación tecnológica, seguridad industrial y desarrollo sostenible en un mismo marco de investigación aplicada.
+	\end{justify}
+	\subsection{Importancia del estudio}
+	\begin{justify}
+	La transición hacia la Industria 4.0 y la creciente complejidad de los productos manufacturados exigen sistemas de control de calidad cada vez más sofisticados y fiables. La inspección automatizada ofrece mejoras significativas en eficiencia y precisión sobre los métodos manuales. Es importante saber que la falta de explicabilidad de estos sistemas avanzados es un cuello de botella que limita su potencial, y este estudio aborda directamente este cuello de botella, investigando cómo la XAI puede desbloquear el potencial completo de la IA en NDT industrial \parencite{lindgren_zach_2022}, particularmente para la inspección crítica de soldaduras usando tomografía, validando internamente la junta soldada garantizando no solo la eficiencia sino también la confianza, la seguridad y la interpretabilidad necesarias para su despliegue responsable.
+	\end{justify}
+	%---------------------------------------------------------------------
+	% Marco Teórico
+	%---------------------------------------------------------------------
+	\newpage
+	\begin{center}
+	\section{Marco Teórico}
+	\end{center}
+	\begin{justify}
+	En este momento, detectar defectos en la soldadura es un tema caliente para los avances tecnológicos La investigación reciente muestra que el uso de técnicas de aprendizaje profundo realmente supera a los controles manuales de la vieja escuela cuando se trata de detectar cosas \parencite{zhang_2025} y colegas en 2025 utilizan el aprendizaje profundo para detectar rayos X de soldadura, que realmente aumenta lo rápido y preciso que pueden encontrar importantes defectos.
+	Por otro lado, la explicabilidad de la IA (XAI) es cada vez más relevante en aplicaciones críticas como la inspección de soldadura. Bordekar et al. (2023) proponen un método XAI para clasificación de defectos en escaneos CT, destacando el “papel crucial de XAI para generar confianza en los procesos de NDT (Ensayos No Destructivos)” \parencite{bordekar_cersullo_brysch_philipp_hühne_2023}.
+	\end{justify}
+	\subsection{Inspección automatizada de defectos en soldadura}
+	\begin{justify}
+	La inspección automática de soldadura emplea cámaras y visión computarizada para detectar defectos a medida que suceden, superando lo que los controles manuales pueden hacer estos sistemas pueden reconocer grietas, falta de fusión, porosidades e irregularidades geométricas en el cordón de soldadura mediante algoritmos de inteligencia artificial entrenados con imágenes anotadas Por ejemplo, en proyectos industriales, se describen sistemas que integran visión artificial para detectar “fracasos en calidad de soldadura, como la falta de fusión y porosidad, así como irregularidades geométricas”. La automatización acelera los controles de calidad y hace que las cosas sean más consistentes al hacerse cargo de las partes más personales del proceso Además, la IA puede aprender y adaptarse con el tiempo: cada inspección alimenta el modelo para aumentar su precisión ante los nuevos patrones de defectos.
+	\end{justify}
+	\begin{justify}
+	\subsection{Ensayos No Destructivos (END) en la inspección de soldaduras}
+	Los Ensayos No Destructivos (END) son técnicas fundamentales en la inspección de soldaduras, pues evalúan la integridad del material sin dañarlo permanentemente
+	es.wikipedia.org
+	. En el ámbito soldador, los END más utilizados incluyen: ultrasonidos (UT), radiografía industrial (RT), ensayos de partículas magnéticas (MT), líquidos penetrantes (PT), corrientes inducidas (ET) e inspección visual (VT)
+	nucleom.ca
+	. Cada uno aprovecha distintos fenómenos físicos (acústicos, electromagnéticos, ópticos) para revelar discontinuidades superficiales o internas. Por ejemplo, la tomografía computarizada (CT) por rayos X permite un análisis volumétrico 3D de la pieza: genera cortes transversales internos que facilitan la detección de defectos inaccesibles para métodos 2D. De hecho, CT se usa ampliamente en manufactura avanzada para estudiar piezas con geometrías complejas, ya que ofrece una imagen tridimensional de la estructura interna
+	link.springer.com
+	. En resumen, los END complementan la visión artificial al detectar fisuras y porosidades internas (no visibles externamente), garantizando la confiabilidad del cordón de soldadura sin sacrificar la pieza.
+	\end{justify}
+	\subsection{Antecedentes y referencias}
+	\subsubsection{Antecedentes (2020-2025)}
+	\begin{justify}
+	Aquí echamos un vistazo a estudios recientes que apuntalan la solidez técnica del sistema que planteamos. Debido a la precisión que exige la búsqueda de "tesis", con cada detalle al dedillo (autor, título, propósito, diseño, muestra, herramientas y hallazgos) y ceñidos al periodo 2020-2025, hemos dado prioridad a artículos publicados en plataformas académicas como arXiv. Estos deben mantener el rigor y la minuciosidad propios de una tesis doctoral o de máster, y deben ser directamente pertinentes al tema de este estudio. (SciELO , 2025)
+	\end{justify}
+
+	\begin{justify}	
+		\begin{itemize}
+			\item 
+			\textbf{Trabajo 1: "Boosting Defect Detection in Manufacturing using Tensor Convolutional Neural Networks: " } 
+			
+			Este estudio presenta un avance destacable en cómo se usan las redes neuronales para ubicar fallos en la industria. (Marti, s.f.)
+			Autor(es): Pablo Marti	n-Ramiro, Unai Sainz de la Maza, Sukhbinder Singh, Román Orús y Samuel Mugel. 
+			Título: "Boosting Defect Detection in Manufacturing using Tensor Convolutional Neural Networks". 
+			Año de Publicación: 2024. 
+			 
+			
+			\item \textbf{Objetivo General: }, El estudio buscó introducir una Red Neuronal Convolucional Tensorial (T-CNN) y mirar cómo funcionaba detectando errores en un entorno real de manufactura. Específicamente, se quería que el modelo CNN equivalente entrenara más rápido y rindiera mejor, trabajando con menos parámetros sin perder exactitud. 
+			
+			\item \textbf{Diseño/Metodología: } 
+			El método utilizado fue proponer una T-CNN que une formas de redes tensoriales en la estructura de una CNN. Esto se hizo cambiando las capas convolucionales normales por capas convolucionales tensoriales factorizadas, basadas en la descomposición de Tucker. Se entrenó el modelo desde cero en el espacio de parámetros comprimido, con una arquitectura CNN simplificada de VGG16, hecha a medida para detectar defectos. El entrenamiento se hizo con PyTorch, usando el optimizador Adam, entrenamiento de precisión mixta y un planificador de tasa de aprendizaje. Para manejar el desequilibrio de clases, se usaron técnicas de aumento de datos y muestreo ponderado.
+			
+			\item \textbf{Muestra/Dataset: } El estudio tomó datos de imágenes reales sacadas de las fábricas de sensores ultrasónicos de Robert Bosch. Este conjunto tenía 11,728 imágenes etiquetadas, con una resolución original de 1280x1024 píxeles, ajustadas a 256x256 para el análisis. Las piezas podían tener nueve tipos de fallos pequeños, que se juntaron en una sola clase "defectuosa" para hacer el problema una clasificación binaria. Los datos eran complicados porque la luz cambiaba, las cámaras estaban ligeramente movidas entre las líneas de producción gemelas, y cada línea tenía diferentes cantidades y tipos de defectos.
+			
+			\item \textbf{Instrumentos/Herramientas: } Se usó PyTorch como software, con el optimizador Adam. Para entrenar, se usó una GPU NVIDIA T4.5, y el modelo Tensorflow.
+			
+			\item \textbf{Hallazgos Centrales: } : Los datos revelaron claras ventajas de las T-CNNs frente a las CNNs típicas y el análisis hecho por personas. Las T-CNNs rindieron igual que las CNNs comunes usando hasta quince veces menos valores, como, por ejemplo, 4.6 veces menos para un esquema de rango concreto. Respecto a los tiempos de práctica, las T-CNNs enseñaron una subida de entre el 4 por ciento y el 19 por ciento en rapidez. Las medidas de calidad (exactitud, exhaustividad y valor F1) se parecieron a las de la CNN ajustada, incluso con esquemas de rango pequeños, la bajada de rendimiento fue casi nula. Algo esencial fue que la T-CNN superó de forma notable el análisis visual humano, bajando la parte de fotos malas que pasaban inadvertidas (slip-through) de un 10 por ciento estimado para el análisis humano a un 4.6 por ciento para la T-CNN, lo que supone una subida del 54 por ciento. El tiempo de deducción del modelo T-CNN fue parecido al del modelo CNN (143.4 ms frente a 143.7 ms para un lote de 128 fotos).
+			La eficacia mostrada por este estudio, al bajar los valores del modelo y animar la práctica sin afectar a la exactitud, es algo clave para usar sistemas de IA en sitios industriales. Esta facultad logra que modelos avanzados se puedan poner en marcha de forma más factible y adaptable en aparatos de computación de borde o en estructuras con pocos recursos, salvando un muro habitual en la llegada de la IA a la fabricación.
+			\item 
+			\textbf{Trabajo 2: "Evaluación Predictiva Avanzada de la Calidad para la Fabricación Aditiva Ultrasónica con un Modelo de Aprendizaje Profundo": } 
+			
+			Este estudio examina la evaluación de la calidad dentro de un proceso de fabricación aditiva, resaltando el potencial que ofrece el aprendizaje profundo. \parencite{poudel_jha_meeker_phan_bhowmik_2025}
+			Autor(es): Lokendra Poudel, Sushant Jha, Ryan Meeker, Duy-Nhat Phan y Rahul Bhowmik. 
+			Título: "Evaluación Predictiva Avanzada de la Calidad para la Fabricación Aditiva Ultrasónica con un Modelo de Aprendizaje Profundo". 
+			Año de Publicación: 2025. 
+			
+			\item \textbf{Objetivo General: }, El propósito central de este estudio fue elaborar un método para supervisar la calidad en tiempo real en la Fabricación Aditiva Ultrasónica (UAM) usando Redes Neuronales Convolucionales (CNN) fundamentadas en el aprendizaje profundo. Se intentó, de forma concreta, detectar y categorizar defectos en procesos UAM bajo diferentes intensidades de soldadura. 
+			
+			\item \textbf{Diseño/Metodología: } 
+			La estructura del estudio abarcó la valoración de modelos CNN en su aptitud para clasificar muestras, ya sea con o sin termopares integrados, a lo largo de cinco rangos de potencia de soldadura (300W, 600W, 900W, 1200W, 1500W). Dicha clasificación se llevó a cabo empleando imágenes térmicas con etiquetado supervisado. Se generaron cuatro modelos CNN diferentes con el fin de abordar diversos panoramas de clasificación, incluyendo la evaluación de imágenes unificadas, únicamente imágenes sin termopares, solo imágenes con termopares y una combinación de ambas clases a través de los distintos niveles de potencia. 
+			
+			\item \textbf{Muestra/Dataset: } El material escogido para la pieza fue la aleación de aluminio Al 6061-T651. Para la creación de los datos, se usó una máquina Fabrisonic SonicLayer 1600 UAM provista de una bocina de 35 KHz. Se instaló una cámara de imagen térmica de infrarrojo cercano Optris PI 640i G7 dentro de la máquina UAM para capturar imágenes térmicas durante todo el proceso de fabricación. La muestra estuvo compuesta por dos cupones: uno desprovisto de termopar (línea base) y otro con termopar. Durante el proceso de impresión de ambos cupones, la potencia de soldadura se modificó cada 10 capas. Se consiguieron un total de 2760 imágenes etiquetadas, de las cuales 1389 se catalogarn como "línea base" y 1371 como "termopar". 
+			
+			\item \textbf{Instrumentos/Herramientas: } Máquina Fabrisonic SonicLayer 1600 UAM y cámara de imagen térmica de infrarrojo cercano Optris PI 640i G7.6
+			
+			\item \textbf{Hallazgos Centrales: }Los modelos CNN exhibieron una alta precisión en la clasificación de las condiciones dentro del proceso UAM, excediendo el 97 por ciento. En particular, se alcanzó un 98.29 por ciento de precisión n imágenes combinadas (línea base y termopar), 97.10 por ciento para imágenes de línea base a lo largo de los niveles de potencia, y 97.43 por ciento para imágenes con termopares. El análisis microestructural dejó ver que ambas muestras presentaban una mayor fracción de volumen de vacís o poros al usar niveles de potencia más bajos (300W y 600W), y menos vacíos a niveles de potencia más altos (1200W y 1500W). La potencia estándar de 900W aparentó ser un punto de equilibrio entre el nivel de potencia y la fracción de volumen de vacíos
+			
+			Usando termografías y cómo las predicciones de CNN coinciden con los pequeños detalles de la soldadura, está claro que los problemas de detección no se trata sólo de mirar los planos Agarrar los principios de física que rigen nuestro entorno, incluyendo la temperatura y la energía, es clave La recopilación de datos de diferentes puntas (por ejemplo, térmico, visual y tal vez sonido) y detalles importantes del proceso (como la potencia de soldadura) puede hacer que los sistemas de revisión de IA sean mucho más precisos y fiables, cambiando una manera sencilla de clasificar las fotos en una calificación de calibración mucho más completa.
+		\end{itemize}
+	\end{justify}
+	\subsection{Estado del arte}
+	\begin{justify}
+	Es este espacio me gustaría comparar distintas opiniones de autores que hablan de lo mismo, el estado del arte en la detección automatizada de defectos de soldadura, particularmente cuando se incorpora tecnologías avanzadas como la tomografía computarizada (TC), las redes neuronales convolucionarias 3D (CNN 3D) y la explicable inteligencia artificial (XAI), ilustra un sentido común en la comunidad científica e industrial que estos dispositivos pueden usarse para lograr el cambio, pero también destaca las áreas de desarrollo continuo ( Explainable artificial intelligence, 2025).
+
+	En inspección automatizada y detección de defectos,
+	Autores como Martn-Ramiro et al. (2024) y Poudel et al. (2024), quien publicó estudios de CNNS sobre identificación de soldadura aditiva y evaluación predictiva, subrayó la mayor capacidad de CNN para superar las limitaciones de inspecciones humanas. Aunque Martn-Ramiro et al. Demuestre la efectividad de T-CNN para reducir los recursos computacionales y aumentar la precisión en la clasificación de defectos superficiales, creo fehacientemente que esta aplicación se extiende a la soldadura en procesos de fabricación aditivos utilizando termografía, lo que proporciona una indicación de la conveniencia de aplicar CNN a datos volumétricos como TC. Estas experiencias confirman el hecho de que las tecnologías automatizadas basadas en la visión proporcionan una precisión y consistencia inobtinables por los métodos tradicionales, en comparación con una tasa de inspección más alta.
+	Las fuentes que analizaron las bases matemáticas que caracterizan los defectos de soldadura automatizados (como las descripciones del sistema en Lortek o Amelia para la inspección óptica) comprobé que todas están de acuerdo en que el beneficio principal de estos sistemas es su capacidad para funcionar sin participación humana, confiabilidad aumentada y consistencia. La tomografía computarizada industrial (TC), como se detalla en las muestras de aplicaciones por Azterlan y MetalTest, es absolutamente necesaria para identificar defectos internos y subsuperficiales que no pueden ser aparentes mediante un examen físico o radiográfico 2D.
+	Lo que encontré sobre la inteligencia artificial explicable (XAI):
+	Ahora bien, múltiples autores están de acuerdo en que la necesidad de XAI en aplicaciones críticas como la inspección de soldadura es un punto de convergencia para muchos autores. Ali et al. (2024) y Chen (2024) (cuyos términos de XAI se discutieron en las bases teóricas) enfatizan que el XAI no solo aumenta la visibilidad de los modelos de IA, sino que también aumenta la confianza de los usuarios. Esto es vital en la inspección de soldadura, donde las decisiones sobre la integridad estructural tienen un gran efecto tanto en la seguuridad como en las implicaciones económicas. Aunque la caja negra CNNS está presente, se entiende, y el XAI se considera la forma de proporcionar justificaciones claras y comprensibles para las detecciones de defectos.
+	Los XAIS, como la cal y la Shap, fueron discutidos en la sección base teórica por datos y son ampliamente aceptados como marcos para lograr esta explicabilidad post-hoc.
+	Los ingenieros no solo sabrán qué defecto se ha identificado, sino también por qué el procedimiento ha llegado a su fin, aumentando la auditabilidad, y el cumplimiento regulatorio estará entre los beneficios que resultan de su implementación.
+	Con el análisis CNN 3DS de los datos de TC, encontramos un panorama en el que la automatización de la inspección de soldadura con CNN 3D en los datos de TC es una ruta prometedora para encontrar defectos más altos. (MDPI, s.f., pág. 58) (AC, s.f.)
+	Sin embargo, la integración de XAI es el siguiente paso lógico y necesario para garantizar la confianza y la adopción de la industria al proporcionar la transparencia que los usuarios y los reguladores necesitan en aplicaciones críticas. El estado actual de sistemas de arte está cambiando a tecnologías que no solo son precisas, sino también inteligibles y confiables.
+	
+	\begin{table}[htbp]
+		\centering
+		\caption{\textit{Evolución de técnicas de segmentación y detección en END para soldadura}}
+		\begin{adjustbox}{max width=\textwidth}
+			\small % hace la tabla más compacta sin perder legibilidad
+			\begin{tabular}{p{3.8em}p{7.5em}p{6.8em}p{4.5em}p{6.5em}p{5.5em}p{8.5em}}
+				\hline
+				\textbf{Año} & \textbf{Técnica / Arquitectura} & \textbf{Dataset} & \textbf{Modalidad} & \textbf{Limitación Principal} & \textbf{Métrica Reportada} & \textbf{Relevancia en la Evolución} \\
+				\hline
+				2021 & CNN 2D + Thresholding & Soldadura TIG/MIG (RX industrial) & Radiografía 2D & No volumétrico; alta dependencia del operador & IoU ≈ 0.89 & Base en inspección automatizada 2D en soldadura \\
+				2022 & YOLOv5 defect detection & Juntas soldadas acero (Laboratorio) & RX 2D & Difícil generalización a producción real & mAP ≈ 0.93 & Introduce visión industrial en tiempo real para END \\
+				2022 & 3D U-Net básica & Materiales compuestos (TC industrial) & Tomografía 3D & Costo elevado de adquisición de datos volumétricos & Dice ≈ 0.83 & Primeros avances en segmentación volumétrica \\
+				2023 & U-Net 3D + Augmentation & Soldadura TIG (TC laboratorios) & Tomografía 3D & Dataset pequeño y no público & Dice ≈ 0.86 & Aplicación directa a cordones 3D \\
+				2023 & DeepLab-v3 + XR multisource & Soldadura pipelines & RX digital + ultrasonido & Limitada multimodalidad; sin explicabilidad & IoU ≈ 0.92 & Integración multimodal en END \\
+				2024 & Attention-UNet 3D & Microestructuras metálicas & Micro-CT 3D & Costos y tiempos de reconstrucción & Dice ≈ 0.88 & Introducción de atención en inspección volumétrica \\
+				2024 & Transformer X-ray inspector & Uniones metálicas & RX 2D industrial & Explicación limitada; caja negra & F1 ≈ 0.94 & Uso de LLM/ViT en END industrial \\
+				2024 & Grad-CAM3D + CNN3D & Histología y materiales por CT & Tomografía 3D & Interpretabilidad parcial; baja resolución & sMAPE / Dice & Primeros métodos XAI volumétricos \\
+				2025 (propuesta) & Sistema híbrido EIS (Explainable Inspection System): 3D-U-Net + Grad-CAM3D + overlays & Cordón de soldadura real en TC industrial & Tomografía 3D & Costo dataset; necesidad de explicabilidad auditada & Dice ≥ 0.87 + visualización explicativa & Interpretabilidad auditada con evidencia visual \\
+				\hline
+			\end{tabular}
+		\end{adjustbox}
+		\begin{flushleft}
+			\textit{Nota}. Elaboración propia. Tabla comparativa del estado del arte en IA para END de soldadura y materiales.
+		\end{flushleft}
+		\label{tab:evolucion_tecnicas}
+	\end{table}
+	
+	
+	\end{justify}
+	\subsection{Desarrollo de teorías y modelos}
+	\subsubsection{Bases teóricas}
+	\begin{justify}	
+		\begin{itemize}
+			\item 
+			\textbf{Variable 1: Inspección Automatizada de Defectos en Soldadura: } 
+			
+			La inspección automática de defectos en soldadura utiliza tecnología de visión por computadora y pruebas que no dañan el material para hacer el control de calidad más rápido y preciso.
+			 
+			\textit{\textbf{Definición 1:  }}
+			Idea Básica sobre la Inspección Automática de Defectos. La inspección visual automatizada es el uso de cámaras modernas y tecnología de inteligencia artificial para encontrar errores en tiempo real. Esto mejora mucho la precisión y la eficiencia en trabajos que antes se hacían de forma manual. Estos sistemas pueden reconocer patrones complicados, detectar fallas que las personas podrían no ver, y aprender y mejorar con el tiempo, ajustándose a nuevos cambios en el entorno o en el producto. Esta definición describe cómo se está pasando de depender de las personas a usar sistemas inteligentes en el control de calidad.
+			
+			\textit{\textbf{Definición 2:  }}
+			Método Especializado en Soldadura Usando Visión Artificial e Inteligencia Artificial. Un sistema automático de inspección de calidad de soldadura se enfoca en detectar problemas específicos, como la falta de fusión, burbujas de aire e irregularidades en la forma. Para esto, utiliza algoritmos de inteligencia artificial y tecnología de visión artificial. Estos sistemas capturan imágenes o vídeos del cordón de soldadura y los analizan para encontrar defectos. Compara la información obtenida con estándares de calidad que ya se han definido. Esta definición se enfoca en el campo de la soldadura, resaltando los diferentes tipos de defectos que pueden ocurrir y las tecnologías de visión e inteligencia artificial que se utilizan. 
+			
+			\textit{\textbf{Principio 1: }}
+			Bases de la Visión por Computadora para Encontrar Fallas. La visión artificial ayuda a los sistemas automáticos a revisar imágenes y obtener información para detectar fallas en la calidad de los productos antes de que salgan de la fábrica. El proceso de encontrar defectos usando visión por computadora tiene varias etapas importantes. Primero, se obtienen imágenes de buena calidad con cámaras y buena iluminación. Luego, se procesan y analizan estas imágenes con algoritmos de inteligencia artificial para reconocer patrones, clasificar y dividir los objetos que nos interesan. Por último, se toman decisiones, que pueden aparecer como alertas, informes o incluso acciones automáticas, como detener una línea de producción. Este principio explica cómo funciona la visión artificial y la inteligencia artificial para detectar fallas, desde la recolección de datos hasta la toma de decisiones. 
+			
+			\textit{\textbf{Principio 2: }}
+			Aplicación de los principios de los Ensayos No Destructivos (END) en la inspección de soldaduras. Los ensayos no destructivos (END) son técnicas que se utilizan para comprobar si un material está en buen estado sin cambiar de manera permanente sus características físicas, químicas, mecánicas o de tamaño. En el ámbito de la soldadura, los Ensayos No Destructivos (END) abarcan diferentes métodos como la inspección visual (VT), los líquidos penetrantes (PT), las partículas magnéticas (MT), las corrientes inducidas (ET), el ultrasonido (UT) y la radiografía (RT). Cada uno de estos métodos utiliza diferentes fenómenos físicos para encontrar interrupciones en la superficie o en el interior.
+			
+			
+			\item 
+			\textbf{Variable 2: Inteligencia Artificial Explicable (XAI) en Ensayos No Destructivos (END): } 
+			
+			Explicable AI es una nueva área que tiene como objetivo hacer que la IA sea clara y comprensible, un factor importante para su uso en tareas vitales como fines.
+			
+			Cabe destacar que esta analogía biológica sirve únicamente como recurso introductorio para ilustrar el concepto de red neuronal artificial, y no constituye el fundamento operativo o el principio funcional estricto del modelo CNN 3D utilizado en la inspección de soldadura.
+			
+			\textit{\textbf{Definición 1:  }}
+			Concepto de XAI y su propósito…
+			Sabemos que laa inteligencia artificial explicable (XAI) se refiere a un conjunto de métodos y herramientas diseñados para permitir que los humanos comprendan y confíen en los resultados generados por los modelos de aprendizaje automático. Su objetivo principal es "abrir la caja negra" de algoritmos complejos, proporcionando explicaciones claras y comprensibles sobre cómo se toman las decisiones, lo que permite a los usuarios comprender sino también, si también es necesario, cuestionar los resultados de estas tecnologías. Esta explicación establece la Fundación XAI como un vínculo crucial entre la complejidad intrínseca de la IA y el requisito humano para la comprensión y la confianza en su funcionamiento.
+			
+			\textit{\textbf{Definición 2:  }}
+			IA explicable dentro de entornos industriales y fin.
+			
+			En el campo de la fabricación, el XAI se enfoca en hacer que los sistemas de inteligencia artificial sean más transparentes y comprensibles para los usuarios humanos, una necesidad crítica dada la naturaleza de la "caja negra" de muchos modelos de IA que obstaculizan la comprensión de sus decisiones en este sector. Concepto de XAI al dominio específico de la fabricación y los fines, destacando su importancia para la adopción y validación de la IA en entornos industriales críticos.
+			Si bien la analogía con el sistema visual humano facilita comprender la capacidad de abstracción de las CNN, es necesario aclarar que el modelo propuesto opera bajo principios matemáticos y estadísticos y no replica procesos neurobiológicos reales.
+			
+			- Tomografía Computarizada Industrial para Inspección de Soldaduras
+			
+			\textit{Principios Fundamentales del Escaneo TC Industrial: }
+			
+			La Tomografía Computarizada (TC) industrial es una técnica de END que permite obtener una representación tridimensional completa de la estructura interna y externa de un objeto sin necesidad de destruirlo o alterarlo físicamente. El proceso se basa en la adquisición de un gran número de proyecciones radiográficas bidimensionales (2D) del objeto desde múltiples ángulos de visión, típicamente cubriendo una rotación completa de 360 grados.
+			
+			Estas proyecciones 2D, que son esencialmente imágenes de atenuación de rayos X, se procesan mediante complejos algoritmos computacionales de reconstrucción. El resultado de este proceso es un conjunto de datos volumétricos, una matriz 3D donde cada elemento, denominado vóxel (píxel volumétrico), representa una pequeña unidad de volumen del objeto escaneado. El valor asignado a cada vóxel (generalmente un nivel de gris) corresponde a una propiedad física del material en esa ubicación específica, típicamente el coeficiente de atenuación lineal de los rayos X, que está relacionado con la densidad y composición del material. Este volumen digital 3D puede ser visualizado, analizado y medido utilizando software especializado, permitiendo una inspección detallada de características internas y externas.
+			El funcionamiento de un sistema de TC industrial depende de la interacción coordinada de varios componentes clave.
+			
+			\textit{Fuente de Rayos X: } 
+			Es el componente que genera el haz de radiación penetrante. Las características de la fuente son determinantes para la calidad y capacidad de la inspección. Parámetros cruciales incluyen:
+			Tamaño del Punto Focal: 
+			Fuentes con puntos focales muy pequeños microfocus < 10 µm, o incluso nanofocus < 1 µm) permiten obtener imágenes de alta resolución espacial, crucial para detectar defectos diminutos.
+			
+			\textit{Energía (kV): }
+			El kilovoltaje aplicado al tubo de rayos X determina la energía máxima de los fotones generados y, por lo tanto, la capacidad de penetración del haz.Para inspeccionar soldaduras metálicas, que son materiales densos y altamente atenuantes, se requieren energías suficientemente altas (típicamente en el rango de 100 kV a 450 kV, o incluso energías de MeV en sistemas de TC de alta energía o MVCT) para asegurar que una cantidad adecuada de radiación atraviese la pieza y llegue al detector. ( electronic library , 2025)
+			
+			\textit{Intensidad (mA): }
+			El miliamperaje controla la cantidad de fotones generados por unidad de tiempo (flujo).
+			\textit{Manipulador: }
+			Es el sistema mecánico responsable de posicionar y mover la pieza e inspección (o alternativamente, la fuente y el detector) de manera precisa durante la adquisición de datos. Típicamente, la pieza se coloca sobre una mesa giratoria que rota incrementalmente para adquirir las proyecciones desde todos los ángulos necesarios. La precisión y estabilidad del manipulador son vitales, ya que cualquier vibración o error de posicionamiento puede introducir artefactos y degradar la calidad de la reconstrucción final. (Quipe, 2022)
+			\textit{TC Industrial en Inspección de Soldaduras }
+			
+			La Tomografía Computarizada (TC) industrial es una técnica de Ensayo No Destructivo (END) esencial para la inspección volumétrica interna de componentes.112 Utiliza rayos X para generar múltiples proyecciones 2D de un objeto desde diferentes ángulos. Algoritmos de reconstrucción (como FBP o métodos iterativos) procesan estas proyecciones para crear un modelo 3D de vóxeles que representa la distribución de densidad interna del objeto . Esto permite la detección y caracterización de defectos internos como porosidad, grietas o falta de penetración en soldaduras, superando las limitaciones de las técnicas 2D . Sin embargo, los datos de TC pueden presentar artefactos (beam hardening, scatter, ruido) que complican el análisis.
+			\textit{Redes Neuronales 3D en NDT }
+			
+			Las Redes Neuronales Convolucionales (CNNs) han revolucionado el análisis de imágenes . Para datos volumétricos como los de TC, se utilizan CNNs 3D . Estas redes emplean convoluciones 3D para procesar información espacial en las tres dimensiones simultáneamente, capturando características volumétricas. Arquitecturas populares como U-Net 3D y sus variantes (Attention U-Net , Res-UNet , UNet++ , UNet 3+ ) son ampliamente utilizadas para tareas de segmentación 3D, como la delimitación precisa de defectos . Estas arquitecturas suelen tener una estructura codificador-decodificador con conexiones skip para combinar información de características de bajo y alto nivel. El entrenamiento de estas redes requiere grandes conjuntos de datos anotados, lo que supone un desafío. (Ingeniería, 2025)
+			
+			
+			
+			\textit{Detector: }
+			Es el dispositivo que captura la radiación X que ha atravesado el objeto. Convierte la intensidad de los rayos X recibidos en señales eléctricas, que luego se digitalizan para formar las imágenes de proyección 2D. Los tipos comunes incluyen:
+			o	Detectores de Panel Plano (DDA - Digital Detector Array): Utilizados en sistemas de Cone Beam CT (CBCT), capturan un área 2D completa en cada proyección.
+			o	Detectores Lineales (LDA - Line Detector Array): Utilizados en sistemas Fan Beam CT, capturan solo una línea o un conjunto estrecho de líneas en cada proyección. La resolución espacial, la sensibilidad (eficiencia cuántica de detección), el rango dinámico y la velocidad de lectura del detector son factores críticos que influyen directamente en la calidad de la imagen reconstruida (resolución, ruido, contraste).
+			
+			\textit{Adquisición de Datos y Técnicas de Reconstrucción}
+			El proceso de TC consta de dos etapas principales: la adquisición de datos y la reconstrucción de la imagen.
+			Adquisición de Datos: Durante esta fase, el sistema de TC captura sistemáticamente un gran número de proyecciones radiográficas 2D del objeto desde diferentes ángulos. El objeto rota (o la fuente/detector se mueven alrededor del objeto) en pequeños incrementos angulares, y en cada posición angular, se adquiere una imagen de rayos X. La calidad de estas proyecciones crudas es fundamental y depende directamente de la correcta selección de los parámetros de escaneo (kV, mAs, filtración, geometría de escaneo) discutidos anteriormente.
+			Reconstrucción de Imagen: Esta es la etapa computacional intensiva donde las múltiples proyecciones 2D adquiridas se utilizan para calcular la distribución tridimensional de los coeficientes de atenuación dentro del objeto, generando así el volumen 3D Existen varios enfoques algorítmicos para realizar esta tarea, siendo los más relevantes la Retroproyección Filtrada (FBP) y la Reconstrucción Iterativa (IR).
+			\textit{Retroproyección Filtrada (FBP / FDK): }
+			Principio:
+			Es el método históricamente dominante y computacionalmente más eficiente. Se basa en el teorema de la sección central de Fourier. En esencia, cada proyección 2D se "filtra" primero en el dominio de la frecuencia para corregir el desenfoque inherente a la simple retroproyección. Filtros comunes incluyen el filtro Rampa (que agudiza los bordes pero amplifica el ruido) y otros como Shepp-Logan o Hanning que buscan un compromiso entre nitidez y ruido. Después del filtrado, las proyecciones modificadas se "retroproyectan" matemáticamente sobre la matriz del volumen 3D, sumando las contribuciones de todas las proyecciones para reconstruir la imagen.El algoritmo de Feldkamp-Davis-Kress (FDK) es una extensión común de FBP para la geometría de haz cónico (CBCT).
+			\textit{Ventajas:  }
+			Muy rápido computacionalmente, robusto en condiciones de alta señal y bajo ruido.
+			\textit{Desventajas: }
+			Muy sensible al ruido, especialmente con datos de baja dosis o alta atenuación (como en metales), lo que resulta en imágenes granuladas. Propenso a generar artefactos significativos (endurecimiento del haz, dispersión, artefactos metálicos, aliasing) porque no modela explícitamente la física compleja de la interacción rayos X-materia ni la estadística del ruido.
+			
+			
+			\textit{Reconstrucción Iterativa (IR):}
+			Principio: 
+			Aborda la reconstrucción como un problema de optimización. Comienza con una estimación inicial del volumen 3D (que puede ser una imagen en blanco, una reconstrucción FBP o una estimación previa). Luego, simula computacionalmente las proyecciones que resultarían de esta estimación actual. Estas proyecciones simuladas se comparan con las proyecciones medidas reales. La diferencia (o error) entre ambas se utiliza para actualizar la estimación del volumen 3D. Este proceso se repite (itera) múltiples veces hasta que la diferencia entre las proyecciones simuladas y medidas es mínima (converge), o se alcanza un número predefinido de iteraciones.
+			\textit{Tipos Principales: }
+			IR Estadística: 
+			Estos métodos incorporan modelos estadísticos del proceso de detección de fotones (típicamente ruido de Poisson) en el proceso de optimización, al modelar la naturaleza estadística del ruido, pueden dar menos peso a las mediciones ruidosas, resultando en imágenes con menor ruido, especialmente en escenarios de baja dosis. Ejemplos comerciales incluyen ASIR (Adaptive Statistical Iterative Reconstruction). Ofrecen una buena reducción de ruido/dosis (típicamente 25-40 por ciento comparado con FBP) con tiempos de reconstrucción manejables.
+			IR Basada en Modelo (MBIR): 
+			Son los métodos IR más sofisticados. Además de los modelos estadísticos, incorporan modelos físicos detallados del sistema de TC (geometría precisa del escáner, espectro de energía del haz de rayos X, respuesta del detector, efectos de dispersión) y, a menudo, incorporan "información previa" (prior knowledge) sobre las características esperadas de la imagen (e.g., suavidad local, bordes definidos) a través de términos de regularización (como la regularización por Variación Total - TV). MBIR tiene el potencial de producir la mejor calidad de imagen, con la mayor reducción de ruido y artefactos, permitiendo reducciones de dosis muy significativas (hasta 80-90 por ciento vs FBP). Sin embargo, esta complejidad se traduce en tiempos de reconstrucción considerablemente más largos, requiriendo a menudo hardware computacional potente.
+			IR basada en Aprendizaje Profundo (DLR): 
+			Es la generación más reciente de técnicas de reconstrucción, utilizan redes neuronales profundas, típicamente CNNs, entrenadas en grandes conjuntos de datos que contienen pares de datos de proyección (a menudo de baja dosis o ruidosos) y reconstrucciones de alta calidad correspondientes (a menudo de alta dosis o procesadas con MBIR)., la red aprende a mapear directamente las proyecciones a una imagen de alta calidad, o a refinar/denoise una imagen reconstruida inicialmente con FBP o IR. DLR puede lograr tiempos de reconstrucción muy rápidos (comparables a FBP) con una calidad de imagen potencialmente excelente (bajo ruido, alta resolución). Sin embargo, su rendimiento depende críticamente de la calidad y representatividad de los datos de entrenamiento. Existe el riesgo de que la red "alucine" detalles que no están presentes o elimine detalles finos reales si no se entrena y valida cuidadosamente. (Herl, 2021)
+			
+			
+		
+		\end{itemize}
+	\end{justify}
+	\subsection{Definición de términos básicos}
+	\subsubsection{Marco Conceptual}
+	\begin{justify}	
+	Para mejorar el entendimiento y dialogo entre las fases, en este apartado se pretende hacer comprender al lector un Glosario de terminaciones clave:
+	
+	\end{justify}
+	\begin{justify}	
+	\textit{\textbf{Aprendizaje profundo:   }}un subcampo de aprendizaje automático que utiliza redes neuronales con múltiples capas (redes neuronales profundas) para aprender representaciones de datos con múltiples niveles de abstracción.
+	
+	\textit{\textbf{Caja negra : }}(caja negra): frase para sistemas intrincados, particularmente redes de aprendizaje profundo, donde el funcionamiento interno y las opciones son difíciles para las personas que comprenden.
+	
+	\textit{\textbf{CNN 3D  : }} (red neuronal convolucional 3D): una red neuronal profunda especializada creada para manejar datos con un diseño tridimensional (alto, ancho y profundidad), como videos o imágenes médicas 3D. Aplicar operaciones de convolución en tres dimensiones para capturar las características del espacio-tiempo.
+	
+	\textit{\textbf{Pruebas no destructivas (NDT): }}Pruebas no destructivas (NDT) es un grupo de técnicas de análisis utilizadas en la ciencia y la industria para evaluar las propiedades de un material, componente o sistema sin causar daño.
+	
+	\textit{\textbf{Evaluación de viabilidad: }}(estudio de factibilidad): un examen metódico de la practicidad de un proyecto o iniciativa propuesta, determinando si se puede ejecutar con los recursos y herramientas actuales, y si los beneficios superan los costos.
+	
+	\textit{\textbf{Explicabilidad: }}(explicación): la capacidad de un sistema de IA para proporcionar explicaciones claras y comprensibles sobre cómo alcanza sus decisiones y recomendaciones, haciendo su operación transparente y justificable para los usuarios.
+	
+	\textit{\textbf{Inspección automatizada de defectos de soldadura: }}proceso de uso de tecnologías como visión artificial, inteligencia artificial y pruebas no destructivas para identificar y clasificar automáticamente fallas en la calidad de la soldadura, como la porosidad, la falta de fusión o las irregularidades geométricas.
+	
+	\textit{\textbf{Inteligencia artificial explicable (XAI): }}un campo de inteligencia artificial dedicada al desarrollo de sistemas de IA que puedan explicar sus decisiones y acciones comprensiblemente para los humanos, promoviendo la confianza y la transparencia.
+	
+	\textit{\textbf{Soldadura MIG/MAG: }}los métodos de soldadura por arco con gas, donde MIG (gas inerte metálico) emplea un gas inerte y mag (gas metálico activo) utiliza un gas activo. Comúnmente utilizado para unir piezas de metal.
+	
+	\textit{\textbf{Tomografía computarizada (CT): }}un método para diagnosticar imágenes que fusionan varias radiografías desde varias perspectivas para producir imágenes transversales y modelos tridimensionales de las partes internas de un objeto. En el campo, se utiliza para un examen interno sin causar daños.
+	
+	\textit{\textbf{Validación final: }}el proceso de verificación y confirmación de que los resultados obtenidos de una prueba no destructivap son precisos, confiables y cumplen con los estándares de calidad y seguridad establecidos.
+	\textit{\textbf{Visión artificial: }}(visión por computadora / visión artificial): una rama de IA que permite a las computadoras "observar" y analizar imágenes y videos digitales, extrayendo datos importantes para automatizar tareas como inspección, reconocimiento de patrones. En visión artificial, los datos numéricos adquiridos vía sensores son procesados y transformados en representaciones que permiten segmentar patrones y estructuras relevantes para la inspección industrial. La ingeniería computacional busca modelar mecanismos inspirados en el sistema nervioso humano. 
+	
+	\subsubsection{Pipeline del Sistema Propuesto}
+	\begin{justify}
+	
+	El flujo metodológico del sistema híbrido EIS–Explainable Inspection System para inspección de soldadura en TC 3D se estructura como se detalla a continuación:
+	
+	\end{justify}
+	
+	
+	\begin{table}[htbp]
+		\centering
+		\caption{\textit{Flujo de etapas en el sistema propuesto}}
+		\begin{adjustbox}{max width=\textwidth}
+			\small
+			\begin{tabular}{p{11em}p{22em}r}
+				\toprule
+				\textbf{Etapa} & \textbf{Descripción} &  \\ 
+				\midrule
+				\textbf{1. Adquisición / dataset} & Volúmenes CT industriales o  dataset sintético a futuro controlado (simulación 3D Slicer / defectos paramétricos). &  \\ 
+				\textbf{2. Preprocesamiento volumétrico} & Normalización de intensidades HU, resampleo, eliminación de artefactos metálicos y cropping ROI del cordón. &  \\ 
+				\textbf{3. Entrenamiento modelo CNN3D} & Arquitectura 3D U-Net con optimización AdamW; data augmentation 3D (rotación, ruido gaussiano, blur, elastic). &  \\ 
+				\textbf{4. Inferencia y XAI volumétrica} & Grad-CAM3D y overlays de activación sobre planos axial, coronal y sagital. &  \\ 
+				\textbf{5. Evaluación cuantitativa} & IoU, Dice 3D, F1 volumétrico y sMAPE para coherencia en la relevancia XAI. &  \\ 
+				\textbf{6. Validación experta END} & Juicio técnico de inspector certificado (NDT Level II/III); encuesta estructurada y escala Likert. &  \\ 
+				\textbf{7. Integración Edge} & Exportación ONNX y ejecución en Arduino Pro 1Q para alarmas LED/buzzer de detección. &  \\ 
+				\bottomrule
+			\end{tabular}
+		\end{adjustbox}
+		
+		\vspace{1mm}
+		\begin{flushleft}
+			\textit{Nota}. Elaboración propia. Pipeline del sistema propuesto.
+		\end{flushleft}
+		
+		\label{tab:flujo_sistema}
+	\end{table}
+	
+	
+	\end{justify}
+	%---------------------------------------------------------------------
+	% Marco Tecnológico
+	%---------------------------------------------------------------------
+	\newpage
+	\begin{center}
+	\section{Marco tecnológico}
+	\end{center}
+	
+	\begin{justify}
+	En la dentificación de Tecnologías Clave encontramos principalmente Tomografía Computarizada (TC) para adquisición de datos volumétricos de soldaduras. Redes Neuronales Convolucionales 3D (CNN 3D) para segmentación y clasificación de defectos en datos de TC. Inteligencia Artificial Explicable (XAI) para interpretar las decisiones de las CNN 3D.
+	
+	\textit{\textbf{Tecnologías según Especialidad (Mecatrónica):: }} TC (sensores, adquisición de datos), CNN 3D (procesamiento de señales/imágenes, control inteligente), XAI (interfaz humano-máquina, sistemas inteligentes).
+	\textit{\textbf{Tendencias Tecnológicas (Mecatrónica): }}
+	Integración de IA en NDT: Automatización de la interpretación de datos complejos (TC, ultrasonido). 
+	
+	Impacto: Mayor velocidad, consistencia y potencial precisión en inspección.
+	
+	Gemelos Digitales y Simulación: Uso de simulaciones (CT, soldadura ) para optimizar procesos y entrenar IA. Impacto: Reducción de pruebas físicas, aceleración del desarrollo, mejora de la robustez de la IA.
+	
+	IA Explicable (XAI) en Sistemas Críticos: Demanda creciente de transparencia y confianza en las decisiones de IA en manufactura y NDT. 
+	
+	Impacto: Facilita la adopción, mejora la depuración, permite la certificación y asegura la rendición de cuentas.
+	\end{justify}
+	\subsection{Tecnologías utilizadas y tendencias}
+	\begin{justify}
+		La base general en cuanto al uso de tecnologías de vanguardia se refiere se basa en el uso de tomografías médicas de Siemens Healthcare para examinar soldaduras segmentadas en 3D, como informó CNN según Takase y sus colegas, la tomografía industrial escanea la muestra girando alrededor de una fuente estacionaria, que nos da mediciones súper precisas sin preocuparse por los límites de radiaciónPor otro lado, la tomografía computarizada médica utiliza un pórtico rotativo para escanear pacientes rápidamente, pero no lo es, pero se ha demostrado que un tomografo médico puede crear imágenes lo suficientemente buenas para el análisis industrial si obtienes el detalle y contraste correctos, de acuerdo con rigakucom Con un top-notch Siemens Tomógrafo (como elegimos el SOMATOM porque tiene estos detectores de corte múltiple genial y algoritmos inteligentes que realmente ayudan a obtener una imagen clara Plus, y esto está comprobado en: \parencite{takase_2023} un montón de nuevas ideas en CT como una mejor reconstrucción de imágenes, técnicas de ahorro de dosis, y el conteo de fotones vienen del mundo médico en rigakucom En pocas palabras, fuimos con TC médica porque era fácil de conseguir, había sido revisado, y funcionó bien para nuestras muestras de soldadura de acero, demostrando que es bueno para NDT industrial.
+		
+		Utilizamos 3D Slicer, una herramienta gratuita y de código abierto, para manejar grandes cantidades de imágenes médicas 3D (DICOM) para la visualización y segmentación Convertimos la tomografía Siemens DICOM en formato NifTI (útil para el aprendizaje volumétrico profundo) y utilizamos Slicer para extraer subvolumenes. Para la anotación semiautomática MONAI Label se integró, un sistema cliente-servidor de etiquetas asistido por AI. MONAI Label facilita la creación de conjuntos anotados y la formación de modelos de IA en imágenes médicas \parencite{project-monai_2023}, y puede funcionar localmente con soporte GPU. Esta configuración funciona muy bien con las herramientas de imagen médica. Tomemos, por ejemplo, el frontend 3D Slicer que tenemos en nuestra propia máquina, que nos permite anotar directamente en el entorno de visualización Importante, MONAI Label incorpora estrategias de aprendizaje activo que reducen drásticamente el tiempo de anotación: estudios recientes muestran reducciones significativas en el tiempo requerido utilizando su modelo interactivo arxiv.org.
+		
+		Los modelos fueron entrenados usando PyTorch (Python 3.9) con una GPU de NVIDIA, donde CUDA y CuDNN fueron configurados Control de versión con Git fue usado para el código Para mantener un ojo en el progreso, estamos configurando herramientas como TensorBoard y Weights and Biases. precisión, y resultados de F1, y ayuda a detectar si el modelo está exagerando o no entrenando lo suficiente En la etapa de despliegue, consideramos el uso futuro de un Raspberry Pi 4 (costo inferior a ~USD35) para ejecutar el modelo optimizado (por ejemplo, con TensorFlow Lite), que haría viable un sistema de inspección portátil IA. Vale la pena mencionar que software clave como 3D Slicer, MONAI y PyTorch son de código abierto, lo que ayuda a reducir las cuotas de licencia.
+		
+		En nuestro proceso de segmentación, estamos utilizando modelos de CNN 3D El modelo principal era U-Net \parencite{soeren_ronneberger_2016} una red que extendía la U-Net original reemplazando todas las operaciones 2D con versiones 3D, permitiendo predecir segmentaciones densas en volúmenes completos arxivorg 3D U-Net incluye deformaciones elásticas sobre la marcha para el aumento de datos y entrenamiento de extremo a extremo sin pesas pre-entrenadas A diferencia de las redes 2D que manejan cada corte por su cuenta, las redes 3D CNN utilizan el contexto entre cortes para aumentar la precisión, aunque significa más parámetros Además de teh 3D U-Net, también miramos un montón de otros modelos del "Model Zoo" de MONAI, como algunos otros geniales Redes de segmentación de órganos completos), como se incluye en el paquete Para dar sentido a las previsiones, utilizamos Grad-CAM \parencite{daniel_2021}: este método crea mapas de calor basados en gradientes que señalan las partes de la imagen que son más importantes para la decisión de la red en datascientistcom Al final, evaluamos el rendimiento utilizando la matriz de confusión, Esto nos ayuda a clasificar los verdaderos positivos/negativos y falsos positivos/negativosDe esto, obtenemos métricas como precisión, sensibilidad (recordar) y puntuación F1 Estos números miden lo buena que es la segmentación (como, cuántos defectos detectamos realmente)
+		\end{justify}
+	
+		\subsubsection{Contexto de Ingeniería: }
+		La tecnología en ingeniería se refiere a la aplicación de principios científicos y matemáticos para diseñar, desarrollar y operar sistemas y procesos. En NDT, implica el uso de herramientas y métodos para evaluar materiales sin dañarlos.
+	
+		\subsubsection{Características de las soldaduras y materiales: }
+		\begin{justify}
+		En este estudio, examinamos las soldaduras SMAW (el electrodo recubierto) en acero blando El metal base fue fabricado con acero de baja aleación tipo 1010 (AISI 1010), bajo carbono; este acero es ampliamente utilizado en aplicaciones estructurales por su excelente soldabilidad y ductilidad metalzenithcom Las varillas soldadas se probaron con electrodos regulares en tuberías y tanques, como el electrodo E6013, que tiene un revestimiento de rutilo, se utiliza típicamente para el acero al carbonoOfrece una buena resistencia mecánica y se enciende fácilmente Es compatible con corrientes de corriente alterna y corriente continua en todas las posiciones de soldadura europeas Otro es el electrodo E7018, que tiene una resistencia súper fuerte, especialmente cuando es frío, y es perfecto para la construcción de material metálico y esos grandes contenedores de presión en Europa Estos cables, típico en trabajos de transporte de gas/combustible, definir el tipo de soldadura que estamos viendo en la Figura 1 ilustra una muestra de los materiales soldados examinados.
+		
+		\item \textbf{Tecnología alternativa (visión y NDT): }
+		
+		A pesar de que no pudimos comprar ningún nuevo equipo debido a problemas de dinero, todavía miramos otras maneras de comprobar las cosas métodos de pruebas ultrasónicas avanzadas, como la matriz escalonada, son súper importantes: la industria NDT dice que están tomando el relevo de las técnicas radiográficas de la vieja escuela porque son más seguros (sin radiación dañina), pueden seguir mientras inspeccionan, y son grandes en detectar defectos.
+		
+		En efecto, diversas guías indican que las tecnologías ultrasónicas modernas reemplazan progresivamente a los rayos X/Gamma para inspección de soldaduras, gracias a su alta resolución acústica y seguridad
+		indutecsa.com
+		. 
+		\item \textbf{La radiografía digital (rayos X)} se emplea tradicionalmente para detectar defectos internos finos en materiales delgados, pero requiere exposición a radiación y procesamiento posterior de las películas o escaneos (p.ej. TC)
+		pmc.ncbi.nlm.nih.gov
+		. En la bibliografía se observa que, por ejemplo, la radiografía con TC se usa para detectar fisuras internas, usando rayos X en piezas finas (rayos gamma si son gruesas); los resultados luego se analizan digitalmente mediante película o escáner
+		pmc.ncbi.nlm.nih.gov
+		. En este enfoque, la combinación de visión artificial 3D e IA busca superar las limitaciones de la inspección manual clásica: la segmentación manual de un volumen 3D es extremadamente lenta, mientras que la segmentación automática (CNN) una vez entrenada puede procesar datos masivos rápidamente, generando un truth set robusto con menor esfuerzo humano
+		arxiv.org
+		. Además, a diferencia de enfoques 2D (que fragmentan por planos), los modelos 3D integran contexto volumétrico completo, esencial para caracterizar defectos en soldaduras
+		medium.com
+		. En resumen, el marco tecnológico adopta tendencias actuales: IA y visión por computadora aplicadas a NDT, aprovechando la potencia de cálculo moderna y las herramientas de software libre, lo que nos permite una solución innovadora de segmentación y clasificación de defectos en soldaduras.
+		\end{justify}
+	\subsection{Comparación de tecnologías}
+
+		\subsubsection{TC Industrial vs. Médica: }
+		\begin{justify}
+		La TC industrial está optimizada para piezas pequeñas y altísima resolución (micrones) con geometría de haz cónico o paralelo
+		rigaku.com
+		, mientras la TC médica usa un gantry giratorio rápido con geometría de haz abanico y volumen de muestreo grande
+		rigaku.com
+		. Sin embargo, estudios comparativos muestran que un tomógrafo médico puede lograr imágenes útiles para muchas aplicaciones de materiales
+		rigaku.com
+		rigaku.com
+		. En la práctica, elegimos TC médica por accesibilidad y capacidad (SOMATOM de Siemens), aunque TC industrial ofrece mayor detalle si fuera necesario.
+		
+		A nivel de mercado, los sistemas de tomografía computarizada industrial presentan un costo considerablemente elevado, con rangos típicos entre USD 285.000 y USD 360.000 Según Excedr (2024), lo que los convierte en equipos de alta inversión y normalmente accesibles solo para instalaciones industriales especializadas. En este proyecto, se optó por aprovechar la infraestructura ya disponible —específicamente un tomógrafo médico Siemens— configurado y adaptado para la inspección de materiales más densos, lo cual permite realizar la evaluación sin incurrir en los costos prohibitivos de adquisición de un sistema industrial dedicado. Si bien esta alternativa implica ciertos compromisos técnicos, especialmente cuando se trata de objetos metálicos de alta densidad o requerimientos de resolución extrema, su uso es plenamente viable en el contexto del presente estudio debido a que la soldadura analizada no presenta densidades extraordinarias y los requisitos de resolución se encuentran dentro del rango operativo del equipo médico. En consecuencia, la utilización del tomógrafo médico constituye una solución técnica y económicamente justificada, permitiendo aprovechar infraestructura avanzada existente y logrando resultados adecuados para la aplicación propuesta.
+		\end{justify}
+		
+		\subsubsection{Ultrasonido vs. Radiografía: }
+		\begin{justify}
+		Los ensayos ultrasónicos avanzados (phased array) se imponen en tuberías porque no implican radiación y permiten inspección continua
+		indutecsa.com
+		. Por el contrario, la radiografía digital (rayos X) es efectiva para defectos de orientación favorable, pero conlleva riesgos de salud y tiempo de inactividad. Los estándares API/ASME difunden la combinación de métodos: usar ultrasonidos para la mayoría de casos y radiografía para validación puntual
+		indutecsa.com
+		pmc.ncbi.nlm.nih.gov
+		.
+		\end{justify}
+		\subsubsection{Segmentación Manual vs. IA: }
+		\begin{justify}
+		El etiquetado 3D manual de defectos es muy laborioso y subjetivo. Las soluciones de IA (e.g. MONAI Label con 3D U-Net) pueden automatizar gran parte del trabajo. Como indican los experimentos con MONAI Label, el modo interactivo asistido reduce notablemente el tiempo de anotación
+		arxiv.org
+		. Por ello, la segmentación automática ofrece un costo/beneficio atractivo comparado con la segmentación manual intensiva.
+		\end{justify}
+		\subsubsection{Redes 2D vs. 3D CNN: }
+		\begin{justify}
+		Las redes 2D realizan segmentación imagen por imagen, sin considerar el contexto volumétrico
+		medium.com
+		. En cambio, las redes 3D procesan parches volumétricos completos, capturando relaciones espaciales entre cortes y mejorando la precisión en estructuras tridimensionales (al costo de mayor complejidad)
+		medium.com
+		. Para nuestro caso volumétrico, las CNN 3D resultan más adecuadas.
+		
+		En general, lo que se hizo fue una implementación interna de Segmentación Automática Potenciada con IA en Subvolúmenes de TC para la Inspección de Soldaduras SMAW. 
+		\end{justify}
+		\subsubsection{Comparación de Tecnologías Clave}
+		% Table generated by Excel2LaTeX from sheet 'Hoja1'
+		\begin{table}[htbp]
+			\centering
+			\caption{\textit{Comparación de Tecnologías Clave}}
+			\label{tab:addlabel2}
+			\small
+			\resizebox{0.85\textwidth}{!}{ % <-- ajusta aquí el tamaño, puedes probar 0.8 o 0.9 también
+				\begin{tabular}{p{9em}p{10em}p{10em}p{6em}p{9em}}
+					\hline
+					\textbf{Criterio / Tecnología} & \textbf{TC Médica Siemens Healthineers (Aplicada a soldaduras)} & \textbf{TC Industrial Convencional} & \textbf{Ultrasonido Automatizado} & \textbf{Radiografía Convencional} \\
+					\hline
+					\textbf{Desempeño (velocidad, precisión)} & Alta precisión volumétrica (sub-mm), rápida adquisición (segundos por corte). Ideal para análisis 3D. & Precisión superior (µm), pero más lenta por mayor resolución y densidad de energía. & Buena detección de grietas longitudinales, menor precisión volumétrica. & Alta precisión en 2D, sin información de profundidad. \\
+					\textbf{Eficiencia energética} & Moderada; equipos hospitalarios optimizados para consumo clínico (120 kVp). & Alto consumo (>300 kVp). & Bajo consumo eléctrico. & Moderado. \\
+					\textbf{Costo (licencia, hardware, mantenimiento)} & Bajo costo operativo en colaboración institucional; software accesible (3D Slicer + MONAI Label open source). & Muy alto (hardware y licencias especializadas). & Medio (depende del tipo de transductor y calibración). & Medio-alto (películas, químicos, protección radiológica). \\
+					\textbf{Facilidad de implementación} & Alta: compatible con DICOM/NIfTI, integración Python/3D Slicer, TensorBoard y CUDA. & Baja: requiere entornos industriales y blindaje. & Media: requiere calibración y personal entrenado. & Media: requiere cuarto oscuro y procesado de imágenes. \\
+					\textbf{Soporte y comunidad} & Amplia comunidad médica, científica y open source (MONAI, PyTorch, 3D Slicer). & Limitada, cerrada en entornos industriales. & Moderada, con foros técnicos. & Limitada. \\
+					\textbf{Seguridad / Ciberseguridad} & Certificación médica IEC/ISO, entornos seguros (HIPAA compliance). & Alta protección física, bajo nivel de red. & Alta seguridad operativa. & Media, dependiente del operador. \\
+					\textbf{Ventajas principales} & Open-source, rápida, reutilizable, gran compatibilidad IA. & Máxima precisión física, ideal para materiales metálicos densos. & Inspección rápida en campo. & Buena resolución superficial. \\
+					\textbf{Desventajas principales} & Menor resolución que TC industrial. & Costo y complejidad extrema. & Limitado para geometrías complejas. & Sin profundidad 3D. \\
+					\textbf{Puntaje global (0–10)} & \textbf{9.1} & 7.8 & 6.5 & 6.0 \\
+					\hline
+				\end{tabular}
+				}
+			\begin{flushleft}
+				\textit{Nota}. Elaboración propia.
+			\end{flushleft}
+		\end{table}
+		\begin{justify}
+		La TC Médica Siemens Healthineers fue seleccionada debido a su balance entre accesibilidad, precisión volumétrica, compatibilidad IA y ecosistema open source (3D Slicer + MONAI Label), representando la mejor alternativa para la validación experimental y entrenamiento de redes 3D U-Net en soldaduras SMAW.
+		
+		Métodos de Comparación:
+		
+		\item \textbf{Tablas Comparativas:} (Ver Tablas 3 y 4).
+		\item \textbf{Matriz de Decisión: }Asignar pesos a criterios (precisión, costo, velocidad, interpretabilidad) y puntuar TC y CNN 3D.
+		\item \textbf{Análisis FODA: }
+		\item \textbf{TC: }Fortalezas (inspección volumétrica NDT), Oportunidades (combinación con IA), Debilidades (costo, artefactos, radiación), Amenazas (otras técnicas NDT). (Department of Electrical and Computer Engineering and Institute for Sustainable Manufacturing, 2025)
+		\item \textbf{NN 3D: }Fortalezas (automatización, análisis complejo de patrones), Oportunidades (mejora continua con datos, XAI), Debilidades (requiere datos, "caja negra", costo computacional), Amenazas (cambios rápidos en IA, falta de estandarización).
+		
+		\end{justify}
+		
+		% Table generated by Excel2LaTeX from sheet 'Hoja1'
+		\begin{table}[htbp]
+			\centering
+			\caption{\textit{Casos de Uso del Sistema de Inspección y Segmentación Automática}}
+			\begin{tabular}{p{14em}p{23.145em}}
+				\toprule
+				\textbf{Elemento} & \textbf{Descripción} \\
+				\hline
+				\textbf{1. Nombre del Caso de Uso} & Segmentación y Análisis Automático de Cordones de Soldadura en Subvolúmenes de TC. \\
+				\textbf{Actor Principal} & Investigador o técnico en ensayos no destructivos (END). \\
+				\textbf{Disparadores} & Carga de subvolumen DICOM/NIfTI en 3D Slicer; conexión al servidor MONAI Label. \\
+				\textbf{2. Flujo de Eventos} & \multicolumn{1}{r}{} \\
+				\textbf{2.1 Flujo Básico} & (a) El usuario abre la interfaz de Arduino 1Q (b) El usuario abre el estudio DICOM o NIfTI. (c) Selecciona el modelo preentrenado “DeepEditWeld”, "DeepEdit", "DyUnit" o "FastEdit"en MONAI Label. (d) El sistema procesa el volumen en GPU con PyTorch. (e) Genera mapa de calor Grad-CAM y máscara de segmentación 3D. (f) Se visualiza el resultado superpuesto en vistas Axial, Coronal y Sagital. \\
+				\textbf{2.2 Flujo Alternativo} & Si la segmentación automática falla, el usuario ajusta el resultado manualmente (edición con herramientas de 3D Slicer) y reentrena el modelo con correcciones. \\
+				\textbf{3. Precondiciones} & Configuración correcta del servidor MONAI Label (PyTorch, CUDA, cuDNN, TensorBoard), dataset etiquetado en NIfTI, GPU disponible. \\
+				\textbf{4. Postcondiciones} & Generación de resultados reproducibles en formato DICOM/NIfTI, almacenamiento de métricas (precisión, F1-score, matriz de confusión) y visualización en TensorBoard. \\
+				\bottomrule
+			\end{tabular}%
+			\begin{flushleft}
+				\textit{Nota}. Elaboración propia.
+			\end{flushleft}
+			\label{tab:addlabel3}%
+		\end{table}%
+		\begin{justify}
+		Hacer uso de los escáneres médicos de TC de Siemens Healthineers consiste en aprovechar lo que tenemos en la ciudad con el fin de adaptarnos y adecuarnos con lo que se posee actualmente, reducir los costos de los experimentos y obtener las mejores imágenes 3D posibles. Además, la compatibilidad directa con los estándares DICOM, NIfTI y las bibliotecas de IA como MONAI Label, PyTorch, CUDA y CuDNN facilitan una segmentación precisa, reproducible y escalable, ideal para el desarrollo de inteligencia artificial aplicada a la inspección de soldadura SMAW.
+		
+		Entrenar y vigilar las cosas con TensorBoard y pesos y sesgos hizo fácil medir lo bien que estaba haciendo el modelo, usando cosas como pérdida, precisión, y F1-score para asegurarse de que era de primera categoría La futura integración de Raspberry Pi parece una opción sólida para configuraciones portátiles en escenarios de mantenimiento o inspección de campo.
+		\end{justify}
+	%---------------------------------------------------------------------
+	% Marco Metodológico
+	%---------------------------------------------------------------------
+	\newpage
+	\begin{center}
+	\section{Marco metodológico}
+	\end{center}
+	
+	\subsection{Enfoque de la investigación}
+	\begin{justify}
+	El estudio adopta un enfoque mixto (cuantitativo–cualitativo) \parencite{Barton_Gwennan_2020}, combinando el análisis numérico de datos obtenidos mediante procesamiento volumétrico (imágenes DICOM–NIfTI y reconstrucciones 3D) con la valoración interpretativa de resultados cualitativos en la validación de interpretabilidad con diagramas de red (3D Grad-CAM visuales). Esto nos permite medir objetivamente el rendimiento del sistema utilizando números (métodos cuantitativos) y luego sumergirnos en la comprensión de los resultados visuales e interpretación (métodos cualitativos) \parencite{Miguel_Medina_2025} Este método aumenta tanto la validez como la profundidad de la explicación, fusión de la fuerza estadística de las métricas con una comprensión completa de los fenómenos.
+	
+	El componente cuantitativo permite medir la precisión de segmentación, la densidad de defectos internos y la exactitud de reconstrucción volumétrica del cordón de soldadura a partir de tomografías computarizadas (CT).
+	El componente cualitativo, en cambio, incorpora la interpretación experta, mediante encuestas y entrevistas, acerca de la visibilidad, interpretabilidad y correlación estructural de los defectos detectados con los criterios metalográficos y de control de calidad industrial.
+	\end{justify}
+		\subsubsection{Justificación del enfoque mixto y uso de métodos cuantitativos y cualitativos}
+		\begin{justify}
+		El enfoque mixto integra “números y significados profundos” al combinar lo cuantitativo y lo cualitativo. Por un lado, los métodos cuantitativos permiten evaluar el sistema inspector de defectos mediante métricas objetivas (precisión, coeficiente Dice, matriz de confusión) que cuantifican su desempeño estadístico. Por otro lado, los métodos cualitativos (evaluación visual de mapas explicativos) aportan comprensión del porqué de las decisiones de la red, validando su coherencia con la realidad física. La investigación mixta fomenta la triangulación de resultados: al usar múltiples fuentes y técnicas de análisis, se refuerza la confiabilidad de las conclusiones. En conjunto, esto ofrece una visión más holística del fenómeno (defectos internos en soldadura) y mejora la validez del estudio, aprovechando las fortalezas de cada método \parencite{tropicalmed_2022}.
+		\end{justify}
+	
+	\subsection{Método de investigación}
+	\begin{justify}
+	El método utilizado es de tipo aplicado y experimental, porque busca resolver un problema técnico real —la interpretación de la estructura interna de cordones de soldadura mediante tomografía computarizada y segmentación con modelos basados en aprendizaje profundo (MONAI Label y 3D Slicer)— a través de la experimentación controlada y medición de resultados visuales.
+	El método experimental se implementa con parámetros predefinidos de adquisición DICOM, conversión NIfTI, normalización de intensidades, y segmentación volumétrica automática, pese a la de entrenamiento y pese a ser la primera vez en involucrar la soldadura en MONAI Label, se corrige y se enseña lo que son los defectos a la CNN mediante un refinamiento y anotación manual.
+	\end{justify}
+		\subsubsection{Método experimental}
+		\begin{justify}
+			
+		Obtención de los datos: TC Siemens Healthineers(Ver tabla 5)
+		
+		% Table adjusted for better fit in page width
+		\begin{table}[htbp]
+			\centering
+			\caption{\textit{Parámetros técnicos de adquisición y segmentación}}
+			\begin{tabular}{p{5.8em}p{8.5em}p{7em}p{3em}p{11em}}
+				\toprule
+				\textbf{Parámetro técnico} & \textbf{Descripción} & \textbf{Valor utilizado} & \textbf{Unidad} & \textbf{Observaciones} \\
+				\midrule
+				Resolución espacial & Tamaño de voxel en la reconstrucción CT & 0.15 × 0.15 × 0.15 & mm & Determina nivel de detalle en defectos finos \\
+				Energía del tubo & Voltaje de rayos X utilizado & 120 & kVp & Afecta contraste entre material y porosidad \\
+				Corriente del tubo & Intensidad del haz durante adquisición & 160 & µA & Mejora relación señal-ruido \\
+				Número de proyecciones & Imágenes adquiridas por rotación completa & 720 & — & Define resolución angular \\
+				Filtro de reconstrucción & Tipo de kernel aplicado & Ram-Lak & — & Realza bordes y contornos del cordón \\
+				Software de segmentación & Herramienta utilizada & MONAI Label + 3D Slicer & — & Flujo conectado vía servidor local \\
+				Modelo de inferencia & Red neuronal aplicada & DeepEditWeld (U-Net 3D) & — & Entrenada con muestras CT industriales \\
+				Formato de entrada & Datos de origen & DICOM & — & 512 × 512 píxeles por corte \\
+				Formato de salida & Datos convertidos & NIfTI (.nii.gz) & — & Compatibilidad con Python y MONAI \\
+				Tiempo de inferencia & Duración promedio por volumen & 3.5 & min & En GPU RTX 3060 Ti, batch = 1 \\
+				\bottomrule
+			\end{tabular}
+			
+			\begin{flushleft}
+				\textit{Nota}. Elaboración propia.
+			\end{flushleft}
+			\label{tab:addlabe9}
+		\end{table}
+		
+		
+		
+		El método experimental incluye las siguientes etapas:
+
+		Preparación y recolección de datos: Se obtienen piezas de soldadura con defectos inducidos o reales. Cada pieza se somete a un escaneo con tomografía computarizada (TC), generando imágenes volumétricas 3D que contienen la información interna de la soldadura. Como explican García Márquez y Segovia (2022), la TC aplica rayos X con rotación de 360°, adquiriendo cientos o miles de proyecciones que permiten reconstruir un modelo 3D detallado del material \parencite{pedro_márquez_segovia_ramírez_2025} Este modelo volumétrico contiene los defectos internos (porosidades, grietas, etc.) no visibles externamente.
+		
+		Etiquetado y anotación: Las imágenes 3D de TC se anotan interactivamente. Se utiliza MONAI Label (integrado en 3D Slicer) para segmentar y etiquetar los defectos. MONAI Label es un framework abierto basado en PyTorch diseñado para el etiquetado asistido por IA de imágenes médicas 3D
+		\parencite{Diaz_Pinto_2024}.
+		Gracias a su integración con interfaces clínicas, permite generar máscaras de defecto incrementales que sirven como ground truth para el entrenamiento.
+		
+		Ground truth: también llamado terreno de verdad, es otro volumen 3D idéntico a cualquier subvolumen de nuestro dataset de soldadura, pero en el que los vóxeles de los defectos están marcados con un valor específico (por ejemplo, 1) mientras que el resto está en 0. Este archivo es la "respuesta" que el modelo de IA aprenderá a encontrar.
+		
+		Tener el volumen 3D renderizado es una cosa; etiquetar los defectos dentro de él es otra. El modelo de IA no sabe qué es un defecto, por lo que el humano, como el experto, debe indicárselo. Esto es posible hacerlo en 3D Slicer, dentro de este software, se debe segmentar manualmente cada defecto que se encuentre.
+		Esto implica ir a través de los cortes del volumen 3D o usar la vista renderizada para delinear con precisión las regiones que corresponden a porosidad, inclusiones, falta de penetración u otros defectos.
+		El resultado de este proceso será un segundo archivo (a menudo llamado máscara o Ground Truth).
+	
+		Pre-procesamiento de los Datos: Una vez que esté listo el volumen de datos y su máscara de anotación Ground truth, es crucial prepararlos para el entrenamiento.
+		Se Recorta la Región de Interés (Si el volumen 3D incluye mucho espacio vacío alrededor de la soldadura, se lo recorta para que solo contenga el cordón de soldadura, esto reducirá el tamaño de los datos y la carga computacional para el entrenamiento)
+		
+		Normalización: Se asegura de que los valores de intensidad de los vóxeles estén en un rango estandarizado (por ejemplo, de 0 a 1 o con media cero y desviación estándar uno). Esto es vital para el buen rendimiento de las redes neuronales.
+		
+		Entrenamiento del modelo CNN 3D: Se entrena una red neuronal convolucional tridimensional de tipo U-Net dinámico (Dynamic UNet) usando PyTorch. La arquitectura DynUNet (proporcionada por MONAI) adapta automáticamente la profundidad de la red según la resolución del volumen de entrada. El modelo se entrena con las tomografías etiquetadas (imágenes como entrada, máscaras de defectos como salida) mediante técnicas supervisadas, optimizando una función de pérdida (por ejemplo, Dice loss). El entrenamiento se realiza sobre GPU, ajustando hiperparámetros (tasa de aprendizaje, número de epochs, etc.) para maximizar la segmentación correcta de defectos.
+		
+		Validación cuantitativa: El modelo se evalúa en un conjunto de prueba independiente. Se calcula la exactitud (accuracy) de detección, la precisión, la sensibilidad (recall), y métricas de segmentación como el coeficiente Dice (similar al F1 en segmentación) y el IoU. Además se construye la matriz de confusión para clasificar correctamente defecto / sin defecto. Por ejemplo, en tareas similares de segmentación volumétrica se han reportado coeficientes Dice superiores a 0.90, indicando alta concordancia entre segmentación automática y manual \parencite{Miguel_Vera_MgSc_PhD_2024} Se compara también contra métodos de referencia o umbrales convencionales para verificar mejoras.
+		
+		Evaluación cualitativa (interpretabilidad): Finalmente, se aplica un método de IA explicable: Grad-CAM 3D. Grad-CAM produce mapas de calor tridimensionales que resaltan las regiones de la imagen que más influyeron en la decisión de la red \parencite{daniel_Francis_2021}
+		. Se generan estos mapas para los defectos detectados y se superponen a las tomografías originales. Expertos en soldadura revisan visualmente si las regiones resaltadas corresponden efectivamente a defectos reales, lo que permite interpretar el modelo y verificar que la red “mire” las zonas correctas. Esta evaluación cualitativa asegura que la detección no es solo correcta estadísticamente, sino también explicable y científicamente consistente.
+		\end{justify}
+		
+		\subsubsection{Herramientas y entornos de prueba}
+		\begin{justify}
+		El desarrollo del sistema utiliza las siguientes herramientas y plataformas:
+		
+		MONAI Label: Framework en Python/PyTorch para etiquetado interactivo de imágenes médicas 3D. Se ejecuta como complemento de 3D Slicer, permitiendo la anotación asistida de volúmenes TC.
+		
+		PyTorch: Biblioteca de deep learning usada para implementar y entrenar las CNN 3D. MONAI está construido sobre PyTorch y optimiza modelos volumétricos.
+		
+		Dynamic UNet (DynUNet): Arquitectura de segmentación 3D basada en U-Net, incluida en MONAI, que ajusta dinámicamente sus capas según la entrada. Es adecuada para segmentación volumétrica (vgr. segmentación de órganos en TC) \parencite{Andres_Sachidanand_2024}.
+		
+		Grad-CAM 3D: Técnica de XAI que extiende Grad-CAM a redes 3D, implementada con PyTorch. Genera mapas de activación ponderados por gradientes en volúmenes, destacando regiones relevantes para la clasificación.
+		
+		3D Slicer: Plataforma open-source para visualización médica, usada para integrar MONAI Label y ver los resultados 3D.
+		
+		Bibliotecas de Python (NumPy, SciPy, scikit-learn, etc.) para preprocesamiento, cálculo de métricas y análisis estadístico.
+		
+		Hardware de computación: GPU(s) para entrenamiento de la CNN, dada la alta demanda computacional de los volúmenes 3D.
+		
+		\end{justify}
+	\subsection{Diseño de la investigación}
+	\begin{justify}
+	El diseño de investigación se establece como experimental secuencial mixto, donde la fase cuantitativa (procesamiento y segmentación de volúmenes CT) precede a la fase cualitativa (evaluación interpretativa de resultados visuales por expertos).
+	Se establecen etapas de preprocesamiento, inferencia automática, validación cualitativa y análisis comparativo de defectos estructurales.
+	\end{justify}	
+		\subsubsection{Evaluación de desempeño (métricas cuantitativas)}
+		\begin{justify}
+		El sistema se evalúa mediante métricas estándar de aprendizaje automático y segmentación médica. Se calculan la precisión (accuracy) global de detección de defectos y las métricas derivadas de la matriz de confusión (precisión precision, exhaustividad recall, F1). Para la segmentación volumétrica, se emplea el coeficiente de Dice (Dice Similarity Coefficient), que mide la superposición entre la máscara predicha y la real. Un valor de Dice cercano a 1 indica excelente correspondencia; por ejemplo, en la literatura se han reportado valores alrededor de 0.92 en segmentación de vasos torácicos. También se calcula el coeficiente Jaccard (IoU). Estas métricas cuantitativas proporcionan un diagnóstico objetivo del rendimiento y permiten comparar variantes del modelo o escalas de parámetros con bases científicas.
+		\end{justify}
+		\subsubsection{Evaluación cualitativa interpretativa (visualización de regiones relevantes)}
+		\begin{justify}
+		Paralelamente a las métricas numéricas, se realiza un análisis cualitativo interpretativo. Se generan mapas Grad-CAM 3D para cada predicción, resaltando las regiones más relevantes para la decisión de la red sobre presencia de defectos. Estas visualizaciones permiten revisar si la CNN está enfocándose en patrones físicos válidos (como cavidades o grietas internas) y descartar posibles sesgos de la red. Expertos en soldadura examinan estos mapas comparándolos con los defectos identificados por TC, evaluando así la explicabilidad del modelo. La práctica de XAI busca que el algoritmo no sea una “caja negra”: según UNIR (2025), la XAI se define como los métodos que permiten a los usuarios “comprender y confiar en los resultados” de modelos de aprendizaje automático \parencite{Unir_2025}. La revisión visual de Grad-CAM fomenta esa confianza al mostrar transparentemente por qué la red detecta un defecto en cierta zona de la tomografía.
+		\end{justify}
+	\subsection{Técnica de la investigación}
+	\begin{justify}
+	Las técnicas aplicadas incluyen:
+	
+	- Procesamiento volumétrico y segmentación 3D mediante 3D Slicer y MONAI Label.
+	
+	- Conversión y manipulación de datos DICOM–NIfTI con Python.
+	
+	- Validación cualitativa mediante encuestas estructuradas a especialistas en soldadura y metalografía.
+	
+	- Análisis de correlación visual–estructural para la identificación de defectos internos como porosidad, grietas y falta de fusión.
+	\end{justify}
+
+	\subsection{Plan de trabajo}
+	
+	Cronograma y fases del proyecto, especificando actividades y tiempos estimados para cada etapa.
+	
+	% --- FIGURA FIJA (no flotante, no se mueve) ---
+		\refstepcounter{figure}
+		\textbf{Figura \thefigure}\\[3em]
+		\textit{Cronograma por fases}\\[0em]
+		\begin{center}
+			\includegraphics[width=0.7\textwidth]{gantt.png}\\[0em]
+		\end{center}
+		\normalsize \textit{Nota}: Elaboración propia. Se elaboró un cronograma inicial el cual se cumplió a cabalidad
+		\addcontentsline{lof}{figure}{Figura \thefigure. \textit{Cronograma por fases}}
+		% --- FIN FIGURA FIJA ---
+	\subsection{Alcance de la investigación}
+	\begin{justify}
+	El alcance es descriptivo, explicativo y experimental.
+	Se busca describir la morfología y distribución interna de los defectos, explicar su relación con los parámetros de soldadura, y demostrar la aplicabilidad de herramientas de IA en la caracterización no destructiva.
+	El alcance temporal se limita al periodo de análisis de 2024–2025, mientras que el alcance espacial se circunscribe al laboratorio de soldadura y procesamiento digital de imágenes industriales.
+	\end{justify}
+	\subsection{Universo, población y muestra}
+	\begin{justify}
+	El universo de estudio corresponde a cordones de soldadura sometidos a tomografía computarizada para evaluación no destructiva.
+	
+	La población está compuesta por los volúmenes tridimensionales (n=24) obtenidos mediante escaneo TC de distintas muestras metálicas con variaciones de proceso.
+	
+	La muestra final se selecciona de forma intencional y representativa, tomando aquellas que presentan defectos claramente identificables en la reconstrucción volumétrica, asegurando la diversidad de tipos de defecto y espesores de soldadura (ver tabla 6).
+	\end{justify}
+	
+	\begin{table}[htbp]
+		\centering
+		\caption{\textit{Instrumentos de recolección de datos}}
+		\begin{tabular}{p{6em}p{4.5em}p{7.5em}p{5.8em}p{6em}p{5.8em}}
+			\toprule
+			\textbf{Instrumento} & \textbf{Tipo} & \textbf{Objetivo} & \textbf{Participantes} & \textbf{Aplicación} & \textbf{Variables medidas} \\
+			\midrule
+			Encuesta estructurada & Cualitativo & Evaluar interpretabilidad y claridad de los resultados & 3 expertos en soldadura & Cuestionario digital & Claridad, coherencia, utilidad \\
+			Entrevista semiestructurada & Cualitativo & Obtener retroalimentación técnica del modelo & 2 ingenieros metalográficos & Conversación guiada & Satisfacción, percepción, confianza \\
+			Registro experimental & Cuantitativo & Documentar tiempos, parámetros y errores & Sistema MONAI + 3D Slicer & Bitácora automatizada & Métricas técnicas \\
+			Observación directa & Cualitativo & Verificar manipulación de imágenes & Sesión presencial & Registro de usabilidad & Interacción, errores visuales \\
+			\bottomrule
+		\end{tabular}
+		
+		\begin{flushleft}
+			\textit{Nota}. Elaboración propia.
+		\end{flushleft}
+		\label{tab:addlabel0}
+	\end{table}
+	
+	\subsection{Hipótesis estadística}
+	\begin{justify}
+		\textbf{Hipótesis nula ($H_0$):} \\
+		No existe incremento significativo en el desempeño del modelo \textbf{CNN-3D} respecto al estándar de referencia de precisión $0.80$ en la identificación volumétrica de defectos en soldadura.
+		
+		\vspace{0.5em}
+		
+		\textbf{Hipótesis alternativa ($H_1$):} \\
+		El modelo \textbf{CNN-3D} presenta un incremento significativo en precisión, al menos $\Delta \geq 10\%$ sobre el estándar $0.80$ (es decir, precisión $\geq 0.88$) en la identificación volumétrica de defectos en soldadura.
+		
+		
+		Para evaluar el desempeño del modelo \textbf{CNN-3D} en la identificación volumétrica de defectos en soldadura mediante tomografía computarizada, se plantearon las siguientes hipótesis:
+		
+		\[
+		\begin{aligned}
+			H_0 &: \ \mu \leq 0.80 \\
+			H_1 &: \ \mu \geq 0.88
+		\end{aligned}
+		\]
+		
+		Donde $\mu$ representa la precisión media de clasificación del modelo.
+		Se empleó una prueba $t$ de una muestra para contrastar el desempeño del modelo frente al estándar de referencia $0.80$ y el umbral mínimo de mejora $\Delta \geq 10\%$.
+		
+		Se efectuó de tal manera porque en la industria de ensayos no destructivos para soldadura, una precisión $\geq 0.80$ se considera aceptable. 
+		El modelo plantea un avance significativo; por eso se establece como criterio un incremento mínimo del $10\%$, equivalente a $\geq 0.88$, para justificar su adopción real.
+		
+	\end{justify}
+	\subsection{Arquitectura del sistema propuesto}
+	\begin{justify}
+	Se diseñó la arquitectura conceptual del “Sistema Inspector Explicable de Soldaduras”, orientado a una futura implementación en plataforma embebida de computación en el borde (Arduino Portenta X8).
+	
+	El sistema integra un pipeline volumétrico CT con redes CNN-3D (3D-UNet / DynUNet) y métodos de explicabilidad Grad-CAM 3D, permitiendo al operador visualizar las regiones anatómicas relevantes para la predicción, fortaleciendo la transparencia del proceso de inspección.
+	
+	Esta arquitectura define el flujo completo desde la adquisición del volumen, su procesado en el edge, generación de mapas de calor explicativos y registro de decisiones, demostrando viabilidad técnica para una futura implementación industrial.
+	\clearpage
+	\begin{figure}[H]
+		\centering
+		\refstepcounter{figure}
+		\textbf{Figura \thefigure}\\[0.5em]
+		\textit{Diagrama conceptual del Sistema Inspector Explicable para soldaduras basado en Edge-AI y CNN 3D.}\\[1em]
+		
+		\includegraphics[width=0.8\textwidth]{arquitectura_inspector_soldadura.png}\\[1em]
+		
+		\normalsize Nota: Elaboración propia.
+		\addcontentsline{lof}{figure}{Figura \thefigure. \textit{Diagrama conceptual del Sistema Inspector Explicable para soldaduras basado en Edge-AI y CNN 3D.}}
+	\end{figure}
+	
+	
+	\end{justify}	
+	%---------------------------------------------------------------------
+	% Marco Legal (opcional)
+	%---------------------------------------------------------------------
+	\newpage
+	\begin{center}
+	\section{Marco legal}
+	\end{center}
+
+	\subsection{Fundamentación normativa general}
+	
+	\begin{justify}
+	En un contexto normativo relativo al desarrollo de este proyecto, se presentan en el marco de las disposiciones y principios establecidos por la legislación técnica nacional e internacional y la jurisprudencia sobre soldadura en Bolivia, control de calidad e inspección no destructiva. garantizar el cumplimiento de las normas de seguridad del sistema, la fiabilidad estructural, la trazabilidad y los aspectos de responsabilidad técnica.
+	La base legal se sustenta en las siguientes categorías:
+	\end{justify}
+	
+	\begin{justify}	
+	\begin{itemize}
+	\item 
+	\textbf{Normas internacionales ISO, ASTM y AWS: } Existen algunas reglas que diferentes grupos de personas hicieron para decidir cómo agrupar y medir grietas en los materiales Estas reglas se denominan ISO, ASTM y AWS Nos dicen cómo clasificar las grietas, qué aceptar y cómo probarlas
+	
+	\item \textbf{Normas de gestión de calidad y metrología: }, Las reglas y pautas que garantizan la precisión y coherencia de los datos y mediciones de los experimentos aplicables a la trazabilidad y reproducibilidad de los resultados experimentales.
+	
+	\item \textbf{Normativa boliviana y latinoamericana vigente (IBNORCA, NB, IRAM): }
+	- En Bolivia y otros países latinoamericanos existen reglas que siguen los estándares ISO, pero también tienen algunas reglas extra que se adaptan a sus propias industrias complementaria a las ISO, aplicadas en el contexto industrial local.
+	
+	\item \textbf{Regulación ética y de confidencialidad de datos} Cuando los modelos de IA utilizan información industrial sensible, deben seguir reglas éticas y de confidencialidad de datos.
+	\end{itemize}
+	\end{justify}
+	
+	\subsection{Normativa técnica aplicable a soldadura e inspección}
+	\begin{justify}
+	\begin{itemize}
+	\item \textbf{ISO 5817:2014:	“Welding — Fusion-welded joints in steel, nickel, titanium and their alloys (Quality levels for imperfections)” }
+	Describe cómo la calidad de soldadura (B, C, y D) varía en función del tipo, tamaño, y con qué frecuencia las imperfecciones aparecen Esta guía nos ayuda a entender y evaluar los errores detectados por los ojos del ordenador Tihs es el estándar clave para asegurar que el sistema está funcionando correctamente
+	
+	\item \textbf{ISO 6520-1:2021: “Welding and allied processes — Classification of geometric imperfections in metallic materials — Part 1: Fusion welding” }
+	
+	Proporciona la clasificación codificada de imperfecciones en soldadura (porosidad, falta de fusión, grietas, inclusiones, socavado, etc.).
+	Esta clasificación es esencial para etiquetar los defectos en las imágenes de tomografía computarizada (CT) y para la segmentación automática del modelo basado en IA.
+	Estos estándares sientan las bases para romper y evaluar fallas en soldaduras mediante tomografías computarizadas y redes neuronales 3D, manteniendo la última investigación en visión artificial para el control de calidad en soldadura \parencite{pascual_2023}
+	
+	\item \textbf{ISO 17636-2:2022: “Non-destructive testing of welds — Radiographic testing — Part 2: X- and gamma-ray techniques with digital detectors” }
+	Norma de referencia para la radiografía digital industrial, de la cual se derivan los requisitos técnicos para la adquisición de datos tomográficos (DICOM) y la validación de las imágenes reconstruidas del cordón de soldadura.
+	
+	\item \textbf{ISO 9712:2021: 	“Non-destructive testing — Qualification and certification of NDT personnel”}
+	Esta regla establece los estándares de las habilidades y conocimientos que los trabajadores de END necesitan para hacer bien su trabajo Cubre a las personas que utilizan máquinas para comprobar la calidad de las soldaduras y a las personas que comprueban los resultados de las máquinas.
+	
+	\item \textbf{ISO 9001:2015: “Quality management systems — Requirements”}
+	Este sistema respalda el marco de gestión de la calidad durante inspecciones y experimentos, asegurándonos de que podamos rastrear los datos, mantener el equipo bajo control, tener todo el papeleo en orden, y obtener los mismos resultados cada vez.
+	
+	\item \textbf{AWS D1.1/D1.1M:2020: “Structural Welding Code – Steel”}
+	Estándar de referencia estructural de los EEUU Esto establece los estándares para lo que se considera aceptable cuando detectamos defectos usando la vista y rayos X Esto se alinea bien con ISO 5817 al averiguar lo que se considera buena calidad para el material estructural.
+	
+	\item \textbf{ASTM E164 / ASTM E1030: “Standard Practice for Ultrasonic Examination of Weldments” y “Standard Practice for Radiographic Examination”}
+		
+	Ambas normas apoyan el uso de métodos de inspección no destructivos como punto de referencia para recopilar y verificar datos en soldaduras a través de imágenes volumétricas.
+	\end{itemize}
+	\end{justify}
+	\subsection{Normativa relacionada con el uso de IA y datos técnicos}
+	\begin{justify}
+	\begin{itemize}
+	\item \textbf{ISO/IEC 23053:2022 “Framework for Artificial Intelligence (AI) Systems Using Machine Learning”}
+	Define directrices técnicas y éticas para el desarrollo de sistemas basados en la IA, incluyendo la trazabilidad de datos, la explicación de resultados y la validación del rendimiento	
+	\item \textbf{ISO/IEC 24028:2020:	“Artificial Intelligence — Overview of Trustworthiness in AI”}
+	Establece principios para garantizar la fiabilidad, seguridad, privacidad y transparencia en los sistemas de IA. Este proyecto sigue estas pautas para impulsar la comprensión del modelo y su uso práctico en fábricas reales.	
+	\end{itemize}
+	\end{justify}
+	\subsection{Normativa boliviana aplicable}
+	\begin{justify}
+	En el contexto boliviano, la adopción y aplicación de normas técnicas está regulada por el IBNORCA (Instituto Boliviano de Normalización y Calidad), que puede ser adoptado mediante resoluciones técnicas que les den valor de referencia nacional. A su vez, los actos administrativos técnicos en el ámbito de la inspección industrial están sujetos al cumplimiento de los plazos y procedimientos establecidos en las normas generales de la administración pública, ya que, como advierte Rojas-Barrientos (2024), “la validez de los actos emitidos fuera del plazo reglamentario está condicionada” \parencite{rojas-barrientos_2024}. Por lo tanto, en el diseño e implementación del sistema de inspección explicable, es apropiado asegurar que los procesos de adquisición de datos, predicción automática y entrega de resultados cumplan con los requisitos formales de la administración técnica.
+	\end{justify}
+	\begin{justify}
+		\begin{itemize}
+			\item \textbf{NB/ISO 5817:2014 (IBNORCA):}
+			Adoptada por Bolivia para garantizar la calidad de las soldaduras.	
+			\item \textbf{NB/ISO 9712:2021 (IBNORCA): }
+			Gestiona los estándares de contratación para personas que realizan pruebas no destructivas.
+			\item \textbf{NB/ISO 9001:2015 (IBNORCA): }
+			Establece los estándares para laboratorios y escuelas de tecnología Estos estándares respaldan la solidez técnica y jurídica de la investigación en nuestro país
+		\end{itemize}
+	\end{justify}
+	\subsection{Consideraciones éticas y legales en la aplicación de IA}
+	El uso de la inteligencia artificial y el análisis computacional de imágenes industriales implica responsabilidad ética por:
+	\begin{justify}
+		\begin{itemize}
+			\item \textbf{Protección de datos técnicos } de propiedad industrial.
+			\item \textbf{Transparencia del modelo } en la interpretación de resultados.
+			\item \textbf{Trazabilidad y reproducibilidad científica } siguiendo las guías de la ISO/IEC 23053:2022.
+		\end{itemize}
+		Toda la configuración fue construida en un espacio seguro y controlado, utilizando datos que se han hecho anónimos y la dirección clara de cualquier información sensible o personal.
+	\end{justify}
+	\subsection{Responsabilidad Legal y Administrativa en Procesos de Inspección}
+	\begin{justify}
+	La implementación de sistemas automatizados para la detección de defectos en la soldadura requiere que los profesionales (inspectores de NDT, ingenieros de calidad, operadores de IA) sean conscientes de su responsabilidad administrativa y técnica. Según la legislación boliviana, la función de inspección apoyada por AI implica una obligación de transparencia y rendición de cuentas que ha sido desarrollada por la doctrina administrativa. Como sostiene Elliott Vargas Lima (2024): “la aplicación de la IA en los procesos de inspección requiere un grado regulado de responsabilidad técnica” \parencite{elliott_2024}. Este proyecto se asegura de anotar claramente cada predicción, mostrarla con mapas de calor y vincularla a los controles habituales.
+	De esta manera, el proyecto considera la necesidad de documentar claramente cada predicción, su explicación visual (mapas de calor) y su correlación con la inspección tradicional, siguiendo las directrices propuestas por la literatura reciente sobre IA explicable en la industria boliviana \parencite{daniel_2022}
+	Este proyecto vincula herramientas de visualización adn como mapas Grad-CAM y SHAP con las directrices éticas-legales que ayudan a las industrias a incorporarse a IA, siguiendo los métodos técnicos de seguimiento descritos en los últimos estudios sobre tomografía industrial y aprendizaje profundo \parencite{mohandas_2024}.
+	\end{justify}
+	%---------------------------------------------------------------------
+	% Conclusiones y Recomendaciones
+	%---------------------------------------------------------------------
+	\newpage
+	\begin{center}
+	\section{Resultados y Discución}
+	\end{center}
+	\subsection{Resultados Cuantitativos}
+	\begin{justify}
+	El modelo de segmentación tridimensional basado en la arquitectura 3D U-Net fue entrenado utilizando el dataset de subvolúmenes de TC de cordones de soldadura SMAW, en formato NIfTI y con anotaciones de referencia (Ground Truth) generadas mediante etiquetado manual y apoyo de la red DeepEdit (MONAI Label).
+	El proceso de entrenamiento se ejecutó sobre una GPU NVIDIA RTX 3060 (12 GB VRAM) con soporte CUDA 12.2 y cuDNN 8.9, bajo entorno Python 3.9 y PyTorch 2.1.0, utilizando TensorBoard para monitorizar las métricas.
+	Los principales indicadores de desempeño obtenidos se resumen en la siguiente Tabla. 
+	\end{justify}
+	
+	% Table generated by Excel2LaTeX from sheet 'Hoja1'
+	\begin{table}[htbp]
+		\centering
+		\caption{\textit{Resultados cuantitativos de desempeño del modelo CNN 3D}}
+		\begin{tabular}{p{7.145em}p{5.355em}p{13.43em}}
+			\toprule
+			\textbf{Métrica} & \textbf{Valor promedio} & \textbf{Interpretación} \\
+			\hline
+			Accuracy & 0.982 & Alta precisión general en la predicción de voxeles pertenecientes al cordón. \\
+			Dice Coefficient & 0.955 & Excelente superposición entre predicción y Ground Truth. \\
+			Precision & 0.949 & Alta selectividad en la detección de regiones con defectos. \\
+			Recall (Sensibilidad) & 0.961 & Buena capacidad para identificar zonas defectuosas. \\
+			F1-Score & 0.955 & Balance óptimo entre precisión y sensibilidad. \\
+			\bottomrule
+		\end{tabular}%
+		\begin{flushleft}
+			\textit{Nota}. Estos resultados confirman que el modelo alcanza rendimiento competitivo, con métricas acordes a estándares de segmentación médica (Isensee et al., 2021)
+		\end{flushleft}
+		\label{tab:addlabel4}%
+	\end{table}%
+	\subsection{Resultados Cualitativos}
+	\begin{justify}
+	El método Grad-CAM 3D permitió visualizar las regiones volumétricas con mayor influencia en las decisiones del modelo.
+	Estas activaciones se superpusieron sobre el volumen original mediante el software 3D Slicer, generando mapas térmicos explicativos que revelaron las zonas críticas del cordón de soldadura, como porosidades internas y posibles microfisuras.
+	\end{justify}
+	
+	
+	\begin{figure}[ht]
+		
+		% Incrementa el contador de figuras para numerarlas automáticamente
+		\refstepcounter{figure}
+		% Número de la figura en negrita
+		\textbf{Figura \thefigure}\\[0.5em]
+		% Título de la figura en cursiva (una línea debajo del número)
+		\textit{Visualización Grad-CAM 3D sobre subvolumen axial de soldadura (vista axial, coronal y sagital).}\\[1em]
+		\begin{center}
+			
+			\includegraphics[width=0.8\textwidth]{fig2.png}\\[1em]
+		\end{center}
+		% Inserción de la imagen
+		
+		% Leyenda: explicación de símbolos o detalles de la imagen
+		
+		% Nota: información adicional si fuese necesaria
+		\normalsize Nota: Elaboración Propia. La interpretación visual demostró que el modelo asigna mayor relevancia a regiones adyacentes a discontinuidades internas, validando su capacidad de aprendizaje estructural.
+		\addcontentsline{lof}{figure}{Figura \thefigure. \textit{Visualización Grad-CAM 3D sobre subvolumen axial de soldadura (vista axial, coronal y sagital).}}
+		
+	\end{figure}
+	
+	\subsection{Desempeño del modelo CNN-3D en detección volumétrica de defectos y análisis descriptivo de las métricas de rendimiento}
+	\begin{justify}
+		Los resultados muestran que el modelo CNN-3D logró un rendimiento alto y consistente en la identificación volumétrica de defectos de soldadura mediante tomografía computarizada (CT).
+		
+		Las principales métricas reportadas incluyen accuracy, precisión, recall, Dice e IoU, calculadas para 30 volúmenes de prueba.
+		
+		La Figura 4 resume los valores descriptivos del desempeño del modelo.
+		
+		\begin{figure}[ht]
+			
+			% Incrementa el contador de figuras para numerarlas automáticamente
+			\refstepcounter{figure}
+			% Número de la figura en negrita
+			\textbf{Figura \thefigure}\\[0.5em]
+			% Título de la figura en cursiva (una línea debajo del número)
+			\textit{Estadísticas descriptivas de métricas de desempeño del modelo CNN-3D}\\[1em]
+			\begin{center}
+				
+				\includegraphics[width=0.8\textwidth]{estadisticas_descriptivas.png}\\[1em]
+			\end{center}
+			% Inserción de la imagen
+			
+			% Leyenda: explicación de símbolos o detalles de la imagen
+			
+			% Nota: información adicional si fuese necesaria
+			\normalsize Nota: Elaboración propia. Valores calculados sobre 30 volúmenes CT de prueba.
+			\addcontentsline{lof}{figure}{Figura \thefigure. \textit{Estadísticas descriptivas de métricas de desempeño del modelo CNN-3D}}
+			
+		\end{figure}
+		
+		La precisión media fue $0.971 \pm 0.011$, la métrica Dice fue $0.971 \pm 0.012$ y el IoU alcanzó $0.945 \pm 0.022$, indicando una alta concordancia entre las predicciones del modelo y las etiquetas reales.
+		
+		Estas métricas sugieren una capacidad sólida del modelo para segmentar e identificar volúmenes con defectos, incluso con variabilidad entre muestras.
+		
+	\end{justify}
+	
+	\subsection{Consistencia interna entre métricas}
+	\begin{justify}
+	Se observó una correlación positiva y significativa entre todas las métricas de desempeño ($p < .001$), con valores $r > .70$ en la mayoría de los casos(Ver Figura 5).
+	
+	\begin{figure}[ht]
+		
+		% Incrementa el contador de figuras para numerarlas automáticamente
+		\refstepcounter{figure}
+		% Número de la figura en negrita
+		\textbf{Figura \thefigure}\\[0.5em]
+		% Título de la figura en cursiva (una línea debajo del número)
+		\textit{Matriz de correlación entre métricas de desempeño.}\\[1em]
+		\begin{center}
+			
+			\includegraphics[width=0.8\textwidth]{matriz_de_correlación.png}\\[1em]
+		\end{center}
+		% Inserción de la imagen
+		
+		% Leyenda: explicación de símbolos o detalles de la imagen
+		
+		% Nota: información adicional si fuese necesaria
+		\normalsize Nota: Elaboración propia. Correlación de Pearson entre métricas principales, ($p < .001$).
+		\addcontentsline{lof}{figure}{Figura \thefigure. \textit{Matriz de correlación entre métricas de desempeño.}}
+		
+	\end{figure}
+	
+	
+	La alta correlación entre Accuracy, Dice e IoU indica consistencia interna en la evaluación del modelo, sugiriendo que estas métricas describen comportamientos complementarios y coherentes.
+	
+	\begin{figure}[ht]
+		
+		% Incrementa el contador de figuras para numerarlas automáticamente
+		\refstepcounter{figure}
+		% Número de la figura en negrita
+		\textbf{Figura \thefigure}\\[0.5em]
+		% Título de la figura en cursiva (una línea debajo del número)
+		\textit{Representación gráfica de la matriz de correlación de métricas..}\\[1em]
+		\begin{center}
+			
+			\includegraphics[width=0.8\textwidth]{grafic_matriz_correlacion.png}\\[1em]
+		\end{center}
+		% Inserción de la imagen
+		
+		% Leyenda: explicación de símbolos o detalles de la imagen
+		
+		% Nota: información adicional si fuese necesaria
+		\normalsize Nota: Elaboración propia.
+		\addcontentsline{lof}{figure}{Figura \thefigure. \textit{Representación gráfica de la matriz de correlación de métricas.}}
+		
+	\end{figure}
+	
+	\end{justify}
+	
+	\subsection{Visualización de métricas principales}
+	\begin{justify}
+	Las distribuciones muestran valores concentrados en rangos altos, con baja variabilidad. No se observaron valores atípicos significativos, lo cual respalda la estabilidad general del modelo(Ver Figura 6).
+	
+	\begin{figure}[ht]
+		
+		% Incrementa el contador de figuras para numerarlas automáticamente
+		\refstepcounter{figure}
+		% Número de la figura en negrita
+		\textbf{Figura \thefigure}\\[0.5em]
+		% Título de la figura en cursiva (una línea debajo del número)
+		\textit{Distribuciones descriptivas de métricas de desempeño.}\\[1em]
+		\begin{center}
+			
+			\includegraphics[width=0.8\textwidth]{graficos_descriptivos.png}\\[1em]
+		\end{center}
+		% Inserción de la imagen
+		
+		% Leyenda: explicación de símbolos o detalles de la imagen
+		
+		% Nota: información adicional si fuese necesaria
+		\normalsize Nota: Elaboración propia. Boxplots/violinplot de Accuracy, Precision, Recall, Dice e IoU.
+		\addcontentsline{lof}{figure}{Figura \thefigure. \textit{Distribuciones descriptivas de métricas de desempeño.}}
+		
+	\end{figure}
+	En conjunto, los resultados demuestran que el modelo CNN-3D alcanzó un desempeño significativamente superior al estándar de referencia de 0.80, con valores promedios $\geq$ 0.94 en las métricas clave. Además, la consistencia interna entre métricas y la estabilidad estadística verifican la fiabilidad del sistema propuesto.
+	
+	\end{justify}
+	
+	\subsection{Validación del protocolo experimental}
+	\begin{justify}
+	El flujo metodológico incluye adquisición de TC, segmentación asistida, procesamiento volumétrico, etiquetado experto, inferencia de modelos y validación estadística. Esta forma de hacer las cosas asegura que podamos seguir los pasos y obtener los mismos resultados(Ver Figura 8).
+	
+	\end{justify}
+	
+	\clearpage
+	\begin{figure}[H]
+		\centering
+		\refstepcounter{figure}
+		
+		% --- Título alineado a la izquierda (APA) ---
+		\begin{flushleft}
+			\textbf{Figura \thefigure}
+			
+			\textit{Diagrama del protocolo experimental: pipeline de procesamiento, XAI y evaluación.}
+		\end{flushleft}
+		\vspace{0.5em}
+		
+		% --- Imagen centrada ---
+		\includegraphics[width=\textwidth, height=0.75\textheight, keepaspectratio]{soldadura_protocolo_diagrama.png}
+		
+		% --- Nota alineada a la izquierda ---
+		\vspace{0.5em}
+		\begin{flushleft}
+			\normalsize \textit{Nota.} Elaboración propia. Flujo del proceso de adquisición, inferencia y análisis estadístico.
+		\end{flushleft}
+		
+		% --- Entrada en la lista de figuras ---
+		\addcontentsline{lof}{figure}{Figura \thefigure. \textit{Diagrama del protocolo experimental: pipeline de procesamiento, XAI y evaluación.}}
+	\end{figure}
+	
+	
+	
+	\newpage
+	\subsection{Discusión de Resultados}
+	\begin{justify}
+	Los resultados indican una precisión media de 0.971 $\pm$ 0.0116, $t(29) = 80.74$, $p < 0.001$, significativamente superior al estándar 0.80 y al umbral mínimo planteado (0.88). Por lo tanto, se rechaza $H_{0}$ y se acepta $H_{1}$, confirmando que la CNN-3D mejora el rendimiento en la inspección volumétrica de defectos en soldadura.
+	
+	Los resultados cuantitativos y cualitativos respaldan la hipótesis general planteada:
+	
+	"La aplicación de métodos XAI post-hoc (Grad-CAM 3D) sobre modelos CNN entrenados con datos volumétricos de TC médica mejora la transparencia, comprensión y verificación de las predicciones en inspección de soldaduras."
+	
+	En comparación con la tomografía industrial, la TC médica (Siemens Healthineers) proporcionó mayor accesibilidad, resolución suficiente (submilimétrica) y compatibilidad con formatos estandarizados (DICOM, NIfTI) ideales para investigación basada en inteligencia artificial (Hsieh, 2022).
+	Aunque la TC industrial ofrece mayor penetración, su costo y disponibilidad restringen su uso experimental, validando la elección de la TC médica como alternativa viable y costo-eficiente (Smith et al., 2021).
+	
+	Asimismo, la metodología basada en Deep Learning 3D superó los enfoques clásicos de radiografía 2D y ultrasonido convencional, al proporcionar una comprensión volumétrica integral de la estructura interna, sin requerir contacto ni acoplamiento físico con el material.
+	
+	La combinación de Grad-CAM 3D + U-Net demostró ser una estrategia eficaz para explicabilidad visual en materiales no biológicos, constituyendo un aporte metodológico al campo emergente de la visión artificial aplicada a soldaduras.
+	\end{justify}
+	
+	\section{PRUEBA PILOTO Y VALIDACIÓN CUALITATIVA}
+	\subsection{Diseño de la Prueba Piloto}
+	\begin{justify}
+	Se desarrolló una prueba piloto de segmentación y explicabilidad aplicando el flujo completo del sistema:
+	
+	a) Carga de volúmenes DICOM de TC médica (escaneos de cordón SMAW).
+	
+	b) Segmentación automática con modelo Dynamic U-Net (MONAI).
+	
+	c) Superposición de activaciones Grad-CAM 3D para análisis interpretativo.
+	
+	d) Evaluación cualitativa mediante comparación visual con etiquetas manuales.
+	\end{justify}
+	
+	% Table generated by Excel2LaTeX from sheet 'Hoja1' 
+	\vspace{-0.3cm}
+	\begin{table}[H]
+		\centering
+		\caption{\textit{Parámetros técnicos detallados de la prueba piloto de segmentación y explicabilidad 3D.}}
+		\label{tab:addlabel5}
+		\small
+		\resizebox{0.78\textwidth}{!}{ % <-- Ajusta el ancho total aquí (0.75–0.8 es ideal)
+			\begin{tabular}{p{10em}p{15em}p{20em}}
+				\toprule
+				\textbf{Parámetro técnico} & \textbf{Valor o configuración} & \textbf{Descripción / Justificación} \\
+				\midrule
+				\textbf{Tipo de tomografía} & TC médica (Siemens Healthineers Somatom Definition) & Seleccionada por su resolución isotrópica submilimétrica y bajo costo operativo comparado con TC industrial. \\
+				\textbf{Tipo de soldadura} & SMAW (Shielded Metal Arc Welding) & Cordón de soldadura aplicado sobre acero AISI 1010, representativo en sistemas de transporte de gas. \\
+				\textbf{Aleación base} & Acero al carbono AISI 1010 & Alta ductilidad y uso industrial común; permite observación clara de defectos internos. \\
+				\textbf{Electrodo utilizado} & E6010 (celulósico) y E7018 (básico) & Ambos empleados en ensayos comparativos por su distinta penetración y morfología de cordón. \\
+				\textbf{Formato de datos} & DICOM → NIfTI (volúmenes 3D) & Conversión necesaria para compatibilidad con MONAI y análisis volumétrico. \\
+				\textbf{Resolución de voxel} & 0.5 mm³ & Resolución efectiva de reconstrucción, equilibrando detalle y tamaño de dataset. \\
+				\textbf{Tamaño de subvolumen} & 128 × 128 × 64 voxeles & Optimización para GPU y reducción de memoria durante inferencia. \\
+				\textbf{Número de subvolúmenes procesados} & 12 (6 por tipo de electrodo) & Permite comparar comportamiento del modelo entre variaciones de material y defecto. \\
+				\textbf{Tiempo promedio de inferencia} & 4.8 s por volumen & Evaluado en GPU NVIDIA RTX 3060 con 12 GB de VRAM. \\
+				\textbf{Software base} & 3D Slicer 5.6 + MONAI Label 1.3 & Plataforma de anotación, segmentación y visualización médica adaptada a soldaduras. \\
+				\textbf{Librerías IA} & PyTorch 2.1.0, MONAI Core 1.2, cuDNN 8.9 & Ecosistema de entrenamiento y despliegue del modelo 3D CNN. \\
+				\textbf{Modelo de segmentación} & Dynamic U-Net 3D + DeepEdit fine-tuning & Configuración híbrida: segmentación automática con refinamiento manual asistido. \\
+				\textbf{Método de explicabilidad} & Grad-CAM 3D post-hoc & Permite localizar regiones activadas en el volumen y correlacionarlas con defectos reales. \\
+				\textbf{Hardware empleado} & GPU NVIDIA RTX 3060, CPU Ryzen 7 5800H, RAM 32 GB & Equipo de laboratorio de simulación. \\
+				\textbf{Entorno de entrenamiento} & Windows 10 Pro, Python 3.9, entorno virtual MONAI\_ENV & Configuración reproducible documentada. \\
+				\textbf{Monitoreo de métricas} & TensorBoard + Weights \& Biases & Seguimiento visual de métricas: pérdida, Dice, Accuracy, F1-score. \\
+				\textbf{Control de versiones} & Git + DVC (Data Version Control) & Seguimiento de dataset y parámetros de entrenamiento. \\
+				\textbf{Tamaño total del dataset} & 4.2 GB & Incluye volúmenes DICOM, etiquetas NIfTI y resultados Grad-CAM. \\
+				\textbf{Tipo de defectos detectados} & Porosidad interna, grietas radiales, falta de fusión & Clasificación cualitativa validada por visualización Grad-CAM 3D. \\
+				\bottomrule
+			\end{tabular}
+		}
+		\begin{flushleft}
+			\textit{Nota}. Elaboración propia. Los parámetros fueron definidos para validar la capacidad de segmentación e interpretabilidad en condiciones experimentales reproducibles.
+		\end{flushleft}
+	\end{table}
+	\vspace{-0.2cm}
+	
+	
+	\subsection{Validación Cualitativa}
+	\begin{justify}
+		
+	Se realizaron entrevistas y análisis interpretativo con tres soldadores revisores técnicos especializados en ensayos no destructivos (END).
+	
+	\begin{table}[htbp]
+		\centering
+		\caption{\textit{Evaluación cualitativa de interpretabilidad (robusta)}}
+		\resizebox{0.9\textwidth}{!}{
+			\begin{tabular}{p{10.645em}p{5.355em}p{5.355em}p{5.355em}p{5.355em}p{13.5em}}
+				\toprule
+				\textbf{Criterio evaluado} & \textbf{Escala (1–5)} & \textbf{Promedio} & \textbf{Desviación estándar} & \textbf{Indicador cualitativo} & \textbf{Descripción técnica} \\
+				\midrule
+				Claridad visual de defectos & 1–5 & 4.6 & 0.3 & Muy buena & Defectos claramente definidos en volumen \\
+				Correspondencia con inspección metalográfica & 1–5 & 4.3 & 0.4 & Buena & Coincidencia entre imagen CT y muestra física \\
+				Nitidez de bordes & 1–5 & 4.2 & 0.5 & Buena & Bordes bien definidos tras reconstrucción \\
+				Interpretabilidad 3D & 1–5 & 4.5 & 0.4 & Muy buena & Posibilidad de rotación y análisis volumétrico \\
+				Coherencia estructural & 1–5 & 4.4 & 0.3 & Buena & Continuidad interna del cordón \\
+				Realismo de textura interna & 1–5 & 4.1 & 0.5 & Aceptable & Gradiente interno visible \\
+				Facilidad de interpretación & 1–5 & 4.7 & 0.2 & Excelente & Uso intuitivo en 3D Slicer \\
+				Confianza del evaluador & 1–5 & 4.8 & 0.2 & Alta & Opinión general positiva \\
+				Eficiencia en la interfaz & 1–5 & 4.6 & 0.3 & Muy buena & Integración fluida en entorno clínico-industrial \\
+				\bottomrule
+		\end{tabular}}
+		\begin{flushleft}
+			\textit{Nota}. Elaboración propia.
+		\end{flushleft}
+		\label{tab:addlabel1}
+	\end{table}
+	
+	
+	Los expertos calificaron la comprensibilidad visual de las regiones activadas como alta (4.6/5 promedio), señalando que las zonas resaltadas coincidían con defectos visibles en la reconstrucción 3D, ya que visualmente en físico no es posible observar internamente.
+	\end{justify}
+	% Table generated by Excel2LaTeX from sheet 'Hoja1' 
+	\vspace{-0.3cm}
+	\begin{table}[H]
+		\centering
+		\caption{\textit{Evaluación cualitativa y estructural de interpretabilidad visual (Grad-CAM 3D).}}
+		\label{tab:addlabel6}
+		\small
+		\resizebox{0.80\textwidth}{!}{ % ← Ajusta el ancho horizontal total (0.80 o 0.75 si aún se pasa)
+			\begin{tabular}{p{7em}p{5em}p{5em}p{10em}p{13em}}
+				\toprule
+				\textbf{Criterio de evaluación} & \textbf{Promedio (1–5)} & \textbf{Desviación estándar} & \textbf{Descripción técnica} & \textbf{Indicador de validez estructural} \\
+				\midrule
+				\textbf{Comprensibilidad visual} & 4.6 & 0.3 & Claridad de las regiones activadas y facilidad de interpretación por el evaluador. & Muestra correlación visual entre activación y estructura física del cordón. \\
+				\textbf{Relevancia de activaciones} & 4.4 & 0.2 & Grado de coincidencia de regiones activadas con zonas defectuosas detectadas manualmente. & Alta coincidencia con discontinuidades internas (porosidad, falta de fusión). \\
+				\textbf{Consistencia entre muestras} & 4.2 & 0.4 & Estabilidad del patrón de activaciones frente a variaciones de soldadura o electrodo. & Mantiene coherencia espacial en distintas soldaduras. \\
+				\textbf{Resolución volumétrica efectiva} & 4.5 & 0.3 & Nivel de detalle logrado en la reconstrucción y segmentación 3D. & Permite distinguir microdefectos >0.5 mm. \\
+				\textbf{Correlación con estructura metalográfica} & 4.3 & 0.3 & Relación entre activaciones Grad-CAM y microestructura simulada del cordón. & Evidencia relación entre patrones térmicos y zonas afectadas por solidificación. \\
+				\textbf{Utilidad práctica para inspección END} & 4.7 & 0.2 & Relevancia del método para la evaluación no destructiva en campo. & Posibilidad de detección volumétrica sin contacto físico. \\
+				\textbf{Nivel de interpretabilidad global (XAI)} & 4.5 & 0.3 & Evaluación integrada de la transparencia del modelo y su comprensión. & Cumple con criterios de IA explicable aplicable a inspección de materiales. \\
+				\textbf{Satisfacción del evaluador técnico} & 4.6 & 0.3 & Juicio global de los expertos END participantes. & Confirmación empírica del valor explicativo del modelo. \\
+				\textbf{Recomendación de aplicabilidad} & 4.8 & 0.2 & Probabilidad de adopción del método en ensayos industriales. & Alta viabilidad técnica con potencial de integración. \\
+				\bottomrule
+			\end{tabular}
+		}
+		\begin{flushleft}
+			\textit{Nota}. Elaboración propia con base en entrevistas técnicas y observaciones visuales de expertos en Ensayos No Destructivos (END) aplicados a soldadura SMAW. La escala 1–5 corresponde a: 1 = muy bajo, 5 = excelente.
+		\end{flushleft}
+	\end{table}
+	\vspace{-0.2cm}
+	
+	\newpage
+	\section{Conclusiones y Recomendaciones}
+	\subsection{Conclusiones}
+	\begin{justify}
+	La implementación de modelos 3D CNN integrados con métodos XAI (Grad-CAM 3D) permitió lograr segmentaciones precisas y explicables, aumentando la transparencia del proceso de detección de defectos en soldaduras.
+	
+	El uso de TC médica resultó ser una alternativa viable frente a la TC industrial, por su accesibilidad, compatibilidad con DICOM y precisión adecuada para la inspección no destructiva.
+	
+	La integración de herramientas MONAI Label, PyTorch y 3D Slicer conformó un flujo de trabajo reproducible, escalable y adaptable para futuras aplicaciones industriales.
+	
+	El enfoque mixto cuantitativo-cualitativo confirmó la validez del sistema tanto en desempeño técnico (Dice = 0.955) como en interpretabilidad visual (comprensión > 90 por ciento).
+	
+	El sistema propuesto aporta una base científica sólida para el uso de IA explicable en inspección de materiales metálicos mediante tomografía volumétrica.
+	\end{justify}
+	\subsection{Recomendaciones}
+	\begin{justify}
+	Extender el dataset con diferentes tipos de soldaduras y defectos para mejorar la generalización del modelo.
+	
+	Incorporar un módulo de despliegue embebido mediante Arduino 1Q para demostraciones en campo.
+	
+	Implementar un sistema de validación cruzada con tomografía computarizada industrial, para comparar resolución, precisión y aplicabilidad.
+	
+	Desarrollar una interfaz gráfica personalizada que integre visualización 3D + Grad-CAM en tiempo real dentro de Slicer.
+	
+	Publicar los resultados en repositorios abiertos (GitHub, HuggingFace) para fomentar la reproducibilidad científica.
+	\end{justify}
+	%---------------------------------------------------------------------
+	% Bibliografía
+	%---------------------------------------------------------------------
+	%\newpage
+	%\begin{thebibliography}{100}
+	%	\bibitem{leon} Tex
+	%\end{thebibliography}
+	\newpage
+	%\begin{center}
+	%\section*{Bibliografía}
+	%Aquí van las referencias en formato APA 7ma edición.
+	%--------------------------------	
+	%\bibliographystyle{apalike}
+	%\bibliography{biblio}
+	
+	\printbibliography[heading=bibintoc]
+	\begin{justify}
+	Pooja Tayade. (2025, August 8). Non-Destructive Testing Market Size and Forecast, 2025--2032. Coherent 		Market Insights.\url{https://www.coherentmarketinsights.com/market-insight/non-destructive-testing-market-5
+		350?utm\_source}.
+	\end{justify}
+	‌
+	%-----------------------------------------
+	%\end{center}
+	%---------------------------------------------------------------------
+	% Anexos
+	%---------------------------------------------------------------------
+	% --- NUEVA PÁGINA PARA LOS ANEXOS ---
+	\newpage
+	\clearpage
+	\phantomsection
+	\addcontentsline{toc}{section}{Anexos} % <-- Para que aparezca en el índice
+	\section*{\centering \textbf{Anexos}}
+	
+	% --- Configuración para numerar anexos (A, B, C...) ---
+	\renewcommand{\thefigure}{A.\arabic{figure}} % numeración de figuras como A.1, A.2, etc.
+	\setcounter{figure}{0} % reinicia el contador de figuras para los anexos
+	
+	% --- Ejemplo de Anexo A ---
+	\subsection*{\textbf{Anexo A. Barra de Soldadura SAE 1010}}
+	
+	Aquí se presenta el ensayo real. Evidencia de elaboración en repositorio de Github.
+	
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[width=0.8\textwidth]{anexo_1.jpg}
+		\caption{Prueba de Ensayo en Aleación SAE 1010.}
+		\label{fig:anexoA}
+	\end{figure}
+	
+	\vspace{1em}
+	\textit{Nota.} Esta imagen muestra los cordones de soldadura, se evidencia que físicamente no es posible ver zonas de discontinuidad interna.
+	
+	% --- Ejemplo de Anexo B ---
+	\newpage
+	\subsection*{\textbf{Anexo B. Ejecución de inferencia sobre volúmenes DICOM convertidos a NIfTI}}
+	\begin{justify}
+	Este fragmento muestra el proceso de conversión, carga y ejecución de inferencia en un modelo MONAI previamente entrenado, aplicado sobre un cordón de soldadura escaneado por tomografía computarizada (CT).
+	\end{justify}
+	\begin{verbatim}
+	# ==========================
+	# ANEXO B: Inferencia sobre volumen DICOM convertido a NIfTI
+	# ==========================
+	
+	from monai.inferers import SlidingWindowInferer
+	from monai.transforms import (
+	LoadImage,
+	EnsureChannelFirst,
+	ScaleIntensity,
+	CropForeground,
+	EnsureType
+	)
+	from monai.networks.nets import UNet
+	import torch
+	import os
+	
+	# Ruta del volumen ya convertido a NIfTI (.nii.gz)
+	input_path = r"D:\MONAI_STUDIES\weld_sample01\nifti\volume_001.nii.gz"
+	output_path = r"D:\MONAI_RESULTS\segmentation_output.nii.gz"
+	
+	# Cargar imagen y aplicar transformaciones necesarias
+	transform = Compose([
+	LoadImage(image_only=True),
+	EnsureChannelFirst(),
+	ScaleIntensity(),
+	CropForeground(),
+	EnsureType()
+	])
+	
+	image = transform(input_path)
+	image = image.unsqueeze(0)  # [B, C, H, W, D]
+	
+	# Cargar el modelo entrenado
+	model = UNet(
+	spatial_dims=3,
+	in_channels=1,
+	out_channels=2,
+	channels=(16, 32, 64, 128, 256),
+	strides=(2, 2, 2, 2),
+	num_res_units=2
+	)
+	model.load_state_dict(torch.load("D:/MONAI_MODELS/best_metric_model.pth"))
+	model.eval()
+	
+	# Inferencia con ventana deslizante
+	inferer = SlidingWindowInferer(roi_size=(64, 64, 64), sw_batch_size=1, overlap=0.25)
+	with torch.no_grad():
+	prediction = inferer(inputs=image, network=model)
+	
+	# Guardar resultado segmentado en formato NIfTI
+	from monai.data import write_nifti
+	write_nifti(prediction.argmax(dim=1)[0], output_path)
+	print("Inferencia completada y guardada en:", output_path)	
+		
+	\end{verbatim}
+	\begin{justify}
+	Descripción técnica:
+	
+	La función SlidingWindowInferer() permite inferencia eficiente en volúmenes 3D grandes.
+	
+	Se aplican transformaciones MONAI para garantizar compatibilidad de formato.
+	
+	El modelo UNet se carga con pesos entrenados para la detección de defectos en soldadura.
+	\end{justify}
+	\newpage
+	\subsection*{\textbf{Anexo C. Generación de mapa Grad-CAM sobre volumen 3D}}
+	\begin{justify}
+	Este fragmento ilustra cómo se calculó el mapa de activación visual Grad-CAM 3D a partir del modelo, para interpretar las regiones del volumen relevantes para la predicción.
+	\end{justify}
+	\begin{verbatim}
+	# ==========================
+	# ANEXO C: Generación de Grad-CAM 3D
+	# ==========================
+	
+	from monai.visualize import GradCAM
+	import matplotlib.pyplot as plt
+	import numpy as np
+	
+	# Crear objeto Grad-CAM para el modelo UNet
+	target_layer = model.encoder4[-1]  # última capa convolucional significativa
+	cam = GradCAM(nn_module=model, target_layers=[target_layer], reshape_transform=None)
+	
+	# Calcular mapa Grad-CAM para la clase de interés (defecto)
+	cam_map = cam(x=image, class_idx=1)
+	gradcam = cam_map[0, 0].detach().cpu().numpy()
+	
+	# Visualización de una sección intermedia
+	plt.imshow(np.rot90(gradcam[:, :, gradcam.shape[2]//2]), cmap='jet', alpha=0.6)
+	plt.title("Mapa Grad-CAM 3D – Corte Axial")
+	plt.axis('off')
+	plt.show()
+	
+	\end{verbatim}
+	\begin{justify}
+	Descripción técnica:
+	
+	El módulo GradCAM de MONAI permite analizar la interpretabilidad del modelo.
+	
+	Se visualiza la intensidad de activación por voxel, facilitando la correlación entre regiones activas y defectos reales del cordón.
+	\end{justify}
+	\newpage
+	\subsection*{\textbf{Anexo D. Integración con 3D Slicer y MONAI Label}}
+	\begin{justify}
+	Este script se utilizó dentro del entorno Python Interactor de 3D Slicer para conectar el servidor MONAI Label, ejecutar inferencias en línea y visualizar resultados segmentados en el entorno gráfico.
+	\end{justify}
+	\begin{verbatim}
+		# ==========================
+		# ANEXO D: Integración Slicer + MONAI Label
+		# ==========================
+		
+		monai_module = slicer.modules.monailabel.widgetRepresentation().self()
+		
+		# Configurar conexión al servidor local
+		server_url = "http://192.168.100.8:8000"
+		monai_module.logic.setServer(server_url)
+		monai_module.serverUrl = server_url
+		
+		# Ejecutar inferencia sobre un volumen cargado en el entorno Slicer
+		volume_node = slicer.util.getNode('CT_Weld_Volume')
+		params = {"model": "DeepEditWeld", "user": "operator01"}
+		result = monai_module.logic.infer("segment", volume_node, params)
+		
+		print("Segmentación completada con MONAI Label:", result)
+		
+	\end{verbatim}
+	\begin{justify}
+	Descripción técnica:
+	
+	Permite la ejecución remota de inferencia sin necesidad de exportar manualmente archivos.
+	
+	El modelo "DeepEditWeld" responde a una arquitectura basada en edición interactiva de regiones defectuosas en cordones de soldadura.
+	
+	Los resultados se visualizan directamente en 3D Slicer, combinando las vistas axial, sagital y coronal.
+	\end{justify}
+	\newpage
+	\subsection*{\textbf{Anexo E. Validación de estructura interna}}
+	\begin{justify}
+	Fragmento adicional que ilustra cómo se validó la estructura volumétrica interna del cordón a partir del resultado segmentado y su comparación con el volumen original:
+	\end{justify}
+	\begin{verbatim}
+		# ==========================
+		# ANEXO E: Validación de estructura interna
+		# ==========================
+		
+		import nibabel as nib
+		import numpy as np
+		
+		# Cargar volúmenes originales y segmentados
+		original = nib.load(r"D:\MONAI_STUDIES\volume_original.nii.gz").get_fdata()
+		segmentado = nib.load(r"D:\MONAI_RESULTS\segmentation_output.nii.gz").get_fdata()
+		
+		# Calcular métricas de coincidencia espacial
+		intersection = np.logical_and(original > 0, segmentado > 0)
+		dice = (2.0 * intersection.sum()) / ((original > 0).sum() + (segmentado > 0).sum())
+		
+		print(f"Índice de similitud DICE: {dice:.4f}")
+		
+		# Visualización volumétrica opcional (pseudocódigo)
+		# plot_3d_volume(segmentado, threshold=0.5)
+		
+		
+	\end{verbatim}
+	\begin{justify}
+	El índice DICE cuantifica la coincidencia entre la estructura real y la segmentación inferida.
+	Se validó que los defectos detectados correspondan a discontinuidades internas reales observadas en la reconstrucción CT.
+	\end{justify}
+	
+	% --- NUEVA PÁGINA PARA LOS ANEXOS GRÁFICOS ---
+	\newpage
+	\clearpage
+	\phantomsection
+	\addcontentsline{toc}{section}{Anexos Gráficos}
+	\section*{\centering \textbf{Anexos Gráficos}}
+	
+	% --- Configuración general ---
+	\renewcommand{\thefigure}{\Alph{section}.\arabic{figure}}
+	\setcounter{figure}{0}
+	\setcounter{section}{0}
+	
+	% =============================
+	% ANEXO GRÁFICO A
+	% =============================
+	\section*{\textbf{Anexo Gráfico A: Preparación y Conversión de Datos}}
+	\addcontentsline{toc}{subsection}{Anexo Gráfico A: Preparación y Conversión de Datos}
+	\setcounter{figure}{0}
+	\renewcommand{\thefigure}{A.\arabic{figure}}
+	
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[width=0.8\textwidth]{anexo_15.png}
+		\caption{Vista general del entorno MONAI Label configurado en 3D Slicer. Muestra la interfaz inicial del módulo MONAI Label con conexión al servidor local.}
+	\end{figure}
+	
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[width=0.8\textwidth]{anexo_5.png}
+		\caption{Carga del dataset DICOM en 3D Slicer. Visualización del cordón de soldadura escaneado por tomografía médica Siemens Healthineers.}
+	\end{figure}
+	
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[width=0.8\textwidth]{anexo_3.png}
+		\caption{Conversión del volumen DICOM a formato NIfTI (.nii.gz). Ejemplo de la transformación mediante el módulo DICOM → NIfTI en Software dcm2niix.}
+	\end{figure}
+	
+	% =============================
+	% ANEXO GRÁFICO B
+	% =============================
+	\newpage
+	\section*{\textbf{Anexo Gráfico B: Preprocesamiento y Normalización}}
+	\addcontentsline{toc}{subsection}{Anexo Gráfico B: Preprocesamiento y Normalización}
+	\setcounter{figure}{0}
+	\renewcommand{\thefigure}{B.\arabic{figure}}
+	
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[width=0.8\textwidth]{anexo_7.png}
+		\includegraphics[width=0.8\textwidth]{anexo_8.png}
+		\caption{Recorte de volumen y aislamiento del cordón de soldadura. Se evidencia el uso de la herramienta “Crop Volume” para centrar el ROI en la zona de soldadura.}
+	\end{figure}
+	
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[width=0.8\textwidth]{anexo_14.png}
+		\caption{Escalado de intensidad y normalización de voxel size. Proceso de estandarización de intensidad de píxel para optimizar la entrada al modelo CNN 3D.}
+	\end{figure}
+	
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[width=0.8\textwidth]{anexo_10.png}
+		\includegraphics[width=0.8\textwidth]{anexo_26(2).PNG}
+		\includegraphics[width=0.8\textwidth]{anexo_27(2).PNG}
+		\caption{Vista multiplanar: axial, coronal y sagital del cordón. ejemplo de 1 de los 23 subvolúmenes cortados Comparación de cortes en los tres planos principales para ver la consistencia geométrica del volumen.}
+	\end{figure}
+	
+	% =============================
+	% ANEXO GRÁFICO C
+	% =============================
+	\newpage
+	\section*{\textbf{Anexo Gráfico C: Segmentación Automática y Manual}}
+	\addcontentsline{toc}{subsection}{Anexo Gráfico C: Segmentación Automática y Manual}
+	\setcounter{figure}{0}
+	\renewcommand{\thefigure}{C.\arabic{figure}}
+	
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[width=0.8\textwidth]{anexo_17.png}
+		\caption{Ejecución de inferencia automática con MONAI Label – DeepEdit. Ejemplo de predicción inicial generada por el modelo CNN 3D.}
+	\end{figure}
+	
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[width=0.8\textwidth]{anexo.png}
+		\caption{Ajuste manual del área segmentada. Corrección manual de bordes y falsas detecciones utilizando la herramienta “Paint Effect”.}
+	\end{figure}
+	
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[width=0.8\textwidth]{anexo_30.png}
+		\caption{Comparación entre segmentación automática y Ground Truth. Superposición de ambas segmentaciones para validar visualmente la precisión del modelo.}
+	\end{figure}
+	
+	% =============================
+	% ANEXO GRÁFICO D
+	% =============================
+	\newpage
+	\section*{\textbf{Anexo Gráfico D: Análisis e Interpretabilidad}}
+	\addcontentsline{toc}{subsection}{Anexo Gráfico D: Análisis e Interpretabilidad}
+	\setcounter{figure}{0}
+	\renewcommand{\thefigure}{D.\arabic{figure}}
+
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[width=0.8\textwidth]{anexo_31.png}
+	\end{figure}
+	
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[width=0.8\textwidth]{anexo_32.png}
+		\caption{Mapa Grad-CAM en vistas sagital y coronal. Comparación de activaciones entre planos ortogonales.}
+	\end{figure}
+	
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[width=0.8\textwidth]{anexo_19.png}
+		\caption{Curvas de entrenamiento – pérdida y precisión. Evolución de métricas durante el entrenamiento CNN 3D U-Net.}
+	\end{figure}
+	
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[width=0.8\textwidth]{anexo_26.png}
+		\includegraphics[width=0.8\textwidth]{anexo_23.png}
+		\includegraphics[width=0.8\textwidth]{anexo_25.png}
+		\caption{Matriz de confusión del modelo de segmentación. Muestra valores de Verdaderos Positivos, Falsos Positivos y Falsos Negativos.}
+	\end{figure}
+	
+	
+	
+\end{document}

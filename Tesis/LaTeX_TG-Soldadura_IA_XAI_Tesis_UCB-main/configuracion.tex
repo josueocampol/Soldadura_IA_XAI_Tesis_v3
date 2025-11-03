@@ -1,0 +1,150 @@
+%---------------------------------------------------------------------
+% Archivo de configuración: configuracion.tex
+%---------------------------------------------------------------------
+
+%=====================================================================
+% Paquetes básicos y configuración de idioma/tipografía
+%=====================================================================
+\usepackage[left=3.5cm, right=3cm, top=3cm, bottom=3cm]{geometry} % Márgenes
+\usepackage[english,main=spanish]{babel} % Idiomas 
+\addto\captionsspanish{\renewcommand{\tablename}{Tabla}}
+\captionsetup[table]{%
+	labelsep=newline,            % Salto de línea entre "Tabla 1" y el título
+	labelfont=bf,                % "Tabla 1" en negrita
+	textfont=it,                 % Título en cursiva
+	justification=raggedright,   % Alineado a la izquierda
+	singlelinecheck=false        % Evitar centrado si es una sola línea
+}
+
+\usepackage[T1]{fontenc}       % Codificación de fuente
+\usepackage{times}             % Usa Times New Roman
+\usepackage{fontsize}          % Permite comandos de tamaño de fuente
+\usepackage{xcolor}            % Colores
+\usepackage{graphicx}          % Manejo de gráficos
+\graphicspath{{./img/}}        % Ruta por defecto para las imágenes
+
+%=====================================================================
+% Paquetes adicionales
+%=====================================================================
+\usepackage{tocloft}           % Personalizar tabla de contenidos, figuras, tablas
+\usepackage{fancyhdr}          % Encabezados y pies de página
+\pagestyle{fancy}
+\fancyhf{}
+\rfoot{\thepage}               % Número de página alineado a la derecha
+\renewcommand{\headrulewidth}{0pt} % Eliminar línea de encabezado
+
+%=====================================================================
+% Configuración de interlineado
+%=====================================================================
+\renewcommand{\baselinestretch}{1.5} % Interlineado 1.5
+
+%=====================================================================
+% Definición de macros para datos del documento
+%=====================================================================
+\newcommand{\titulo}[1]{\def\Titulo{#1}}
+\newcommand{\autor}[1]{\def\Autor{#1}}
+\newcommand{\tutor}[1]{\def\Tutor{#1}}
+\newcommand{\fecha}[1]{\def\Fecha{#1}}
+\newcommand{\departamento}[1]{\def\Departamento{#1}}
+\newcommand{\carrera}[1]{\def\Carrera{#1}}
+\newcommand{\fechaActual}{\number\year}  % Muestra únicamente el año actual
+
+%=====================================================================
+% Comandos para carátulas (portadas)
+%=====================================================================
+
+% Carátula simple (sin tutor)
+\newcommand{\caratulaTapa}{
+	\begin{titlepage}
+		\begin{center}
+			{\fontsize{18}{20}\selectfont UNIVERSIDAD CATÓLICA BOLIVIANA "SAN PABLO" SEDE TARIJA}\\[0.5cm]
+			{\fontsize{16}{18}\selectfont DEPARTAMENTO DE \MakeUppercase{\Departamento}}\\
+			{\fontsize{14}{16}\selectfont CARRERA DE: \MakeUppercase{\Carrera}\\}
+			\begin{figure}[h]
+				\centering
+				\includegraphics[height=7cm]{ucbLOGO}
+			\end{figure}
+			{\fontsize{16}{18}\selectfont \MakeUppercase{\Titulo} }
+			\vspace{1cm}
+			
+			{\fontsize{14}{16}\selectfont POSTULANTE: \MakeUppercase{\Autor}\\}
+		\end{center}
+		\vspace{0.2cm}
+		{\fontsize{12}{14}\selectfont
+			Trabajo de Tesis de grado presentado en consideración de la Universidad Católica Boliviana "San Pablo", como requisito para optar el Grado Académico de Licenciatura en \Carrera 
+			
+		}
+		
+		{\centering \fontsize{14}{16}\selectfont TARIJA-BOLIVIA\\\Fecha\\}
+		
+		\thispagestyle{empty} % Evita numeración en la portada
+	\end{titlepage}
+}
+
+% Carátula que incluye tutor
+\newcommand{\caratulaContenido}{
+	\begin{titlepage}
+		\begin{center}
+			{\fontsize{18}{20}\selectfont UNIVERSIDAD CATÓLICA BOLIVIANA "SAN PABLO" SEDE TARIJA}\\[0.5cm]
+			{\fontsize{16}{18}\selectfont DEPARTAMENTO DE \MakeUppercase{\Departamento}}\\
+			{\fontsize{14}{16}\selectfont CARRERA DE: \MakeUppercase{\Carrera}\\}
+			\begin{figure}[h]
+				\centering
+				\includegraphics[height=7cm]{ucbLOGO}
+			\end{figure}
+			{\fontsize{16}{18}\selectfont \MakeUppercase{\Titulo}}
+			\vspace{1cm}
+			
+			{\fontsize{14}{16}\selectfont POSTULANTE: \MakeUppercase{\Autor}\\
+				TUTOR: \MakeUppercase{\Tutor}}
+		\end{center}
+		\vspace{0.2cm}
+		{\fontsize{12}{14}\selectfont
+			Trabajo de Tesis de grado presentado en consideración de la Universidad Católica Boliviana "San Pablo", como requisito para optar el Grado Académico de Licenciatura en \Carrera 
+		}
+		
+		{\centering \fontsize{14}{16}\selectfont TARIJA-BOLIVIA\\\Fecha\\}
+		
+		\thispagestyle{empty} % Evita numeración en la portada
+	\end{titlepage}
+}
+
+%=====================================================================
+% Comando para iniciar numeración a partir de la introducción
+%=====================================================================
+\newcommand{\iniciarNumeracion}{
+	\setcounter{page}{1}   % Reinicia la numeración de páginas
+	\pagestyle{fancy}      % Usa el estilo "fancy"
+	\fancyhf{}             % Limpiar encabezados y pies
+	\fancyfoot[R]{\thepage}          % Número de página a la derecha
+	\renewcommand{\headrulewidth}{0pt} % Sin línea de encabezado
+	\renewcommand{\footrulewidth}{0pt} % Sin línea de pie de página
+	
+	% Redefinir el estilo 'plain' para páginas de inicio de capítulo
+	\fancypagestyle{plain}{%
+		\fancyhf{}
+		\fancyfoot[R]{\thepage}
+		\renewcommand{\headrulewidth}{0pt}
+		\renewcommand{\footrulewidth}{0pt}
+	}
+}
+
+%=====================================================================
+% Comando para configurar índices (ToC, LoF, LoT)
+%=====================================================================
+\newcommand{\configurarIndices}{
+	\setcounter{tocdepth}{3}      % Profundidad del índice de contenidos
+	\setcounter{secnumdepth}{3}   % Profundidad de numeración de secciones
+	
+	% Puntos (dotfill) en los niveles de índice
+	\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
+	\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+	\renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}}
+	\renewcommand{\cftsubsubsecleader}{\cftdotfill{\cftdotsep}}
+	
+	% Opcional: líder de puntos para figuras y tablas
+	\renewcommand{\cftfigleader}{\cftdotfill{\cftdotsep}}
+	\renewcommand{\cfttableader}{\cftdotfill{\cftdotsep}}
+}
+
+% Fin de configuracion.tex

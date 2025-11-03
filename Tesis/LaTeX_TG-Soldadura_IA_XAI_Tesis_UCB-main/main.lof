@@ -1,0 +1,23 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {figure}{Figura 1. \textit {Aporte de un Inspector de Soldadura SMAW}}{3}{}%
+\contentsline {figure}{Figura 2. \textit {Cronograma por fases}}{38}{}%
+\contentsline {figure}{Figura 3. \textit {Diagrama conceptual del Sistema Inspector Explicable para soldaduras basado en Edge-AI y CNN 3D.}}{41}{}%
+\contentsline {figure}{Figura 4. \textit {Visualización Grad-CAM 3D sobre subvolumen axial de soldadura (vista axial, coronal y sagital).}}{47}{}%
+\contentsline {figure}{Figura 5. \textit {Estadísticas descriptivas de métricas de desempeño del modelo CNN-3D}}{48}{}%
+\contentsline {figure}{Figura 6. \textit {Matriz de correlación entre métricas de desempeño.}}{49}{}%
+\contentsline {figure}{Figura 7. \textit {Representación gráfica de la matriz de correlación de métricas.}}{50}{}%
+\contentsline {figure}{Figura 8. \textit {Distribuciones descriptivas de métricas de desempeño.}}{51}{}%
+\contentsline {figure}{Figura 9. \textit {Diagrama del protocolo experimental: pipeline de procesamiento, XAI y evaluación.}}{52}{}%
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Prueba de Ensayo en Aleación SAE 1010.}}{60}{}%
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Vista general del entorno MONAI Label configurado en 3D Slicer. Muestra la interfaz inicial del módulo MONAI Label con conexión al servidor local.}}{66}{}%
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Carga del dataset DICOM en 3D Slicer. Visualización del cordón de soldadura escaneado por tomografía médica Siemens Healthineers.}}{66}{}%
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Conversión del volumen DICOM a formato NIfTI (.nii.gz). Ejemplo de la transformación mediante el módulo DICOM → NIfTI en Software dcm2niix.}}{67}{}%
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Recorte de volumen y aislamiento del cordón de soldadura. Se evidencia el uso de la herramienta “Crop Volume” para centrar el ROI en la zona de soldadura.}}{68}{}%
+\contentsline {figure}{\numberline {B.2}{\ignorespaces Escalado de intensidad y normalización de voxel size. Proceso de estandarización de intensidad de píxel para optimizar la entrada al modelo CNN 3D.}}{69}{}%
+\contentsline {figure}{\numberline {B.3}{\ignorespaces Vista multiplanar: axial, coronal y sagital del cordón. ejemplo de 1 de los 23 subvolúmenes cortados Comparación de cortes en los tres planos principales para ver la consistencia geométrica del volumen.}}{70}{}%
+\contentsline {figure}{\numberline {C.1}{\ignorespaces Ejecución de inferencia automática con MONAI Label – DeepEdit. Ejemplo de predicción inicial generada por el modelo CNN 3D.}}{71}{}%
+\contentsline {figure}{\numberline {C.2}{\ignorespaces Ajuste manual del área segmentada. Corrección manual de bordes y falsas detecciones utilizando la herramienta “Paint Effect”.}}{71}{}%
+\contentsline {figure}{\numberline {C.3}{\ignorespaces Comparación entre segmentación automática y Ground Truth. Superposición de ambas segmentaciones para validar visualmente la precisión del modelo.}}{72}{}%
+\contentsline {figure}{\numberline {D.1}{\ignorespaces Mapa Grad-CAM en vistas sagital y coronal. Comparación de activaciones entre planos ortogonales.}}{74}{}%
+\contentsline {figure}{\numberline {D.2}{\ignorespaces Curvas de entrenamiento – pérdida y precisión. Evolución de métricas durante el entrenamiento CNN 3D U-Net.}}{74}{}%
+\contentsline {figure}{\numberline {D.3}{\ignorespaces Matriz de confusión del modelo de segmentación. Muestra valores de Verdaderos Positivos, Falsos Positivos y Falsos Negativos.}}{75}{}%
